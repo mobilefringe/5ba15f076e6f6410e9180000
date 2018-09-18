@@ -1,38 +1,36 @@
 <template>
     <footer>
-		<div class="footer">
-			<div class="site_container">
-			    <div class="row footer_logo">
-			        <div class="col-md-3 center-block">
-			            <div class="property_logo">
-					        <router-link to="/">
-					            <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
-				            </router-link>
-				        </div>    
-			        </div>
-			        
-			        <div class="col-md-6">
-			            <nav id="footer_nav">
-    						<ul>
-    						    <li v-for="item in footer_menu_items" class="menu_item">
-    						        <router-link :to="item.href">{{$t(item.name)}}</router-link>
-    						    </li>
-    						</ul>
-    					</nav>    
-			        </div>
-			        <div class="col-md-3">
-			            <div class="social_icons">
-                            <span v-for="item in social_media">
-                                <a :href="item.url" target="_blank">
-                                    <i :class="item.iconClass" aria-hidden="true"></i>
-                                </a>
-                            </span>
-                        </div>    
-			        </div>
-			    </div>
-				<div class="footer_terms">
-					<p>&copy; {{copyright_year}} <span class="caps">{{property.name}}</span> {{$t("footer.all_rights")}} <router-link to="/pages/bonniedoon-privacy-policy">{{$t("footer.privacy_policy")}}</router-link> <span class="hidden_phone">|</span><br class="visible_phone"/><span> {{$t("footer.powered_by")}} <a href="//www.mallmaverick.com" target="_blank">Mall Maverick</a></span></p>
-				</div>
+		<div class="site_container">
+		    <div class="row footer_logo">
+		        <div class="col-md-3 center-block">
+		            <div class="property_logo">
+				        <router-link to="/">
+				            <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
+			            </router-link>
+			        </div>    
+		        </div>
+		        
+		        <div class="col-md-6">
+		            <nav id="footer_nav">
+						<ul>
+						    <li v-for="item in footer_menu_items" class="menu_item">
+						        <router-link :to="item.href">{{$t(item.name)}}</router-link>
+						    </li>
+						</ul>
+					</nav>    
+		        </div>
+		        <div class="col-md-3">
+		            <div class="social_icons">
+                        <span v-for="item in social_media">
+                            <a :href="item.url" target="_blank">
+                                <i :class="item.iconClass" aria-hidden="true"></i>
+                            </a>
+                        </span>
+                    </div>    
+		        </div>
+		    </div>
+			<div class="footer_terms">
+				<p>&copy; {{copyright_year}} <span class="caps">{{property.name}}</span> {{$t("footer.all_rights")}} <router-link to="/pages/bonniedoon-privacy-policy">{{$t("footer.privacy_policy")}}</router-link> <span class="hidden_phone">|</span><br class="visible_phone"/><span> {{$t("footer.powered_by")}} <a href="//www.mallmaverick.com" target="_blank">Mall Maverick</a></span></p>
 			</div>
 		</div>
     </footer>
