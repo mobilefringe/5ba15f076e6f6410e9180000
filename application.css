@@ -400,9 +400,12 @@ ul.options-list li.highlighted {
             color: $primary;
         }
     }
-    .fa:first-child {
+    
+}
+.social_icons:first-child .fa {
+    // .fa:first-child {
         margin: 0;
-    }
+    // }    
 }
 
 /* FOOTER */
