@@ -400,7 +400,7 @@ ul.options-list li.highlighted {
             color: $primary;
         }
         &:first-child {
-            margin: 0;
+            margin-LEFT: 0;
         }   
     }
 }
