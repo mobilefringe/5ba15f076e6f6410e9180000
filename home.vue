@@ -30,7 +30,7 @@
                         	        <a :href="feature.url">
                             			<img :src="feature.image_url" alt="name">
                             			<div class="feature_item_info" v-if="feature.name && feature.description ">
-                            				<div :class="'feature_item_content ' + feature.text_class + feature.border">
+                            				<div class="feature_item_content">
                             					<p v-if="locale=='en-ca'">{{ feature.name }}</p>
                             					<p v-else>{{ feature.name_2 }}</p>
                             					<h3 v-if="locale=='en-ca'">{{ feature.description }}</h3>
@@ -132,24 +132,12 @@
                     _.forEach(features, function(value, key) {
                         if ( _.includes([1], key) ) {
                             value.masonry_class = "grid-item--width2";
-                            // value.text_class = " ";
-                            // value.border = " ";
                         } else if ( _.includes([2], key) ){
                             value.masonry_class = "grid-item--width2";
                         } else if ( _.includes([3], key) ){
                             value.masonry_class = "grid-item--height2";
-                        // } else if ( _.includes([4], key) ){
-                        //     value.text_class = " ";
-                        //     value.border = "full_border";
-                        // } else if ( _.includes([5], key) ){
-                        //     value.text_class = "add_black";
-                        //     value.border = " ";
-                        //     value.last_item = true;
                         } else {
                             value.masonry_class = " ";
-                            // value.text_class = " ";
-                            // value.border = " ";
-                            // value.last_item = false;
                         }
                     });
                     return features;
