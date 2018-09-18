@@ -400,13 +400,12 @@ ul.options-list li.highlighted {
             color: $primary;
         }
     }
-    
 }
-.social_icons .fa:first-child {
-    // .fa:first-child {
-        margin: 0;
-    // }    
-}
+// .social_icons .fa:first-child {
+//     // .fa:first-child {
+//         margin: 0;
+//     // }    
+// }
 
 /* FOOTER */
 footer {
