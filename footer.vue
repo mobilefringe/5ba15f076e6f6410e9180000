@@ -2,13 +2,11 @@
     <footer>
 		<div class="site_container">
 		    <div class="footer_logo">
-		        <div class="center-block">
-		            <div class="property_logo">
-				        <router-link to="/">
-				            <img src="https://via.placeholder.com/150x50" alt="Property Logo"/>
-			            </router-link>
-			        </div>    
-		        </div>
+	            <div class="property_logo">
+			        <router-link to="/">
+			            <img src="https://via.placeholder.com/150x50" alt="Property Logo"/>
+		            </router-link>
+		        </div>    
 		        <div class="center-block">
 		            <nav id="footer_nav">
 						<ul>
@@ -18,15 +16,13 @@
 						</ul>
 					</nav>    
 		        </div>
-		        <div class="center-block">
-		            <div class="social_icons">
-                        <span v-for="item in social_media">
-                            <a :href="item.url" target="_blank">
-                                <i :class="item.iconClass" aria-hidden="true"></i>
-                            </a>
-                        </span>
-                    </div>    
-		        </div>
+	            <div class="social_icons">
+                    <span v-for="item in social_media">
+                        <a :href="item.url" target="_blank">
+                            <i :class="item.iconClass" aria-hidden="true"></i>
+                        </a>
+                    </span>
+                </div>    
 		    </div>
 			<div class="footer_terms">
 				<p>&copy; {{copyright_year}} <span class="caps">{{property.name}}</span> {{$t("footer.all_rights")}} <router-link to="/pages/bonniedoon-privacy-policy">{{$t("footer.privacy_policy")}}</router-link> <span class="hidden_phone">|</span><br class="visible_phone"/><span> {{$t("footer.powered_by")}} <a href="//www.mallmaverick.com" target="_blank">Mall Maverick</a></span></p>
