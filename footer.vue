@@ -5,7 +5,7 @@
 		        <div class="col-md-3 center-block">
 		            <div class="property_logo">
 				        <router-link to="/">
-				            <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
+				            <img src="https://via.placeholder.com/350x150" alt="Property Logo"/>
 			            </router-link>
 			        </div>    
 		        </div>
