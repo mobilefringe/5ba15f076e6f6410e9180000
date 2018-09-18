@@ -404,10 +404,8 @@ ul.options-list li.highlighted {
 
 /* FOOTER */
 footer {
-    max-height: 646px;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+    height: 100px;
+    background: #000;
 }
 .footer {
     position: relative;
