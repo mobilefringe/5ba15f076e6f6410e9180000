@@ -399,16 +399,14 @@ ul.options-list li.highlighted {
         &:hover {
             color: $primary;
         }
-        &:first-child {
-            margin-LEFT: 0;
-        }   
     }
 }
-// .social_icons .fa:first-child {
-//     // .fa:first-child {
-//         margin: 0;
-//     // }    
-// }
+
+.social_icons span:first-child .fa {
+
+        margin: 0;
+    // }    
+}
 
 /* FOOTER */
 footer {
