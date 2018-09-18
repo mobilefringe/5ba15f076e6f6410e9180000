@@ -259,22 +259,16 @@ ul.options-list li.highlighted {
     -webkit-align-items: center;
     -ms-flex-align: center;
     align-items: center;
-    .language_select {
-        padding: 5px 0;
-        font-size: 0.875rem;
-        line-height: 1.1875rem;
-        letter-spacing: 3.3;
-        text-transform: uppercase;
-        span:hover {
-            cursor: pointer;
-        }
-    }
-    .property_logo {
-        margin: 32px auto;
-        max-width: 282px;
-        img {
-            max-width: 100%;
-        }
+    -webkit-box-pack: justify;
+    -webkit-justify-content: space-between;
+    -ms-flex-pack: justify;
+    justify-content: space-between;
+}
+.property_logo {
+    margin: 32px auto;
+    max-width: 282px;
+    img {
+        max-width: 100%;
     }
 }
 .header_search_container {
