@@ -440,13 +440,11 @@ footer {
         }
     }
     .footer_terms {
+        text-align: center;
         p {
             margin: 0;
             font-size: 0.75rem;
         }
-    }
-    .footer_conduct p, .footer_terms p {
-        
     }
 }
 
