@@ -1,15 +1,14 @@
 <template>
     <footer>
 		<div class="site_container">
-		    <div class="row footer_logo">
-		        <div class="col-md-3 center-block">
+		    <div class="footer_logo">
+		        <div class="center-block">
 		            <div class="property_logo">
 				        <router-link to="/">
 				            <img src="https://via.placeholder.com/150x75" alt="Property Logo"/>
 			            </router-link>
 			        </div>    
 		        </div>
-		        
 		        <div class="col-md-6">
 		            <nav id="footer_nav">
 						<ul>
