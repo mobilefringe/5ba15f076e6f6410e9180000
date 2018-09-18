@@ -596,9 +596,9 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        border: 2px solid #FFF;
-        border-left: 0;
-        border-bottom: 0;
+        // border: 2px solid #FFF;
+        // border-left: 0;
+        // border-bottom: 0;
         text-align: center;
         color: #FFF;
         p {
@@ -638,19 +638,16 @@ footer {
         line-height: normal;
         text-transform: uppercase;
     }
-    .feature_item_content.add_black {
-        border: none;
-        color: #000;
-        p::after {
-            background-color: #000;
-        }
-        .feature_item_more {
-            border-color: #000;
-        }
-    }
-    .feature_item_content.full_border {
-        border: 1px solid #FFF;
-    }
+    // .feature_item_content.add_black {
+    //     border: none;
+    //     color: #000;
+    //     p::after {
+    //         background-color: #000;
+    //     }
+    //     .feature_item_more {
+    //         border-color: #000;
+    //     }
+    // }
 }
 .feature_item_container a:hover {
     .feature_item_info::after {
