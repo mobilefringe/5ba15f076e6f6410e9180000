@@ -624,19 +624,21 @@ footer {
             letter-spacing: 2.5px;
             line-height: 36px;
         }
+        .feature_item_more {
+            margin: 40px auto 54px auto;
+            padding: 11px 0;
+            min-width: 150px;
+            height: 40px;
+            display: inline-block;
+            border: 2px solid #FFF;
+            font-weight: 700;
+            font-size: 0.875rem;
+            line-height: normal;
+            	letter-spacing: 0.2px;
+            text-transform: uppercase;
+        }
     }
-    .feature_item_more {
-        margin: 40px auto 54px auto;
-        padding: 11px 0;
-        min-width: 150px;
-        height: 40px;
-        display: inline-block;
-        border: 2px solid #FFF;
-        font-weight: 700;
-        font-size: 0.875rem;
-        line-height: normal;
-        text-transform: uppercase;
-    }
+    
     // .feature_item_content.add_black {
     //     border: none;
     //     color: #000;
