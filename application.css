@@ -470,9 +470,7 @@ footer {
         top: 50%;
         left: 50%;
         transform: translate(-50%, -50%);
-        border: 1px solid #FFF;
-        border-bottom: 0;
-        border-left: 0;
+        border: 2px solid #FFF;
         color: #FFF;
         text-align: center;
         h1 {
@@ -605,7 +603,7 @@ footer {
         -webkit-box-direction: normal;
         -webkit-flex-direction: column;
         -ms-flex-direction: column;
-                flex-direction: column;
+        flex-direction: column;
         -webkit-box-pack: justify;
         -webkit-justify-content: space-between;
         -ms-flex-pack: justify;
@@ -614,7 +612,6 @@ footer {
         text-align: center;
         color: #FFF;
         p {
-            // margin: 54px 0 40px 0;
             position: relative;
             font-weight: bold;
             font-size: 0.875rem;
