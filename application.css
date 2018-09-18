@@ -346,7 +346,7 @@ ul.options-list li.highlighted {
 	display: inline-block;
 	position: relative;
     min-width: 130px;
-    font-size: 1rem;
+    font-size: 0.875rem;
     text-align: center;
 }
 #primary_nav ul #menu2.menu_item {
