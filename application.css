@@ -401,11 +401,8 @@ ul.options-list li.highlighted {
         }
     }
 }
-
 .social_icons span:first-child .fa {
-
-        margin: 0;
-    // }    
+    margin: 0;
 }
 
 /* FOOTER */
