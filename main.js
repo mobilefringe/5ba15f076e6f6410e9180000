@@ -178,19 +178,19 @@ require(["Vue", "vuex", "vue2-filters", "vue_router", "routes", "datastore", "vu
                 ],
                 social_media: [
                     {
-                        name: "Facebook",
-                        url: "https://www.facebook.com/stlaurentcentre",
-                        iconClass: "fa fa-facebook-square"
+                        name: "Instagram",
+                        url: "https://www.instagram.com",
+                        iconClass: "fa fa-instagram"
                     },
                     {
                         name: "Twitter",
-                        url: "https://twitter.com/StLaurentCentre",
+                        url: "https://twitter.com",
                         iconClass: "fa fa-twitter-square"
                     },
                     {
-                        name: "Instagram",
-                        url: "https://www.instagram.com/stlaurentcentre",
-                        iconClass: "fa fa-instagram"
+                        name: "Facebook",
+                        url: "https://www.facebook.com",
+                        iconClass: "fa fa-facebook-square"
                     }
                 ],
                 search_result : null,
