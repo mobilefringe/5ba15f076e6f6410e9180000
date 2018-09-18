@@ -263,6 +263,7 @@ ul.options-list li.highlighted {
     -webkit-justify-content: space-between;
     -ms-flex-pack: justify;
     justify-content: space-between;
+    border-bottom: border: 1px solid #979797;
 }
 .property_logo {
     margin: 32px auto;
