@@ -5,7 +5,7 @@
 		        <div class="col-md-3 center-block">
 		            <div class="property_logo">
 				        <router-link to="/">
-				            <img src="https://via.placeholder.com/350x150" alt="Property Logo"/>
+				            <img src="https://via.placeholder.com/200x100" alt="Property Logo"/>
 			            </router-link>
 			        </div>    
 		        </div>
