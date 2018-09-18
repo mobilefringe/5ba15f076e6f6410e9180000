@@ -402,7 +402,7 @@ ul.options-list li.highlighted {
     }
     
 }
-.social_icons:first-child .fa {
+.social_icons .fa:first-child {
     // .fa:first-child {
         margin: 0;
     // }    
