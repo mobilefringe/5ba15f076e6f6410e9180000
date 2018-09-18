@@ -4,7 +4,7 @@
 			<div class="site_container">
 				<div class="row header_logo">
 					<div class="col-md-3 hidden_phone">
-					    <div class="social_icons pull-right">
+					    <div class="social_icons">
                             <span v-for="item in social_media">
                                 <a :href="item.url" target="_blank">
                                     <i :class="item.iconClass" aria-hidden="true"></i>
