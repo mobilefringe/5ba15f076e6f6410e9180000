@@ -439,10 +439,11 @@ footer {
             }
         }
     }
-}
-.footer_conduct p, .footer_terms p {
+    .footer_conduct p, .footer_terms p {
     font-size: 0.75rem;
 }
+}
+
 
 /* *** HOME *** */
 .home_banner_container {
