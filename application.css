@@ -399,6 +399,9 @@ ul.options-list li.highlighted {
         &:hover {
             color: $primary;
         }
+        &:first-child {
+            margin: 0;
+        }   
     }
 }
 // .social_icons .fa:first-child {
