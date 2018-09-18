@@ -400,6 +400,9 @@ ul.options-list li.highlighted {
             color: $primary;
         }
     }
+    .fa:first-child {
+        margin: 0;
+    }
 }
 
 /* FOOTER */
