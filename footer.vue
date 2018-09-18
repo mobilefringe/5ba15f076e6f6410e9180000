@@ -5,11 +5,11 @@
 		        <div class="center-block">
 		            <div class="property_logo">
 				        <router-link to="/">
-				            <img src="https://via.placeholder.com/150x75" alt="Property Logo"/>
+				            <img src="https://via.placeholder.com/150x50" alt="Property Logo"/>
 			            </router-link>
 			        </div>    
 		        </div>
-		        <div class="col-md-6">
+		        <div class="center-block">
 		            <nav id="footer_nav">
 						<ul>
 						    <li v-for="item in footer_menu_items" class="menu_item">
@@ -18,7 +18,7 @@
 						</ul>
 					</nav>    
 		        </div>
-		        <div class="col-md-3">
+		        <div class="center-block">
 		            <div class="social_icons">
                         <span v-for="item in social_media">
                             <a :href="item.url" target="_blank">
