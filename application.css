@@ -439,8 +439,14 @@ footer {
             }
         }
     }
+    .footer_terms {
+        p {
+            margin: 0;
+            font-size: 0.75rem;
+        }
+    }
     .footer_conduct p, .footer_terms p {
-        font-size: 0.75rem;
+        
     }
 }
 
