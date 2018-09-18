@@ -2,8 +2,8 @@
     <header>
         <div class="sticky">
 			<div class="site_container">
-				<div class="row header_logo">
-					<div class="col-md-3 hidden_phone">
+				<div class="header_logo">
+					<div class="hidden_phone">
 					    <div class="social_icons">
                             <span v-for="item in social_media">
                                 <a :href="item.url" target="_blank">
@@ -12,7 +12,7 @@
                             </span>
                         </div>
 					</div>
-					<div class="col-xs-12 col-md-6 mobile_header">
+					<div class="mobile_header">
 					    <div class="property_logo center-block">
 							<router-link to="/">
 							    <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
@@ -24,7 +24,7 @@
 				            <i v-if="showMobileMenu" class="fa fa-angle-up"></i>
 					    </div>
 					</div>
-					<div class="col-md-3 hidden_phone">
+					<div class="hidden_phone">
 					    <div class="header_search_container">
     					    <search-component v-model="search" :list="processedStores" :suggestion-attribute="suggestionAttribute" :placeholder="$t('header.search')" @select="onOptionSelect">
                                 <template slot="item" scope="option">
