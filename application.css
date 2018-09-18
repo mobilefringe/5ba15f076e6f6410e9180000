@@ -404,15 +404,10 @@ ul.options-list li.highlighted {
 
 /* FOOTER */
 footer {
+    padding: 20px 0;
     height: 100px;
     background: #000;
-}
-.footer {
-    position: relative;
-    padding: 20px 0;
-    background: rgba(255, 255, 255, 0.5);
-    text-align: center;
-    color: $font;
+    color: #FFF;
     .footer_logo {
         display: -webkit-box;
         display: -webkit-flex;
