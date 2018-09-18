@@ -640,7 +640,7 @@ footer {
             line-height: 36px;
         }
         .feature_item_more {
-            // margin: 40px auto 54px auto;
+            margin: 0 auto;
             padding: 11px 0;
             min-width: 150px;
             height: 40px;
