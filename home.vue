@@ -199,6 +199,12 @@
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
+                },
+
+                lastItem(feature){
+                    if(feature.last_item == true){
+                        return true
+                    }
                 }
             }
         })
