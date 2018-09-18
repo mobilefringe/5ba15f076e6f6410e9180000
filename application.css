@@ -596,9 +596,6 @@ footer {
         left: 50%;
         transform: translate(-50%, -50%);
         z-index: 1;
-        // border: 2px solid #FFF;
-        // border-left: 0;
-        // border-bottom: 0;
         text-align: center;
         color: #FFF;
         p {
@@ -606,6 +603,7 @@ footer {
             position: relative;
             font-weight: bold;
             font-size: 0.875rem;
+            	letter-spacing: 2.35px;
             text-transform: uppercase;
             &::after {
                 content: " ";
