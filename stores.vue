@@ -21,7 +21,8 @@
         							</article>
         						</template>
         					</search-component>
-        					<img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1517497861636/search_icon_2x.png" id="search_icon" alt="">
+        					<i id="search_icon" class="fas fa-search"></i>
+        					<!--<img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1517497861636/search_icon_2x.png" id="search_icon" alt="">-->
         				</div>
         				
         				<div class="stores_button_container map_link">
