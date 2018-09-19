@@ -24,9 +24,9 @@
         					<img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1517497861636/search_icon_2x.png" id="search_icon" alt="">
         				</div>
         				
-        				<div class="stores_button_container map_link hidden_phone">
+        				<div class="stores_button_container">
         				    <router-link to="/map">
-        				        <div>{{$t("stores_page.view_map")}}</div>
+        				        <div>View Center Map</div>
         				    </router-link>
         				</div>
         			
