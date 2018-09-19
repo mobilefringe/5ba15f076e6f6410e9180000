@@ -19,7 +19,7 @@
         		</div>
         		<div class="site_container">
         		    <div class="home_page_title_container">
-        		        <h5 class="home_page_subtitle caps">Discover {{ property.name }}</h5>
+        		        <h5 class="center caps">Discover {{ property.name }}</h5>
         		        <h3 class="home_page_title caps">What's Happening</h3>
         		    </div>
         		    <div v-masonry transition-duration="0.3s" item-selector=".grid-item" class="hidden_phone">
