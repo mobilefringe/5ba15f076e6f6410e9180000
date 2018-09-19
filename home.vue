@@ -20,7 +20,7 @@
         		<div class="site_container">
         		    <div class="home_page_title_container">
         		        <div class="stores_header_line"></div>
-        		        <h3 class="home_page_title caps">{{ $t("home_page.explore") }} {{ property.name }}</h3>
+        		        <h3 class="home_page_title caps">What's Happening</h3>
         		        <div class="stores_header_line"></div>
         		    </div>
         		    <div v-masonry transition-duration="0.3s" item-selector=".grid-item" class="hidden_phone">
