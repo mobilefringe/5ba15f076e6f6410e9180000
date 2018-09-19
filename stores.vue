@@ -96,7 +96,8 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-select", "jquery", "smooth-zoom", "vue!png-map", "vue!search-component"], function(Vue, Vuex, VueSelect, $, smoothZoom, PNGMapComponent, SearchComponent) {
+    define(["Vue", "vuex", "vue-select", "vue!search-component", "masonry", "vue-masonry-plugin"], function(Vue, Vuex, VueSelect, SearchComponent, masonry, VueMasonryPlugin) {
+        Vue.use(VueMasonryPlugin.default);
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
             data: function() {
@@ -153,22 +154,11 @@
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
-                        if(value.assets != undefined){
-                            //Stores JSON
-                            var store_id = value.id
-                            vm.$store.dispatch('LOAD_PAGE_DATA', { url: vm.property.mm_host + "/api/v4/thegateway/stores/" + store_id + "/store_files.json" }).then(response => {
-                                if(response.data != undefined) {
-                                    hover_image = response.data.store_files[0].url
-                                    value.hover_img = 'https://www.mallmaverick.com' + hover_image
-                                    vm.filteredStores = null;
-                                    vm.filteredStores = store_list; 
-                                    vm.filteredStores[key].hover_img = 'https://www.mallmaverick.com' + hover_image
-                                }
-                            }, error => {
-                                console.error("Could not retrieve data from server. Please check internet connection and try again.");
-                                vm.$router.replace({ name: 'home' });
-                            });
-                        }    
+                        if (_.includes(value.image_url, 'missing')) {
+                           value.no_store_logo = true;
+                        } else {
+                          value.no_store_logo = false;
+                        }
                     });
                     this.filteredStores = store_list;
                     return store_list
