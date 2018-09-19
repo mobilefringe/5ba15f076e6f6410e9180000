@@ -26,7 +26,7 @@
         				
         				<div class="stores_button_container map_link">
         				    <router-link to="/map">
-        				        <div>View Center Map</div>
+        				        View Center Map
         				    </router-link>
         				</div>
         			
