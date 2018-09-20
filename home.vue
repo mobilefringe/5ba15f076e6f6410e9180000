@@ -72,7 +72,7 @@
         		    </div>
         		    <div class="row">
         		        <div v-for="feature in programs" class="col-sm-6">
-        		            <div class="feature_item_container program">
+        		            <div class="feature_item_container programs">
                     			<img :src="feature.image_url" alt="name">
                     			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
                     				<div class="feature_item_content">
