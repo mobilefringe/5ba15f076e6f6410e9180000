@@ -28,12 +28,12 @@
             		<div class="row">
                         <div class="col-md-5">
             				<div class="details_store_hours">
-            				    
+            				    <h4>Shopping Hours</h4>   
             				</div>
             			</div>
             			<div class="col-md-7">
             				<div class="details_store_desc">
-            				    <h3>{{ currentStore.name }}</h3>
+            				    <h4>{{ currentStore.name }}</h4>
             				    <div v-html="currentStore.description"></div>
             				    <a v-if="currentStore.website" :href="'//' + currentStore.website" target="_blank">
             				        <div class="details_store_website animated_btn">{{$t("stores_page.store_website")}}</div>
