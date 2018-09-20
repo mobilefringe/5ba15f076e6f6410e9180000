@@ -15,8 +15,13 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="details_store_name">
-                                <h2>{{ currentStore.name}}</h2>
-                                <p>{{ storeCategory }}</p>
+                                <h2>{{ currentStore.name }}</h2>
+                                <p class="store_phone">{{ storeCategory }}</p>
+                                <h3 class="store_category">{{ currentStore.phone }}</h3>
+                                <div class="">
+                                    <div class="store_website animated_btn">Visit Website</div>
+                                    <div class="store_website animated_btn">View Map</div>
+                                </div>
                             </div>
                         </div>
                         <div class="col-md-4">
