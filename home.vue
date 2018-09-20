@@ -82,7 +82,7 @@
                             					<p>Southland Scoop</p>
                             					<!--<h3>{{ feature.description }}</h3>-->
                             					<h3>Latest news and info at Southland Mall!</h3>
-                            					<div v-else class="feature_item_more">
+                            					<div class="feature_item_more">
                             					    {{ $t("home_page.read_more") }}    
                             					</div>
                             				</div>
