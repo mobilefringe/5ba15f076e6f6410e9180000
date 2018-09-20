@@ -71,25 +71,25 @@
         		        <h3 class="home_page_title caps">Kids Club & Southland Scoop</h3>
         		    </div>
         		    <div class="row">
-        		        <div class="col-sm-6">
-        		            <div v-for="feature in programs">
-            		            <div class="feature_item_container">
-                        	        <!--<a :href="feature.url">-->
-                            			<img :src="feature.image_url" alt="name">
-                            			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
-                            				<div class="feature_item_content">
-                            					<!--<p>{{ feature.name }}</p>-->
-                            					<p>Southland Scoop</p>
-                            					<!--<h3>{{ feature.description }}</h3>-->
-                            					<h3>Latest news and info at Southland Mall!</h3>
-                            					<div class="feature_item_more">
-                            					    {{ $t("home_page.read_more") }}    
-                            					</div>
-                            				</div>
-                            			</div>
-                            		<!--</a>-->
-                        	    </div>
-                            </div>
+        		        <div v-for="feature in programs" class="col-sm-6">
+
+        		            <div class="feature_item_container">
+                    	        <!--<a :href="feature.url">-->
+                        			<img :src="feature.image_url" alt="name">
+                        			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
+                        				<div class="feature_item_content">
+                        					<!--<p>{{ feature.name }}</p>-->
+                        					<p>Southland Scoop</p>
+                        					<!--<h3>{{ feature.description }}</h3>-->
+                        					<h3>Latest news and info at Southland Mall!</h3>
+                        					<div class="feature_item_more">
+                        					    {{ $t("home_page.read_more") }}    
+                        					</div>
+                        				</div>
+                        			</div>
+                        		<!--</a>-->
+                    	    </div>
+
         		        </div>
         		        <div class="col-sm-6"></div>
         		    </div>
