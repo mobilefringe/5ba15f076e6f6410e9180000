@@ -10,7 +10,6 @@
     			</div>
     		</div>
             <div v-if="dataLoaded" v-cloak class="site_container">
-                <div class
                 <div class="row">
                     <div class="col-md-8">
                         <div class="details_store_name">
