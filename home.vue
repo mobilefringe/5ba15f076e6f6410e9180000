@@ -26,30 +26,30 @@
                         <div v-masonry-tile class="item" >
                             <div v-for="feature in feature_items" :class="'grid-item ' + feature.masonry_class ">
                         	    <div v-if="feature.name && feature.description" class="feature_item_container">
-                        			<img :src="feature.image_url" alt="name">
-                        			<div class="feature_item_info" >
-                        				<div class="feature_item_content">
-                        					<p>{{ feature.name }}</p>
-                        					<h3>{{ feature.description }}</h3>
-                        					<a :href="feature.url">
+                        	        <a :href="feature.url">
+                            			<img :src="feature.image_url" alt="name">
+                            			<div class="feature_item_info" >
+                            				<div class="feature_item_content">
+                            					<p>{{ feature.name }}</p>
+                            					<h3>{{ feature.description }}</h3>
                             					<div class="feature_item_more">Read More</div>
-                            				</a>
-                        				</div>
-                        			</div>
+                            				</div>
+                            			</div>
+                            		</a>
                         	    </div>
                         	    
                         	    <div v-else class="feature_item_container">
                         	        <a :href="feature.url">
                             			<img :src="feature.image_url" alt="name">
-                            			<!--<div class="feature_item_info" v-if="feature.name && feature.description">-->
-                            			<!--	<div class="feature_item_content">-->
-                            			<!--		<p>{{ feature.name }}</p>-->
-                            			<!--		<h3>{{ feature.description }}</h3>-->
-                            			<!--		<div class="feature_item_more">-->
-                            			<!--		    {{ $t("home_page.read_more") }}    -->
-                            			<!--		</div>-->
-                            			<!--	</div>-->
-                            			<!--</div>-->
+                            			<div class="feature_item_info" v-if="feature.name && feature.description">
+                            				<div class="feature_item_content">
+                            					<p>{{ feature.name }}</p>
+                            					<h3>{{ feature.description }}</h3>
+                            					<div class="feature_item_more">
+                            					    {{ $t("home_page.read_more") }}    
+                            					</div>
+                            				</div>
+                            			</div>
                             		</a>
                         	    </div>
                             </div>
