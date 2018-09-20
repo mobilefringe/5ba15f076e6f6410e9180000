@@ -9,6 +9,7 @@
     				</div>
     			</div>
     		</div>
+    		<div class="margin_60"></div>
             <div v-if="dataLoaded" v-cloak class="site_container">
                 <div class="row">
                     <div class="col-md-8">
