@@ -3,26 +3,39 @@
         <loader v-if="!dataLoaded"></loader>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak class="site_container">
-                <div class="details_store_name">
-                    <h2>{{ currentStore.name}}</h2>
-                    <p>{{ storeCategory }}</p>
-                </div>
-				<div class="details_store_image">
-					<img v-lazy="currentStore.store_front_url_abs" class="image"/>
-					<h4 v-if="currentStore.phone" class="details_store_phone">
-					    {{$t("stores_page.store_phone")}}:<br class="visible_mobile"> {{ currentStore.phone }}
-				    </h4>
-				</div>
-				<div class="details_store_hours">
-				    
-				</div>
-				<div class="details_store_desc">
-				    <div v-html="currentStore.description"></div>
-				    <a v-if="currentStore.website" :href="'//' + currentStore.website" target="_blank">
-				        <div class="details_store_website animated_btn">{{$t("stores_page.store_website")}}</div>
-				    </a>
-				</div>
+                <div class="row">
+                    <div class="col-md-8">
+                        <div class="details_store_name">
+                            <h2>{{ currentStore.name}}</h2>
+                            <p>{{ storeCategory }}</p>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        
 
+        				<div class="details_store_image">
+        					<img v-lazy="currentStore.store_front_url_abs" class="image"/>
+        					<h4 v-if="currentStore.phone" class="details_store_phone">
+        					    {{$t("stores_page.store_phone")}}:<br class="visible_mobile"> {{ currentStore.phone }}
+        				    </h4>
+        				</div>
+        			</div>
+        		</div>
+        		<div class="row">
+                    <div class="col-md-5">
+        				<div class="details_store_hours">
+        				    
+        				</div>
+        			</div>
+        			<div class="col-md-7">
+        				<div class="details_store_desc">
+        				    <div v-html="currentStore.description"></div>
+        				    <a v-if="currentStore.website" :href="'//' + currentStore.website" target="_blank">
+        				        <div class="details_store_website animated_btn">{{$t("stores_page.store_website")}}</div>
+        				    </a>
+        				</div>
+        			</div>
+                </div>
 		    </div>
 		</transition>
 	</div>
