@@ -167,7 +167,8 @@
                     return features;
                 },
                 programs () {
-                    
+                    var features = _.slice(this.$store.state.feature_items, 6, 8);  
+                    return features
                 },
                 mobile_feature_items () {
                     var features = this.$store.state.feature_items;
