@@ -69,10 +69,10 @@
             },
             created (){
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Stores Banner');
-                    if(temp_repo) {
-                        this.storeBanner = temp_repo.images[0];
-                    }
+                    // var temp_repo = this.findRepoByName('Stores Banner');
+                    // if(temp_repo) {
+                    //     this.storeBanner = temp_repo.images[0];
+                    // }
                     
                     this.updateCurrentStore(this.id);
                     this.dataLoaded = true;
