@@ -1,0 +1,100 @@
+<template>
+    <div> <!-- without an outer container div this component template will not render -->
+        <loader v-if="!dataLoaded"></loader>
+        <transition name="fade">
+            <div v-if="dataLoaded" v-cloak class="site_container">
+                <div class="details_store_name">
+                    <h2>{{ currentStore.name}}</h2>
+                    <p>{{ storeCategory }}</p>
+                </div>
+				<div class="details_store_image">
+					<img v-lazy="currentStore.store_front_url_abs" class="image"/>
+					<h4 v-if="currentStore.phone" class="details_store_phone">
+					    {{$t("stores_page.store_phone")}}:<br class="visible_mobile"> {{ currentStore.phone }}
+				    </h4>
+				</div>
+				<div class="details_store_hours">
+				    
+				</div>
+				<div class="details_store_desc">
+				    <div v-html="currentStore.description"></div>
+				    <a v-if="currentStore.website" :href="'//' + currentStore.website" target="_blank">
+				        <div class="details_store_website animated_btn">{{$t("stores_page.store_website")}}</div>
+				    </a>
+				</div>
+
+		    </div>
+		</transition>
+	</div>
+</template>
+
+<script>
+    define(['Vue', 'vuex', 'moment', 'vue-lazy-load'], function(Vue, Vuex, moment, VueLazyload) {
+        Vue.use(VueLazyload);
+        return Vue.component("store-details-component", {
+            template: template, // the variable template will be injected,
+            data: function() {
+                return {
+                    dataLoaded: false,
+                    currentStore: null
+                }
+            },
+            props:['id', 'locale'],
+            beforeRouteUpdate(to, from, next) {
+                this.currentStore = this.findStoreBySlug(to.params.id);
+                if (this.currentStore === null || this.currentStore === undefined){
+                    this.$router.replace({ name: '404'});
+                }
+                next();
+            },
+            created (){
+                this.loadData().then(response => {
+                    this.updateCurrentStore(this.id);
+                    this.dataLoaded = true;
+                });
+            },
+            watch: {
+                currentStore: function() {
+                    console.log(this.currentStore)
+                    console.log(this.currentStore.store_front_url_abs)
+                    if ( _.includes(this.currentStore.store_front_url_abs, 'missing')) {
+                        this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5a81f86a6e6f6404f6030000/image/png/1516652189884/ES_logo_red2.png";
+                    }
+                },
+                locale: function(val, oldVal) {
+                    console.log("locale", this.locale);
+                }
+            },
+            computed: {
+                ...Vuex.mapGetters([
+                    'property',
+                    'timezone',
+                    'processedStores',
+                    'findStoreBySlug',
+                    'findCategoryById'
+                ]),
+                storeCategory() {
+                    var currentStoreCategory = this.currentStore.categories[0];
+                    category = this.findCategoryById(currentStoreCategory)
+                    return category.name
+                }
+            },
+            methods: {
+                loadData: async function() {
+                    try {
+                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
+                        let results = await Promise.all([this.$store.dispatch("getData", "categories")]);
+                    } catch (e) {
+                        console.log("Error loading data: " + e.message);
+                    }
+                },
+                updateCurrentStore (id) {
+                    this.currentStore = this.findStoreBySlug(id);
+                    if (this.currentStore === null || this.currentStore === undefined){
+                        this.$router.replace({ name: '404'});
+                    }
+                }
+            }
+        });
+    });
+</script>
