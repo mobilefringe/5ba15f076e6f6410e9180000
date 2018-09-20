@@ -2,7 +2,15 @@
     <div> <!-- without an outer container div this component template will not render -->
         <loader v-if="!dataLoaded"></loader>
         <transition name="fade">
+            <div class="page_header" v-if="storeBanner" v-bind:style="{ backgroundImage: 'url(' + storeBanner.image_url + ')' }">
+    			<div class="site_container">
+    				<div class="header_content caps">
+    					<h1>Shop</h1>
+    				</div>
+    			</div>
+    		</div>
             <div v-if="dataLoaded" v-cloak class="site_container">
+                <div class
                 <div class="row">
                     <div class="col-md-8">
                         <div class="details_store_name">
