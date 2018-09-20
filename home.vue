@@ -152,7 +152,7 @@
                     return _.orderBy(this.$store.state.banners, ['position'], ['asc']);
                 },
                 feature_items () {
-                    var features = this.$store.state.feature_items;
+                    var features = _.slice(this.$store.state.feature_items, 0, 5);
                     _.forEach(features, function(value, key) {
                         if ( _.includes([1], key) ) {
                             value.masonry_class = "grid-item--width2";
@@ -165,6 +165,9 @@
                         }
                     });
                     return features;
+                },
+                programs () {
+                    
                 },
                 mobile_feature_items () {
                     var features = this.$store.state.feature_items;
