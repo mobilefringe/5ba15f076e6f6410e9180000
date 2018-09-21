@@ -19,8 +19,8 @@
                                 <p class="store_category">{{ storeCategory }}</p>
                                 <h3 class="store_phone"><span>{{ currentStore.phone }}</span><i class="fa fa-phone"></i></h3>
                                 <div class="">
-                                    <div class="store_website animated_btn">Visit Website</div>
-                                    <div class="store_website animated_btn">View Map</div>
+                                    <div class="store_website animated_btn caps">Visit Website</div>
+                                    <div class="store_website animated_btn caps">View Map</div>
                                 </div>
                             </div>
                         </div>
