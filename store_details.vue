@@ -67,8 +67,7 @@
 </template>
 
 <script>
-    define(['Vue', 'vuex', 'moment', 'vue-lazy-load'], function(Vue, Vuex, moment, VueLazyload) {
-        Vue.use(VueLazyload);
+    define(['Vue', 'vuex', 'moment'], function(Vue, Vuex, moment) {
         return Vue.component("store-details-component", {
             template: template, // the variable template will be injected,
             data: function() {
@@ -79,13 +78,9 @@
                     storeHours: {}
                 }
             },
-            props:['id', 'locale'],
+            props:['id'],
             beforeRouteUpdate(to, from, next) {
                 this.updateCurrentStore(to.params.id);
-                // this.currentStore = this.findStoreBySlug(to.params.id);
-                // if (this.currentStore === null || this.currentStore === undefined){
-                //     this.$router.replace({ name: '404'});
-                // }
                 next();
             },
             created (){
