@@ -71,7 +71,8 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    currentStore: null
+                    currentStore: null,
+                    storeHours: {}
                 }
             },
             props:['id', 'locale'],
@@ -99,6 +100,15 @@
                     console.log(this.currentStore.store_front_url_abs)
                     if ( _.includes(this.currentStore.store_front_url_abs, 'missing')) {
                         this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5a81f86a6e6f6404f6030000/image/png/1516652189884/ES_logo_red2.png";
+                    }
+                    
+                    var vm = this;
+                    if (this.currentStore.store_hours) {
+                        var storeHours = [];
+                        _.forEach(this.currentStore.store_hours, function (value, key) {
+                            storeHours.push(vm.findHourById(value));
+                        });
+                        this.storeHours = storeHours;
                     }
                 },
                 locale: function(val, oldVal) {
