@@ -43,12 +43,12 @@
                                         <p>{{ hour.holiday_name }}</p>
                                     </div>
                                     <div class="col-md-4">
-                                        <p>{{ hour.holiday_date | moment("MMM D YYYY", timezone) }}</p>    
+                                        <p>{{ hour.holiday_date | moment("MMM D, YYYY", timezone) }}</p>    
                                     </div>
                                     <div class="col-md-4">
                                         <span v-if="hour.is_closed == true">{{ $t("hours_page.closed") }}</span>
                                         <span v-else>
-                                            {{ hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone) }}
+                                            {{ hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone) }}
                                         </span>    
                                     </div>
                                 </div>
