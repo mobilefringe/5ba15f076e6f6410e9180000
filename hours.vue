@@ -19,18 +19,30 @@
                         </div>
                         <div class="row">
                             <div class="col-sm-6">
-                                <h5 class="caps">{{ $t("hours_page.reg_hours") }}</h5>
-                                <div id="hours_container" class="hours_container">
-                                    <div class="hours_div text-left" v-for="hour in hours">
-                                        <span :class="hour.todays_hour">
-                                            <span>{{ hour.day_of_week | moment("dddd", timezone) }}: </span>
-                                            <span v-if="hour.is_closed == true">Closed</span>
-                                            <span v-else>
-                                                {{hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone)}}
-                                            </span>
-                                        </span>
-                                    </div>
-                                </div>
+                                <div>
+                    <p>
+                        Monday - Friday:<br/>
+                        <span v-for="hour in weekdayHours">
+                            {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Saturday:<br/>
+                        <span v-for="hour in saturdayHours">
+                            {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
+                        </span>
+                    </p>
+                </div>
+                <div>
+                    <p>
+                        Sunday:<br/>  
+                        <span v-for="hour in sundayHours">
+                            {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
+                        </span>
+                    </p>
+                </div>
                             </div>
                         </div>
                         <div class="row">
@@ -106,6 +118,15 @@
                     });
                     return hours;
                 },
+                weekdayHours() {
+                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 1 });
+                },
+                saturdayHours() {
+                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 6 });
+                },
+                sundayHours() {
+                    return _.filter(this.getPropertyHours, function(o) { return o.day_of_week == 0 });
+                }
                 holidayHours () {
                     return this.getPropertyHolidayHours;
                 }
