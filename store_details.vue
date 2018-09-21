@@ -40,9 +40,6 @@
             				<div class="details_store_desc">
             				    <h4>{{ currentStore.name }}</h4>
             				    <div v-html="currentStore.description"></div>
-            				    <a v-if="currentStore.website" :href="'//' + currentStore.website" target="_blank">
-            				        <div class="details_store_website animated_btn">{{$t("stores_page.store_website")}}</div>
-            				    </a>
             				</div>
             			</div>
                     </div>
