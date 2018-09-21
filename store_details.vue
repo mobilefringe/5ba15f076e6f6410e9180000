@@ -34,16 +34,13 @@
                         <div class="col-md-5">
             				<div class="details_store_hours">
             				    <h4 class="details_store_title caps">Shopping Hours</h4> 
-            				    <ul v-if="storeHours" class="details_store_hours_list">
+            				    <ul v-if="storeHours" class="store_details_hours_list">
                                     <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
-                                        <div v-if="hour.is_closed">
-                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
-                                        </div>
-                                        <div v-else-if="hour.open_full_day">
-                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>Open 24 Hours
+                                        <div v-if="!hour.is_closed">
+                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
                                         </div>
                                         <div v-else>
-                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
+                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
                                         </div>
                                     </li>
                                 </ul>
@@ -103,14 +100,18 @@
                     }
                     
                     var vm = this;
-                    if (this.currentStore.store_hours) {
-                        var storeHours = [];
-                        _.forEach(this.currentStore.store_hours, function (value, key) {
-                            storeHours.push(vm.findHourById(value));
-                        });
-                        console.log(storeHours)
-                        this.storeHours = _.sortBy(storeHours, [function(o) { return o.day_of_week; }]);
-                    }
+                    var storeHours = [];
+                    _.forEach(this.currentStore.store_hours, function (value, key) {
+                        hours = vm.findHourById(value)
+                        today = moment().day();
+                        if( today == hours.day_of_week ){
+                            hours.todays_hours = true;
+                        } else {
+                            hours.todays_hours = false;
+                        }
+                        storeHours.push(hours);
+                    });
+                    this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
                 },
                 locale: function(val, oldVal) {
                     console.log("locale", this.locale);
