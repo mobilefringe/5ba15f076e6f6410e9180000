@@ -19,7 +19,7 @@
                                 <p v-if="storeCategory" class="store_category">{{ storeCategory }}</p>
                                 <h3 v-if="currentStore.phone" class="store_phone"><span>{{ currentStore.phone }}</span><i class="fa fa-phone"></i></h3>
                                 <div class="">
-                                    <a :href="" target="_blank">
+                                    <a :href="currentStore.website" target="_blank">
                                         <div class="store_website animated_btn caps">Visit Website</div>
                                     </a>
                                     <div class="store_website animated_btn caps">View Map</div>
