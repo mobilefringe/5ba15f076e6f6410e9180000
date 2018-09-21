@@ -109,7 +109,7 @@
                             storeHours.push(vm.findHourById(value));
                         });
                         console.log(storeHours)
-                        this.storeHours = storeHours;
+                        this.storeHours = _.sortBy(storeHours, [function(o) { return o.day_of_week; }]);
                     }
                 },
                 locale: function(val, oldVal) {
