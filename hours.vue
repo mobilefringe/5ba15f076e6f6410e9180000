@@ -40,7 +40,7 @@
                             <div v-for="hour in holidayHours" class="col-sm-6">
                                 <div class="row">
                                     <div class="col-md-4">
-                                        <p>{{ hour.holiday_name }}</p>
+                                        <p class="holiday_name">{{ hour.holiday_name }}</p>
                                     </div>
                                     <div class="col-md-4">
                                         <p>{{ hour.holiday_date | moment("MMM D, YYYY", timezone) }}</p>    
