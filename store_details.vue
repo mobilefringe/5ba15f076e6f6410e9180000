@@ -38,7 +38,7 @@
             			</div>
             			<div class="col-md-7">
             				<div class="details_store_desc">
-            				    <h4>{{ currentStore.name }}</h4>
+            				    <h4 class="caps">{{ currentStore.name }}</h4>
             				    <div v-html="currentStore.description"></div>
             				</div>
             			</div>
