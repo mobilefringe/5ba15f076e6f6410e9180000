@@ -26,7 +26,13 @@
                         </div>
                         <div class="col-md-4">
             				<div class="details_store_image">
-            					<img v-lazy="currentStore.store_front_url_abs" class="image"/>
+            				    <div v-if="currentStore.no_logo" class="store_details_image center-block">
+                                    <div class="no_logo">
+                                        <p class="store_details_name">{{ currentStore.name }}</p>
+                                    </div>    
+                                </div>
+                                <img v-else class="store_details_image center-block" :src="currentStore.store_front_url_abs" :alt="currentStore.name + ' Logo'" />
+            					<!--<img v-lazy="currentStore.store_front_url_abs" class="image"/>-->
             				</div>
             			</div>
             		</div>
@@ -92,27 +98,15 @@
                 });
             },
             watch: {
-                currentStore: function() {
-                    console.log(this.currentStore)
-                    console.log(this.currentStore.store_front_url_abs)
-                    if ( _.includes(this.currentStore.store_front_url_abs, 'missing')) {
-                        this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5a81f86a6e6f6404f6030000/image/png/1516652189884/ES_logo_red2.png";
-                    }
+                // currentStore: function() {
+                //     console.log(this.currentStore)
+                //     console.log(this.currentStore.store_front_url_abs)
+                //     if ( _.includes(this.currentStore.store_front_url_abs, 'missing')) {
+                //         this.currentStore.store_front_url_abs = "//codecloud.cdn.speedyrails.net/sites/5a81f86a6e6f6404f6030000/image/png/1516652189884/ES_logo_red2.png";
+                //     }
                     
-                    var vm = this;
-                    var storeHours = [];
-                    _.forEach(this.currentStore.store_hours, function (value, key) {
-                        hours = vm.findHourById(value)
-                        today = moment().day();
-                        if( today == hours.day_of_week ){
-                            hours.todays_hours = true;
-                        } else {
-                            hours.todays_hours = false;
-                        }
-                        storeHours.push(hours);
-                    });
-                    this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
-                },
+                    
+                // },
                 locale: function(val, oldVal) {
                     console.log("locale", this.locale);
                 }
@@ -144,7 +138,29 @@
                 updateCurrentStore (id) {
                     this.currentStore = this.findStoreBySlug(id);
                     if (this.currentStore === null || this.currentStore === undefined){
-                        this.$router.replace({ name: '404'});
+                        this.$router.replace({ path: '/'});
+                    } else {
+                        // STORE LOGO
+                        if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
+                            this.currentStore.no_logo = true
+                        } else {
+                            this.currentStore.no_logo = false
+                        }
+                        // STORE HOURS
+                        var vm = this;
+                        var storeHours = [];
+                        _.forEach(this.currentStore.store_hours, function (value, key) {
+                            hours = vm.findHourById(value)
+                            today = moment().day();
+                            if( today == hours.day_of_week ){
+                                hours.todays_hours = true;
+                            } else {
+                                hours.todays_hours = false;
+                            }
+                            storeHours.push(hours);
+                        });
+                        this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
+                    
                     }
                 }
             }
