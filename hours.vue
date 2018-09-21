@@ -32,8 +32,13 @@
                                     </div>
                                 </div>
                             </div>
+                        </div>
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <h4 class="caps">Holiday Hours</h4>
+                            </div>
                             <div class="col-sm-6">
-                                <h5 class="caps">{{$t("hours_page.holiday_hours")}}</h5>
+                                
                                 <div id="holidays_hours_container" class="hours_container">
                                     <div class="hours_div text-left"  v-for="hour in holidayHours">
                                         <span>
