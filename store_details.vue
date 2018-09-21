@@ -121,7 +121,8 @@
                     'timezone',
                     'processedStores',
                     'findStoreBySlug',
-                    'findCategoryById'
+                    'findCategoryById',
+                    'findHourById',
                 ]),
                 storeCategory() {
                     var currentStoreCategory = this.currentStore.categories[0];
