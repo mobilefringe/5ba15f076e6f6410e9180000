@@ -33,12 +33,12 @@
             		<div class="row">
                         <div class="col-md-5">
             				<div class="details_store_hours">
-            				    <h4>Shopping Hours</h4>   
+            				    <h4 class="details_store_title caps">Shopping Hours</h4>   
             				</div>
             			</div>
             			<div class="col-md-7">
             				<div class="details_store_desc">
-            				    <h4 class="caps">{{ currentStore.name }}</h4>
+            				    <h4 class="details_store_title caps">{{ currentStore.name }}</h4>
             				    <div v-html="currentStore.description"></div>
             				</div>
             			</div>
