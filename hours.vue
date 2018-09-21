@@ -38,15 +38,20 @@
                                 <h4 class="caps">Holiday Hours</h4>
                             </div>
                             <div v-for="hour in holidayHours" class="col-sm-6">
-                                <span>
-                                    <span v-if="locale=='en-ca'">{{hour.holiday_name}} / </span>
-                                    <span v-else>{{hour.holiday_name_2}} / </span>
-                                    {{ hour.holiday_date | moment("MMM D YYYY", timezone) }} /
-                                </span>
-                                <span v-if="hour.is_closed == true">{{ $t("hours_page.closed") }}</span>
-                                <span v-else>
-                                    {{ hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone) }}
-                                </span>
+                                <div class="row">
+                                    <div class="col-md-4">
+                                        <p>{{ hour.holiday_name }}</p>
+                                    </div>
+                                    <div class="col-md-4">
+                                        <p>{{ hour.holiday_date | moment("MMM D YYYY", timezone) }}</p>    
+                                    </div>
+                                    <div class="col-md-4">
+                                        <span v-if="hour.is_closed == true">{{ $t("hours_page.closed") }}</span>
+                                        <span v-else>
+                                            {{ hour.open_time | moment("h:mm A", timezone)}} - {{hour.close_time | moment("h:mm A", timezone) }}
+                                        </span>    
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
