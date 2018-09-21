@@ -81,10 +81,11 @@
             },
             props:['id', 'locale'],
             beforeRouteUpdate(to, from, next) {
-                this.currentStore = this.findStoreBySlug(to.params.id);
-                if (this.currentStore === null || this.currentStore === undefined){
-                    this.$router.replace({ name: '404'});
-                }
+                this.updateCurrentStore(to.params.id);
+                // this.currentStore = this.findStoreBySlug(to.params.id);
+                // if (this.currentStore === null || this.currentStore === undefined){
+                //     this.$router.replace({ name: '404'});
+                // }
                 next();
             },
             created (){
@@ -116,7 +117,6 @@
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
                         let results = await Promise.all([this.$store.dispatch("getData", "categories")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
@@ -127,7 +127,6 @@
                     if (this.currentStore === null || this.currentStore === undefined){
                         this.$router.replace({ path: '/'});
                     } else {
-                        console.log(this.currentStore)
                         // STORE LOGO
                         if (_.includes(this.currentStore.store_front_url_abs, 'missing')) {
                             this.currentStore.no_logo = true
@@ -148,7 +147,6 @@
                             storeHours.push(hours);
                         });
                         this.storeHours = _.sortBy(storeHours, function(o) { return o.day_of_week });
-                    
                     }
                 }
             }
