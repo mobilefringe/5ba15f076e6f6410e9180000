@@ -81,7 +81,7 @@
                     dataLoaded: false,
                     pageBanner : null,
                     search_result : null,
-                    shopFilter: 6439
+                    shopFilter: 6443
                 }
             },
             created (){
