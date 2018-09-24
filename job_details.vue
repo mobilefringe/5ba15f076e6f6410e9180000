@@ -125,7 +125,11 @@
                                 this.currentJob.image_url = this.currentJob.store.store_front_url_abs
                             }
                             this.currentJob.store_name = this.currentJob.store.name;
-                            // this.currentJob.category = 
+
+                            
+                            if (this.currentJob.store.categories.length > 0) {
+                                this.currentJob.store_category = this.getStoreCategories(this.currentStore.store.categories);
+                            }
                         } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
                             this.currentJob.store = {};
                             this.currentJob.image_url =  "https://via.placeholder.com/400x400/757575";
