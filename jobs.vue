@@ -16,7 +16,7 @@
     					    <div class="promo_img" v-lazy:background-image="promo.image_url"></div>
     					    <div class="promo_content">
     					        <h2>{{ promo.store_name }}</h2>
-    					        <h4 v-if="promo.store_category">
+    					        <h4 v-if="promo.store_category" class="bold">
     					            <span v-for="item in promo.store_category">{{ item }},</span>
     					        </h4>
     							<hr>
