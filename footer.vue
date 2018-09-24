@@ -20,6 +20,7 @@
                     <span v-for="item in social_media">
                         <a :href="item.url" target="_blank">
                             <i :class="item.iconClass" aria-hidden="true"></i>
+                            <p class="accessibility">{{ item.name }}</p>
                         </a>
                     </span>
                 </div>    
