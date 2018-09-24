@@ -144,20 +144,6 @@
                             store_list.push(value);
                         }
                     });
-                    
-                    // var store_list = this.processedStores
-                    // var vm = this;
-                    // var hover_image = "";
-                    // _.forEach(store_list, function(value, key) {
-                    //     if(_.includes(value.categories, vm.shopFilter)) {
-                    //         if (_.includes(value.image_url, 'missing')) {
-                    //           value.no_store_logo = true;
-                    //         } else {
-                    //           value.no_store_logo = false;
-                    //         }
-                    //     }
-                    // });
-                    // this.filteredStores = store_list;
                     return store_list
                 },
                 allCatergories() {
