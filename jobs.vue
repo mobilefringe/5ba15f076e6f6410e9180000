@@ -92,7 +92,7 @@
                                 value.image_url = value.store.store_front_url_abs;  
                             }
                             value.store_name = value.store.name;
-                            // value.store_category = 
+                            value.store_category = vm.getStoreCategories(value.store.categories);
                         } else if (value.store == null || value.store == undefined) {
                             value.store = {};
                             value.image_url =  "https://via.placeholder.com/400x400/757575";
@@ -103,7 +103,7 @@
                     });
                     _.sortBy(temp_promo, [function(o) { return o.start_date; }]);
                     return temp_promo;
-                },
+                }
             },
             methods: {
                 loadData: async function() {
@@ -112,6 +112,11 @@
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
+                },
+                getStoreCategories(categories) {
+                    var currentStoreCategory = this.currentStore.categories[0];
+                    category = this.findCategoryById(currentStoreCategory)
+                    return category.name
                 },
                 checkJobType(promo) {
                     if(this.locale != "en-ca") {
