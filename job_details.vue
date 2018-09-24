@@ -106,12 +106,11 @@
                         var property_name = this.property.name
                         if (this.currentJob.store != null && this.currentJob.store != undefined){
                             this.currentJob.store_name = this.currentJob.store.name;
-                            
                             this.currentJob.store_phone = this.currentJob.store.phone
                             this.currentJob.store_website = this.currentJob.store.website
                         
                             // STORE LOGO
-                            if (_.includes(this.currentJob.store.image_url.store_front_url_abs, 'missing')) {
+                            if (_.includes(this.currentJob.store.store_front_url_abs, 'missing')) {
                                 console.log("Yes")
                                 this.currentJob.no_logo = true
                             } else {
