@@ -34,7 +34,7 @@ define([], function() {
             component: view('default'),
             children: [{
                     path: '',
-                    component: view('play'),
+                    component: view('dine'),
                     name: 'storeList'
                 }
             ]
