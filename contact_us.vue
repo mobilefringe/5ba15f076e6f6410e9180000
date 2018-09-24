@@ -35,7 +35,6 @@
 					        <form id="contact_form" class="form-horizontal" action="form-submit" @submit.prevent="validateBeforeSubmit">
                                 <div class="form-group ">
                                     <div class="col-sm-12 col-md-6">
-                                        
                                         <div class="position_relative" :class="{'has-error': errors.has('name')}">
                                             <label class="label" for="name">Name</label>
                                             <input v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" placeholder="Your Name*" data-vv-delay="500">
@@ -67,13 +66,12 @@
                             <div id="send_contact_success" class="alert alert-success text-left" role="alert" v-show="formSuccess">
                                 <span class="glyphicon glyphicon-ok" aria-hidden="true"></span>
                                 <span class="sr-only">Success</span>
-                                {{ $t("contact_page.form_success_msg") }}
+                                Thank you for contacting us. A member from our team will contact you shortly.
                             </div>
                             <div id="send_contact_error" class="alert alert-danger text-left" role="alert" v-show="formError">
                                 <span class="glyphicon glyphicon-exclamation-sign" aria-hidden="true"></span>
                                 <span class="sr-only">Error:</span>
-                                {{ $t("contact_page.form_error_msg") }}
-                                There was an error when trying to submit your request. Please try again later.
+                                There was an error when trying to submit your message. Please try again later.
                             </div>
 					    </div>
 					</div>
