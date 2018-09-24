@@ -62,7 +62,6 @@
         "back_to_events" : "Back to Events"
     },
     "hours_page" : {
-        "header_desc" : "Regular & Holiday Hours",
         "hours" : "Hours",
         "reg_hours" : "Regular Hours",
         "holiday_hours" : "Holiday Hours",
