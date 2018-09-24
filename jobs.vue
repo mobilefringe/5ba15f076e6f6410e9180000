@@ -83,9 +83,8 @@
                     var vm = this;
                     var temp_promo = [];
                     var temp_job = [];
-                    console.log(this.processedJobs)
+                    // console.log(this.processedJobs)
                     _.forEach(this.processedJobs, function(value, key) {
-                        
                         if (value.store != null && value.store != undefined) {
                             if(_.includes(value.store.image_url, 'missing')) {
                                 value.image_url = "https://via.placeholder.com/400x400/757575";
@@ -94,7 +93,7 @@
                             }
                             value.store_name = value.store.name;
                             
-                            if (value.store.categories.length > 0 ) {
+                            if (value.store.categories.length > 0) {
                                 value.store_category = vm.getStoreCategories(value.store.categories);
                             }
                         } else if (value.store == null || value.store == undefined) {
@@ -122,14 +121,14 @@
                     var store_categories = store_categories;
                     var vm = this;
                     var categories = [];
-                    if (store_categories.length > 0) {
-                        _.forEach(store_categories, function(value, key) {
-                            console.log(value)
-                            var category = vm.findCategoryById(value);
-                            console.log(category)
-                            // categories.push(category)
-                        });
-                    }
+
+                    _.forEach(store_categories, function(value) {
+                        console.log(value)
+                        var category = vm.findCategoryById(value);
+                        console.log(category)
+                        // categories.push(category)
+                    });
+                    
                     
                     console.log(categories)
                 },
