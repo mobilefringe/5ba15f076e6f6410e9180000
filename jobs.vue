@@ -132,7 +132,7 @@
                         }
                     });
                     
-                    
+                    categories = _.toString(categories);
                     console.log(categories)
                     return categories
                 },
