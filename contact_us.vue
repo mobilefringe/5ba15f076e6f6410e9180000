@@ -10,7 +10,8 @@
 					        <iframe title="Map" width="100%" height="100%" frameborder="0" scrolling="no" marginheight="0" marginwidth="0"  :src="'https://maps.google.nl/maps?q=' + getPropertyAddress + '&amp;hl=en&amp;ie=UTF8&amp;t=v&amp;hnear=' + getPropertyAddress + '&amp;z=16&amp;output=embed'"></iframe>
 					    </div>
 					    <div class="contact_content">
-					        <h3 class="">{{ $t("contact_page.location") }}</h3>
+					        <span v-if="property.address1 && property.city && property.province_state && property.postal_code"
+					        <h3>Location:</h3>
 					        <p>{{ property.address1 }} {{ property.city }}, {{property.province_state }} {{property.postal_code }}</p>
 					        <div class="margin_40"></div>
 					        <span v-if="property.contact_phone || property.contact_fax">
