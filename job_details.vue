@@ -112,10 +112,10 @@
                                 this.currentJob.image_url = this.currentJob.store.store_front_url_abs
                             }
                             // STORE LOGO
-                            if (_.includes(this.currentJob.store.store_front_url_abs, 'missing')) {
-                                this.currentStore.no_logo = true
+                            if (_.includes(this.currentJob.store.image_url.store_front_url_abs, 'missing')) {
+                                this.currentJob.no_logo = true
                             } else {
-                                this.currentStore.no_logo = false
+                                this.currentJob.no_logo = false
                             }
 
                             
