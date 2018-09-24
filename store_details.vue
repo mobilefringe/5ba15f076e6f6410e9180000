@@ -40,7 +40,7 @@
             		<div class="row">
                         <div class="col-md-5">
             				<div class="details_store_hours">
-            				    <h4 class="details_store_title caps">{{ $t("stores_page.hours_title") }}</h4> 
+            				    <h4 class="details_store_title caps">{{ $t("stores_page.store_hours") }}</h4> 
             				    <ul v-if="storeHours" class="details_store_hours_list">
                                     <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
                                         <div v-if="!hour.is_closed">
