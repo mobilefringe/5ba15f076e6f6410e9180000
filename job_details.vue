@@ -85,26 +85,6 @@
                     this.updateCurrentJob(this.id);
                 });
             },
-            // watch: {
-            //     currentJob : function (){
-            //         var property_name = this.property.name
-            //         if(this.currentJob != null) {
-            //             if (this.currentJob.store != null && this.currentJob.store != undefined){
-            //                 if(_.includes(this.currentJob.store.image_url, 'missing')) {
-            //                     this.currentJob.image_url = "https://via.placeholder.com/400x400/757575";
-            //                 } else {
-            //                     this.currentJob.image_url = this.currentJob.store.store_front_url_abs
-            //                 }
-            //                 this.currentJob.store_name = this.currentJob.store.name;
-            //                 // this.currentJob.category = 
-            //             } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
-            //                 this.currentJob.store = {};
-            //                 this.currentJob.image_url =  "https://via.placeholder.com/400x400/757575";
-            //                 this.currentJob.store_name = property_name;
-            //             }
-            //         }
-            //     }
-            // },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
@@ -128,7 +108,7 @@
 
                             
                             if (this.currentJob.store.categories.length > 0) {
-                                this.currentJob.store_category = this.getStoreCategories(this.currentStore.store.categories);
+                                this.currentJob.store_category = this.getStoreCategories(this.currentJob.store.categories);
                             }
                         } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
                             this.currentJob.store = {};
