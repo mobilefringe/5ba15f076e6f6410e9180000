@@ -68,10 +68,10 @@
             },
             props:['id', 'locale'],
             beforeRouteUpdate(to, from, next) {
-                this.currentJob = this.findJobBySlug(to.params.id);
-                    if (this.currentJob === null || this.currentJob === undefined){
-                        this.$router.replace({ name: '404'});
-                    }
+                this.updateCurrentJob(this.id);
+                    // if (this.currentJob === null || this.currentJob === undefined){
+                    //     this.$router.replace({ name: '404'});
+                    // }
                 next();
             },
             created(){
@@ -81,8 +81,9 @@
                         this.pageBanner = temp_repo.images[0];
                     }
                     
-                    this.dataLoaded = true;
                     this.updateCurrentJob(this.id);
+                    
+                    this.dataLoaded = true;
                 });
             },
             computed: {
