@@ -13,12 +13,14 @@
 					        <h3 class="">{{ $t("contact_page.location") }}</h3>
 					        <p>{{ property.address1 }} {{ property.city }}, {{property.province_state }} {{property.postal_code }}</p>
 					        <div class="margin_40"></div>
-					        <h3 class="">{{ $t("contact_page.phone_title") }}</h3>
-					        <p>{{ $t("contact_page.phone1") }}: {{ property.contact_phone }}</p>
-					        <p>{{ $t("contact_page.phone2") }}: {{ property.contact_fax }}</p>
+					        <span v-if="property.contact_phone || property.contact_fax">
+					            <h3>Phone:</h3>
+					            <p>Customer Services: {{ property.contact_phone }}</p>
+					            <p>Security: {{ property.contact_fax }}</p>
+					       </span>
 					        <div class="margin_40"></div>
 					        <span v-if="property.contact_email">
-					            <h3 class="">{{ $t("contact_page.email") }}</h3>
+					            <h3>Email:</h3>
 					            <p>{{ property.contact_email }}</p>
 					       </span>
 					    </div>
