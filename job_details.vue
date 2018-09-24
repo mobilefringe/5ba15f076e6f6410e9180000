@@ -40,7 +40,8 @@
             		<div class="row">
             			<div class="col-md-12">
             				<div class="details_store_desc">
-            				    <h4 class="details_store_title caps">{{ currentJob.name }}</h4>
+            				    <h4 v-if="locale=='en-ca'" class="details_store_title">{{ $t("jobs_page.position") }}: {{ promo.name }}</h4>
+                                <h4 v-else class="details_store_title">{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</h4>
             				    <div v-html="currentJob.description"></div>
             				</div>
             			</div>
