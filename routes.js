@@ -26,13 +26,17 @@ define([], function() {
                     path: '',
                     component: view('play'),
                     name: 'storeList'
-                },
-                // {
-                //     path: ':id',
-                //     component: view('store_details'),
-                //     name: 'storeDetails',
-                //     props: true
-                // }
+                }
+            ]
+        },
+        {
+            path: '/dine',
+            component: view('default'),
+            children: [{
+                    path: '',
+                    component: view('play'),
+                    name: 'storeList'
+                }
             ]
         },
         {
