@@ -69,9 +69,6 @@
             props:['id', 'locale'],
             beforeRouteUpdate(to, from, next) {
                 this.updateCurrentJob(this.id);
-                    // if (this.currentJob === null || this.currentJob === undefined){
-                    //     this.$router.replace({ name: '404'});
-                    // }
                 next();
             },
             created(){
