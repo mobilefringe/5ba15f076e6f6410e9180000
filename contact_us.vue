@@ -29,7 +29,7 @@
 					    <div class="contact_form_container">
 					        <div class="row">
 					            <div class="col-md-12">
-					                <h3 class="">{{ $t("contact_page.form_header") }}</h3>    
+					                <h3>Stay in touch with us:</h3>    
 					            </div>
 					        </div>
 					        <form id="contact_form" class="form-horizontal" action="form-submit" @submit.prevent="validateBeforeSubmit">
