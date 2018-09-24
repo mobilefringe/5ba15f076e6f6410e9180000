@@ -116,14 +116,17 @@
                 },
                 getStoreCategories(store_categories) {
                     console.log(store_categories)
+                    var store_categories = store_categories;
                     var vm = this;
                     var categories = [];
-                    _.forEach(store_categories, function(value, key) {
-                        console.log(value)
-                        var category = vm.findCategoryById(value);
-                        console.log(category)
-                        // categories.push(category)
-                    });
+                    if (store_categories.length > 0) {
+                        _.forEach(store_categories, function(value, key) {
+                            console.log(value)
+                            var category = vm.findCategoryById(value);
+                            console.log(category)
+                            // categories.push(category)
+                        });
+                    }
                     
                     console.log(categories)
                 },
