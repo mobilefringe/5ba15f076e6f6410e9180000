@@ -119,9 +119,11 @@
                     var vm = this;
                     var categories = [];
                     _.forEach(store_categories, function(value, key) {
-                       console.log(value) 
                        category = vm.findCategoryById(value)
+                       categories.push(category)
                     });
+                    
+                    console.log(categories)
                     // var currentStoreCategory = this.currentStore.categories[0];
                     // category = this.findCategoryById(currentStoreCategory)
                     // return category.name
