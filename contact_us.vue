@@ -3,7 +3,7 @@
         <loader v-if="!dataLoaded"></loader>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-                <div class="page_header" v-if="storeBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
+                <div class="page_header" v-if="pageBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
         			<div class="site_container">
         				<div class="header_content caps">
         					<h1>Contact Us</h1>
@@ -97,6 +97,7 @@
             data: function() {
                 return {
                     dataLoaded: false,
+                    pageBanner: null,
                     form_data : {},
                     formSuccess : false,
                     formError: false
