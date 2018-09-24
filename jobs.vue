@@ -122,7 +122,6 @@
                     var categories = [];
                     _.forEach(store_categories, function(value, key) {
                         try {
-                            console.log(value)
                             var category = vm.findCategoryById(value);
                             var category_name = category.name
                             console.log(category_name)
