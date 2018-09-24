@@ -16,9 +16,9 @@
     					    <div class="promo_img" v-lazy:background-image="promo.image_url"></div>
     					    <div class="promo_content">
     					        <h2>{{ promo.store_name }}</h2>
-    					        <p v-if="promo.store_category">
+    					        <h4 v-if="promo.store_category">
     					            <span v-for="item in promo.store_category">{{ item }},</span>
-    					        </p>
+    					        </h4>
     							<hr>
     					        <p class="job_position" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
     					        <p class="job_position" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>
