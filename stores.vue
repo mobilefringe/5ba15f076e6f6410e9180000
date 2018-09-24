@@ -3,7 +3,7 @@
         <loader v-if="!dataLoaded"></loader>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-        		<div class="page_header" v-if="storeBanner" v-bind:style="{ backgroundImage: 'url(' + storeBanner.image_url + ')' }">
+        		<div class="page_header" v-if="storeBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
         			<div class="site_container">
         				<div class="header_content caps">
         					<h1>Shop</h1>
@@ -106,7 +106,7 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    storeBanner : null,
+                    pageBanner : null,
                     windowWidth: 0,
                     selectedCat: null,
                     filteredStores: null,
@@ -117,7 +117,13 @@
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Stores Banner');
                     if(temp_repo) {
-                        this.storeBanner = temp_repo.images[0];
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
                     
                     this.dataLoaded = true;
