@@ -18,7 +18,7 @@
                                 <h2>{{ currentJob.store_name }}</h2>
                                 <p v-if="currentJob.store_category" class="store_category">{{ currentJob.store_category }}</p>
                                 <h3 v-if="currentJob.store_phone" class="store_phone"><span>{{ currentJob.store_phone }}</span><i class="fa fa-phone"></i></h3>
-                                <div v-if="this.currentJob.store != null && this.currentJob.store != undefined">
+                                <div v-if="currentJob.store != null && currentJob.store != undefined">
                                     <a v-if="currentJob.store_website" :href="currentJob.store_website" target="_blank">
                                         <div class="store_website animated_btn caps">{{ $t("stores_page.store_website") }}</div>
                                     </a>
