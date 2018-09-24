@@ -18,7 +18,7 @@
                                 <h2>{{ currentJob.store_name }}</h2>
                                 <p v-if="currentJob.store_category" class="store_category">{{ currentJob.store_category }}</p>
                                 <h3 v-if="currentJob.store_phone" class="store_phone"><span>{{ currentJob.store_phone }}</span><i class="fa fa-phone"></i></h3>
-                                <div class="">
+                                <div>
                                     <a v-if="currentJob.store_website" :href="currentJob.store_website" target="_blank">
                                         <div class="store_website animated_btn caps">{{ $t("stores_page.store_website") }}</div>
                                     </a>
@@ -31,7 +31,7 @@
             				    
             				    <div v-if="currentJob.no_logo" class="store_details_image center-block">
                                     <div class="no_logo">
-                                        <p class="store_details_name">{{ currentJob.name }}</p>
+                                        <p class="store_details_name">{{ currentJob.store_name }}</p>
                                     </div>    
                                 </div>
                                 <img v-else class="store_details_image center-block" :src="currentJob.store_front_url_abs" :alt="currentJob.name + ' Logo'" />
