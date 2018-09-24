@@ -40,7 +40,7 @@
                         	    
                         	    <div v-else class="feature_item_container">
                         	        <a :href="feature.url">
-                            			<img :src="feature.image_url" alt="name">
+                            			<img :src="feature.image_url" :alt="feature.name">
                             			<div class="feature_item_info" v-if="feature.name && feature.description">
                             				<div class="feature_item_content">
                             					<p>{{ feature.name }}</p>
