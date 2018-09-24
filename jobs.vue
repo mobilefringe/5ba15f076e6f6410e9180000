@@ -115,18 +115,15 @@
                     }
                 },
                 getStoreCategories(store_categories) {
-                    console.log(categories)
+                    console.log(store_categories)
                     var vm = this;
                     var categories = [];
                     _.forEach(store_categories, function(value, key) {
-                       category = vm.findCategoryById(value)
+                       category = vm.findCategoryById(value);
                        categories.push(category)
                     });
                     
                     console.log(categories)
-                    // var currentStoreCategory = this.currentStore.categories[0];
-                    // category = this.findCategoryById(currentStoreCategory)
-                    // return category.name
                 },
                 checkJobType(promo) {
                     if(this.locale != "en-ca") {
