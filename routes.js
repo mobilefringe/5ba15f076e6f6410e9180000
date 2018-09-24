@@ -117,7 +117,7 @@ define([], function() {
             }]
         },
         {
-            path: '/contact_us',
+            path: '/contact-us',
             component: view('default'),
             children: [{
                 path: '',
