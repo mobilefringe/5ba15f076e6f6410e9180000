@@ -17,8 +17,10 @@
 					        <p>{{ $t("contact_page.phone1") }}: {{ property.contact_phone }}</p>
 					        <p>{{ $t("contact_page.phone2") }}: {{ property.contact_fax }}</p>
 					        <div class="margin_40"></div>
-					        <h3 class="">{{ $t("contact_page.email") }}</h3>
-					        <p>{{ property.contact_email }}</p>
+					        <span v-if="property.contact_email">
+					            <h3 class="">{{ $t("contact_page.email") }}</h3>
+					            <p>{{ property.contact_email }}</p>
+					       </span>
 					    </div>
 					    <div class="contact_form_container">
 					        <div class="row">
