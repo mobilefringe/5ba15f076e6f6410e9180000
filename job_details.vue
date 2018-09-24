@@ -35,7 +35,6 @@
                                     </div>    
                                 </div>
                                 <img v-else class="store_details_image center-block" :src="currentJob.store_front_url_abs" :alt="currentJob.name + ' Logo'" />
-                                <img v-else class="store_details_image center-block" src="" alt="" />
             				</div>
             			</div>
             		</div>
