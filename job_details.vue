@@ -103,7 +103,7 @@
                             this.currentJob.store_name = this.currentJob.store.name;
                             
                             this.currentJob.store_phone = this.currentJob.store.phone
-                            
+                            this.currentJob.store_website = this.currentJob.store.website
                             if(_.includes(this.currentJob.store.image_url, 'missing')) {
                                 this.currentJob.image_url = "https://via.placeholder.com/400x400/757575";
                             } else {
