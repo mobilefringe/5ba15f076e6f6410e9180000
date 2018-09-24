@@ -105,6 +105,20 @@
             },
             created(){
                 this.loadData().then(response => {
+                    var temp_repo = this.findRepoByName('Contact Banner');
+                    if(temp_repo) {
+                        try {
+                            this.storeBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        temp_repo = 
+                            {
+                                "image_url": "https://via.placeholder.com/1920x300"
+                            }
+                        }
+                    }
                    this.dataLoaded = true;
                    console.log(this.property)
                 });
