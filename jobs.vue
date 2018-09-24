@@ -119,8 +119,9 @@
                     var vm = this;
                     var categories = [];
                     _.forEach(store_categories, function(value, key) {
-                       category = vm.findCategoryById(value);
-                       categories.push(category)
+                        console.log(value)
+                        category = vm.findCategoryById(value);
+                        categories.push(category)
                     });
                     
                     console.log(categories)
