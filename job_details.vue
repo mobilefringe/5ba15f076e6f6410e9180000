@@ -74,6 +74,7 @@
             data: function() {
                 return {
                     dataLoaded: false,
+                    pageBanner:null,
                     currentJob: null,
                     storeJobs : null
                 }
