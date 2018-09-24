@@ -96,6 +96,7 @@
             methods: {
                 updateCurrentJob (id) {
                     this.currentJob = this.findJobBySlug(id);
+                    console.log(this.currentJob)
                     if (this.currentJob != null || this.currentJob != undefined){
                         var property_name = this.property.name
                         if (this.currentJob.store != null && this.currentJob.store != undefined){
