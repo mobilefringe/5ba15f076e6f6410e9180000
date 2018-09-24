@@ -93,7 +93,10 @@
                                 value.image_url = value.store.store_front_url_abs;  
                             }
                             value.store_name = value.store.name;
-                            value.store_category = vm.getStoreCategories(value.store.categories);
+                            
+                            if (value.store.categories.length > 0 ) {
+                                value.store_category = vm.getStoreCategories(value.store.categories);
+                            }
                         } else if (value.store == null || value.store == undefined) {
                             value.store = {};
                             value.image_url =  "https://via.placeholder.com/400x400/757575";
