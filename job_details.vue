@@ -38,22 +38,7 @@
             			</div>
             		</div>
             		<div class="row">
-                        <div class="col-md-5">
-            				<div class="details_store_hours">
-            				    <h4 class="details_store_title caps">{{ $t("stores_page.store_hours") }}</h4> 
-            				    <ul v-if="storeHours" class="details_store_hours_list">
-                                    <li v-for="hour in storeHours" :class="{ today: hour.todays_hours }">
-                                        <div v-if="!hour.is_closed">
-                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>{{hour.open_time | moment("h:mma", timezone)}} - {{hour.close_time | moment("h:mma", timezone)}}
-                                        </div>
-                                        <div v-else>
-                                            <span class="hours_list_day">{{hour.day_of_week | moment("dddd", timezone)}} </span>CLOSED
-                                        </div>
-                                    </li>
-                                </ul>
-            				</div>
-            			</div>
-            			<div class="col-md-7">
+            			<div class="col-md-12">
             				<div class="details_store_desc">
             				    <h4 class="details_store_title caps">{{ currentJob.name }}</h4>
             				    <div v-html="currentJob.description"></div>
