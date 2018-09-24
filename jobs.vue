@@ -132,6 +132,7 @@
                     
                     
                     console.log(categories)
+                    return categories
                 },
                 checkJobType(promo) {
                     if(this.locale != "en-ca") {
