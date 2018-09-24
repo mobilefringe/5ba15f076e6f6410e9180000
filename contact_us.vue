@@ -31,25 +31,25 @@
                                     <div class="col-sm-12 col-md-6">
                                         
                                         <div class="position_relative" :class="{'has-error': errors.has('name')}">
-                                            <label class="label" for="name">Name*</label>
-                                            <input v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" :placeholder="$t('contact_page.form_name')" data-vv-delay="500">
+                                            <label class="label" for="name">Name</label>
+                                            <input v-model="form_data.name" v-validate="'required|alpha_spaces'" class="form-control" :class="{'input': true}" name="name" type="text" placeholder="Your Name*" data-vv-delay="500">
                                             <span v-show="errors.has('name')" class="form-control-feedback">{{ errors.first('name') }}</span>
                                         </div>
                                         <div class="position_relative" :class="{'has-error': errors.has('email')}">
-                                            <label class="label" for="email">Email*</label>
-                                            <input v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" :placeholder="$t('contact_page.form_email')" data-vv-delay="500">
+                                            <label class="label" for="email">Email</label>
+                                            <input v-model="form_data.email" v-validate="'required|email'" class="form-control" :class="{'input': true}" name="email" type="email" placeholder="Your Email*" data-vv-delay="500">
                                             <span v-show="errors.has('email')" class="form-control-feedback">{{ errors.first('email') }}</span>
                                         </div>
                                         <div class="position_relative" :class="{'has-error': errors.has('phone')}">
-                                            <label class="label" for="phone">Phone Number*</label>
-                                            <input v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" :placeholder="$t('contact_page.form_phone')" data-vv-delay="1000">
+                                            <label class="label" for="phone">Phone Number</label>
+                                            <input v-model="form_data.phone" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="phone" type="text" placeholder="Your Phone Number*" data-vv-delay="1000">
                                             <span v-show="errors.has('phone')" class="form-control-feedback">{{ errors.first('phone') }}</span>
                                         </div>
                                     </div>
                                     <div class="col-sm-12 col-md-6">
                                         <div class="position_relative" :class="{'has-error': errors.has('message')}">
                                             <label class="label" for="message">Message*</label>
-                                            <textarea v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" :placeholder="$t('contact_page.form_message')" data-vv-delay="500"></textarea>
+                                            <textarea v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" placeholder="Your Message... *" data-vv-delay="500"></textarea>
                                             <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
                                         </div>
                                         <div class="center">
