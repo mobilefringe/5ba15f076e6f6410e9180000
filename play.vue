@@ -80,8 +80,6 @@
                 return {
                     dataLoaded: false,
                     pageBanner : null,
-                    windowWidth: 0,
-                    filteredStores: null,
                     search_result : null,
                     shopFilter: 6439
                 }
@@ -133,17 +131,11 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                getWindowWidth(event) {
-                    this.windowWidth = window.innerWidth;
-                },
                 onOptionSelect(option) {
                     this.search_result = "";
                     this.$router.push("/stores/" + option.slug);
                 }
-            },
-            beforeDestroy: function() {
-                window.removeEventListener('resize', this.getWindowWidth);
-            },
+            }
         });
     });
 </script>
