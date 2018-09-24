@@ -104,11 +104,9 @@
         "back_to_promos" : "Back to Promotions"
     },
     "stores_page" : {
-        "header_desc" : "Discover ",
-        "directory" : "Store Directory", 
+        "directory" : "Shop", 
         "find_your_store": "Find Store",
-        "sort_by_cats" : "Sort By Categories",
-        "view_map": "View Map",
+        "view_map": "View Center Map",
         "new_store" : "New Store",
         "coming_soon" : "Coming Soon",
         "store_website": "Visit Website",
