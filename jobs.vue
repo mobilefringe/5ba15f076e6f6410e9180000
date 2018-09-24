@@ -123,9 +123,13 @@
                     var categories = [];
 
                     _.forEach(store_categories, function(value) {
-                        console.log(value)
-                        var category = vm.findCategoryById(value);
-                        console.log(category)
+                        try {
+                            console.log(value)
+                            var category = vm.findCategoryById(value);
+                            console.log(category)
+                        } catch(e) {
+                            
+                        }
                         // categories.push(category)
                     });
                     
