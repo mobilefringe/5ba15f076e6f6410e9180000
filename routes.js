@@ -101,11 +101,11 @@ define([], function() {
         {
             path: '/hours',
             component: view('hours'),
-            // children: [{
-            //     path: '',
-            //     component: view('hours'),
-            //     name: 'hourList',
-            // }]
+            children: [{
+                path: '',
+                component: view('hours'),
+                name: 'hourList',
+            }]
         },
         {
             path: '/contest',
@@ -138,7 +138,7 @@ define([], function() {
         {
             path: '/pages',
             component: view('default'),
-            redirect: '/404',
+            redirect: '/',
             children: [{
                 path: ':id',
                 component: view('page_details'),
@@ -147,49 +147,8 @@ define([], function() {
             }]
         },
         {
-            path: '/find_us',
+            path: '/thank-you',
             component: view('default'),
-            redirect: '/404',
-            children: [{
-                path: '',
-                component: view('find_us'),
-                name: 'findUs'
-            }]
-        },
-        // {
-        //     path: '/community',
-        //     component: view('default'),
-        //     redirect: '/404',
-        //     children: [{
-        //         path: '',
-        //         component: view('community'),
-        //         name: 'community'
-        //     }]
-        // },
-        // {
-        //     path: '/photos',
-        //     component: view('default'),
-        //     redirect: '/404',
-        //     children: [{
-        //         path: '',
-        //         component: view('photos'),
-        //         name: 'photos'
-        //     }]
-        // },
-        {
-            path: '/social',
-            component: view('default'),
-            redirect: '/404',
-            children: [{
-                path: '',
-                component: view('social_media'),
-                name: 'Social'
-            }]
-        },
-        {
-            path: '/thank_you',
-            component: view('default'),
-            redirect: '/404',
             children: [{
                 path: '',
                 component: view('thank_you'),
@@ -197,13 +156,8 @@ define([], function() {
             }]
         },
         {
-            path: '/404',
-            name: '404',
-            component: view('notfoundcomponent')
-        },
-        {
             path: '*',
-            redirect: '/404'
+            redirect: '/'
         }
     ]
 
