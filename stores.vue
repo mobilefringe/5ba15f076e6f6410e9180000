@@ -81,9 +81,9 @@
                     dataLoaded: false,
                     pageBanner : null,
                     windowWidth: 0,
-                    selectedCat: null,
                     filteredStores: null,
-                    search_result : null
+                    search_result : null,
+                    shopFilter: 6439
                 }
             },
             created (){
@@ -136,10 +136,12 @@
                     var vm = this;
                     var hover_image = "";
                     _.forEach(store_list, function(value, key) {
-                        if (_.includes(value.image_url, 'missing')) {
-                           value.no_store_logo = true;
-                        } else {
-                          value.no_store_logo = false;
+                        if(_.includes(value.categories, vm.shopFilter)) {
+                            if (_.includes(value.image_url, 'missing')) {
+                               value.no_store_logo = true;
+                            } else {
+                              value.no_store_logo = false;
+                            }
                         }
                     });
                     this.filteredStores = store_list;
