@@ -28,7 +28,7 @@
                         </div>
                         <div class="col-md-4">
             				<div class="details_store_image">
-            				    <div v-if="currentJob.no_logo" class="store_details_image center-block">
+            				    <div v-if="currentJob.no_logo && currentJob.store" class="store_details_image center-block">
                                     <div class="no_logo">
                                         <p class="store_details_name">{{ currentJob.name }}</p>
                                     </div>    
