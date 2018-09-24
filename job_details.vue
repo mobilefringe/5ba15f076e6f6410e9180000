@@ -109,11 +109,7 @@
                             
                             this.currentJob.store_phone = this.currentJob.store.phone
                             this.currentJob.store_website = this.currentJob.store.website
-                            if(_.includes(this.currentJob.store.image_url, 'missing')) {
-                                this.currentJob.image_url = "https://via.placeholder.com/400x400/757575";
-                            } else {
-                                this.currentJob.image_url = this.currentJob.store.store_front_url_abs
-                            }
+                        
                             // STORE LOGO
                             if (_.includes(this.currentJob.store.image_url.store_front_url_abs, 'missing')) {
                                 console.log("Yes")
