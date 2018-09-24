@@ -20,9 +20,9 @@
                                 <h3 v-if="currentStore.phone" class="store_phone"><span>{{ currentStore.phone }}</span><i class="fa fa-phone"></i></h3>
                                 <div class="">
                                     <a v-if="currentStore.website" :href="currentStore.website" target="_blank">
-                                        <div class="store_website animated_btn caps">Visit Website</div>
+                                        <div class="store_website animated_btn caps">{{ $t("stores_page.store_website") }}</div>
                                     </a>
-                                    <div class="store_website animated_btn caps">View Map</div>
+                                    <div class="store_website animated_btn caps">{{ $t("stores_page.view_map") }}</div>
                                 </div>
                             </div>
                         </div>
