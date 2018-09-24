@@ -62,12 +62,18 @@
             },
             created() {
                 this.loadData().then(response => {
-                    this.dataLoaded = true;
                     var temp_repo = this.findRepoByName('Jobs Banner');
                     if(temp_repo) {
-                        this.pageBanner = temp_repo.images[0];
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
                     this.promos = this.promotions;
+                    this.dataLoaded = true;
                 });
             },
             computed: {
