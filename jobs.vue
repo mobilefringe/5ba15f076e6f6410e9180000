@@ -15,7 +15,7 @@
     				    <div class="promo_container jobs clearfix" v-for="(promo, index) in paginated('promos')">
     					    <div class="promo_img" v-lazy:background-image="promo.image_url"></div>
     					    <div class="promo_content">
-    					        <h3 class="">{{ promo.store_name }}</h3>
+    					        <h2>{{ promo.store_name }}</h2>
     					        <p v-if="promo.store_category">{{ promo.store_category }}</p>
     							<p></p>
     							<hr>
