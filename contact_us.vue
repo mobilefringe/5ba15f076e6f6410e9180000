@@ -52,7 +52,7 @@
                                             <textarea v-model="form_data.message" v-validate="'required:true'" class="form-control" :class="{'input': true}" name="message" type="text" placeholder="Your Message... *" data-vv-delay="500"></textarea>
                                             <span v-show="errors.has('message')" class="form-control-feedback">{{ errors.first('message') }}</span>
                                         </div>
-                                        <div class="center">
+                                        <div class="pull-right">
                                             <button class="submit_btn animated_btn" type="submit" :disabled="formSuccess">Send Message</button>
                                         </div>
                                     </div>
