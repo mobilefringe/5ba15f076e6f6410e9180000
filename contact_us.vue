@@ -3,6 +3,13 @@
         <loader v-if="!dataLoaded"></loader>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
+                <div class="page_header" v-if="storeBanner" v-bind:style="{ backgroundImage: 'url(' + storeBanner.image_url + ')' }">
+        			<div class="site_container">
+        				<div class="header_content caps">
+        					<h1>Contact Us</h1>
+        				</div>
+        			</div>
+        		</div>
         		<div class="site_container">
         		    <div class="margin_60 hidden_phone"></div>
                     <div class="contact_container clearfix">
