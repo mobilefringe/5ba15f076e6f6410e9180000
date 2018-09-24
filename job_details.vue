@@ -158,7 +158,25 @@
                     } else {
                         return promo.job_type
                     }
-                }
+                },
+                getStoreCategories(store_categories) {
+                    var store_categories = store_categories;
+                    var vm = this;
+                    var categories = [];
+                    _.forEach(store_categories, function(value, key) {
+                        try {
+                            var category = vm.findCategoryById(value);
+                            var category_name = category.name
+                            categories.push(category_name)
+                        } catch(e) {
+                            
+                        }
+                    });
+                    
+                    categories = _.toString(categories, ', ');
+                    console.log(categories)
+                    return categories
+                },
             }
         });
     });
