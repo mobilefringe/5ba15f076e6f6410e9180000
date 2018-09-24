@@ -194,7 +194,6 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-
                 getWindowWidth(event) {
                     this.windowWidth = window.innerWidth;
                 },
