@@ -115,9 +115,9 @@
                 },
                 getStoreCategories(categories) {
                     console.log(categories)
-                    var currentStoreCategory = this.currentStore.categories[0];
-                    category = this.findCategoryById(currentStoreCategory)
-                    return category.name
+                    // var currentStoreCategory = this.currentStore.categories[0];
+                    // category = this.findCategoryById(currentStoreCategory)
+                    // return category.name
                 },
                 checkJobType(promo) {
                     if(this.locale != "en-ca") {
