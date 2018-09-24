@@ -42,6 +42,7 @@
             				<div class="details_store_desc">
             				    <h4 v-if="locale=='en-ca'" class="details_store_title">{{ $t("jobs_page.position") }}: {{ currentJob.name }}</h4>
                                 <h4 v-else class="details_store_title">{{ $t("jobs_page.position") }}: {{ currentJob.name_2 }}</h4>
+    							<p class="job_date">{{ $t("jobs_page.end_date") }}: {{ currentJob.end_date | moment("MMMM DD, YYYY", timezone) }}</p>
             				    <div v-html="currentJob.description"></div>
             				</div>
             			</div>
