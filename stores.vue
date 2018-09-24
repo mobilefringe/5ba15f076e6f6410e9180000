@@ -132,19 +132,32 @@
                     'findRepoByName'
                 ]),
                 allStores() {
-                    var store_list = this.processedStores
+                    var store_list = [];
                     var vm = this;
-                    var hover_image = "";
-                    _.forEach(store_list, function(value, key) {
+                    _.forEach(this.processedStores, function(value, key) {
                         if(_.includes(value.categories, vm.shopFilter)) {
                             if (_.includes(value.image_url, 'missing')) {
                                value.no_store_logo = true;
                             } else {
                               value.no_store_logo = false;
                             }
+                            store_list.push(value);
                         }
                     });
-                    this.filteredStores = store_list;
+                    
+                    // var store_list = this.processedStores
+                    // var vm = this;
+                    // var hover_image = "";
+                    // _.forEach(store_list, function(value, key) {
+                    //     if(_.includes(value.categories, vm.shopFilter)) {
+                    //         if (_.includes(value.image_url, 'missing')) {
+                    //           value.no_store_logo = true;
+                    //         } else {
+                    //           value.no_store_logo = false;
+                    //         }
+                    //     }
+                    // });
+                    // this.filteredStores = store_list;
                     return store_list
                 },
                 allCatergories() {
@@ -163,28 +176,28 @@
                         return (o.$el.className == "svg-map")
                     })[0];
                 },
-                filterByCategory() {
-                    category_id = this.selectedCat;
-                    if (category_id == "All" || category_id == null || category_id == undefined) {
-                        category_id = "All";
-                    } else {
-                        category_id = this.findCategoryByName(category_id).id;
-                    }
+                // filterByCategory() {
+                //     category_id = this.selectedCat;
+                //     if (category_id == "All" || category_id == null || category_id == undefined) {
+                //         category_id = "All";
+                //     } else {
+                //         category_id = this.findCategoryByName(category_id).id;
+                //     }
 
-                    if (category_id == "All") {
-                        this.filteredStores = this.allStores;
-                    } else {
-                        var find = this.findCategoryById;
-                        var filtered = _.filter(this.allStores, function(o) {
-                            return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
-                        });
-                        this.filteredStores = filtered;
-                    }
-                    var el = document.getElementById("selectByCat");
-                    if(el) {
-                        el.classList.remove("open");
-                    }
-                }
+                //     if (category_id == "All") {
+                //         this.filteredStores = this.allStores;
+                //     } else {
+                //         var find = this.findCategoryById;
+                //         var filtered = _.filter(this.allStores, function(o) {
+                //             return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
+                //         });
+                //         this.filteredStores = filtered;
+                //     }
+                //     var el = document.getElementById("selectByCat");
+                //     if(el) {
+                //         el.classList.remove("open");
+                //     }
+                // }
             },
             methods: {
                 loadData: async function() {
