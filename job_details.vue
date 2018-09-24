@@ -34,7 +34,7 @@
                                         <p class="store_details_name">{{ currentJob.store_name }}</p>
                                     </div>    
                                 </div>
-                                <img v-else class="store_details_image center-block" :src="currentJob.store_front_url_abs" :alt="currentJob.name + ' Logo'" />
+                                <img v-else class="store_details_image center-block" :src="currentJob.store_logo" :alt="currentJob.name + ' Logo'" />
             				</div>
             			</div>
             		</div>
