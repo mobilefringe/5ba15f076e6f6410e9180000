@@ -24,7 +24,7 @@
         				</div>
         				<div class="stores_button_container map_link">
         				    <router-link to="/map">
-        				        View Center Map
+        				        {{ $t("stores_page.view_map") }}
         				    </router-link>
         				</div>
         			</div>
@@ -50,10 +50,10 @@
         									<div class="store_tag_text">Promotion</div>
         								</div>
         								<div class="store_tag" v-if="!store.total_published_promos && store.is_coming_soon_store">
-        									<div class="store_tag_text">Coming Soon</div>
+        									<div class="store_tag_text">{{ $t("stores_page.coming_soon") }}</div>
         								</div>
         								<div class="store_tag" v-if="!store.total_published_promos && !store.is_coming_soon_store && store.is_new_store">
-        									<div class="store_tag_text">New Store</div>
+        									<div class="store_tag_text">{{ $t("stores_page.new_store") }}</div>
         								</div>
         								<div class="store_details">
         								    <div class="store_text">
