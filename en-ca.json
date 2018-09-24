@@ -4,7 +4,9 @@
     },
     "nav": {
         "directory" : "Directory",
-        "stores" : "Stores",
+        "stores" : "Shop",
+        "dine" : "Dine",
+        "play" : "Play",
         "centre_map" : "Centre Map",
         "promos" : "Promotions",
         "events" : "Events",
