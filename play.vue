@@ -88,7 +88,7 @@
             },
             created (){
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Stores Banner');
+                    var temp_repo = this.findRepoByName('Play Banner');
                     if(temp_repo) {
                         try {
                             this.pageBanner = temp_repo.images[0];
@@ -102,34 +102,11 @@
                     this.dataLoaded = true;
                 });
             },
-            watch: {
-                windowWidth: function() {
-                    if (this.windowWidth <= 768) {
-                        this.mobile_store = true;
-                    } else {
-                        this.mobile_store = false;
-                    }
-                },
-            },
-            mounted() {
-                // this.filteredStores = this.allStores;
-                this.$nextTick(function() {
-                    window.addEventListener('resize', this.getWindowWidth);
-                    //Init
-                    this.getWindowWidth();
-                });
-            },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
-                    'timezone',
-                    'processedStores',
-                    'processedCategories',
-                    'storesByAlphaIndex',
-                    'storesByCategoryName',
-                    'findCategoryById',
-                    'findCategoryByName',
-                    'findRepoByName'
+                    'findRepoByName',
+                    'processedStores'
                 ]),
                 allStores() {
                     var store_list = [];
@@ -145,45 +122,7 @@
                         }
                     });
                     return store_list
-                },
-                allCatergories() {
-                    return this.processedCategories;
-                },
-                dropDownCats() {
-                    var cats = _.map(this.processedCategories, 'name');
-                    cats.unshift('All');
-                    return cats;
-                },
-                getPNGurl() {
-                    return "https://www.mallmaverick.com" + this.property.map_url;
-                },
-                svgMapRef() {
-                    return _.filter(this.$children, function(o) {
-                        return (o.$el.className == "svg-map")
-                    })[0];
-                },
-                // filterByCategory() {
-                //     category_id = this.selectedCat;
-                //     if (category_id == "All" || category_id == null || category_id == undefined) {
-                //         category_id = "All";
-                //     } else {
-                //         category_id = this.findCategoryByName(category_id).id;
-                //     }
-
-                //     if (category_id == "All") {
-                //         this.filteredStores = this.allStores;
-                //     } else {
-                //         var find = this.findCategoryById;
-                //         var filtered = _.filter(this.allStores, function(o) {
-                //             return _.indexOf(o.categories, _.toNumber(category_id)) > -1;
-                //         });
-                //         this.filteredStores = filtered;
-                //     }
-                //     var el = document.getElementById("selectByCat");
-                //     if(el) {
-                //         el.classList.remove("open");
-                //     }
-                // }
+                }
             },
             methods: {
                 loadData: async function() {
