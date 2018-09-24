@@ -116,6 +116,7 @@
                             }
                             // STORE LOGO
                             if (_.includes(this.currentJob.store.image_url.store_front_url_abs, 'missing')) {
+                                console.log("Yes")
                                 this.currentJob.no_logo = true
                             } else {
                                 this.currentJob.no_logo = false
