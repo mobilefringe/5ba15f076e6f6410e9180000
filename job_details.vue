@@ -16,7 +16,7 @@
                         <div class="col-md-8">
                             <div class="details_store_name">
                                 <h2>{{ currentJob.store_name }}</h2>
-                                <p v-if="storeCategory" class="store_category">{{ storeCategory }}</p>
+                                <p v-if="currentJob.store_category" class="store_category">{{ currentJob.store_category }}</p>
                                 <h3 v-if="currentJob.phone" class="store_phone"><span>{{ currentJob.phone }}</span><i class="fa fa-phone"></i></h3>
                                 <div class="">
                                     <a v-if="currentJob.website" :href="currentJob.website" target="_blank">
