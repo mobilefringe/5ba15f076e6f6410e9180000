@@ -28,14 +28,13 @@
                         </div>
                         <div class="col-md-4">
             				<div class="details_store_image">
-            				    <div v-if="currentJob.store">
-                				    <div v-if="currentJob.no_logo" class="store_details_image center-block">
-                                        <div class="no_logo">
-                                            <p class="store_details_name">{{ currentJob.name }}</p>
-                                        </div>    
-                                    </div>
-                                    <img v-else class="store_details_image center-block" :src="currentJob.store_front_url_abs" :alt="currentJob.name + ' Logo'" />
+            				    
+            				    <div v-if="currentJob.no_logo" class="store_details_image center-block">
+                                    <div class="no_logo">
+                                        <p class="store_details_name">{{ currentJob.name }}</p>
+                                    </div>    
                                 </div>
+                                <img v-else class="store_details_image center-block" :src="currentJob.store_front_url_abs" :alt="currentJob.name + ' Logo'" />
                                 <img v-else class="store_details_image center-block" src="" alt="" />
             				</div>
             			</div>
@@ -111,7 +110,6 @@
                         
                             // STORE LOGO
                             if (_.includes(this.currentJob.store.store_front_url_abs, 'missing')) {
-                                console.log("Yes")
                                 this.currentJob.no_logo = true
                             } else {
                                 this.currentJob.no_logo = false
