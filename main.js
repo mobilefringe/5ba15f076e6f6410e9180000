@@ -116,17 +116,17 @@ require(["Vue", "vuex", "vue2-filters", "vue_router", "routes", "datastore", "vu
                         href: "/events",
                     },
                     {
-                        name: "nav.guest_services",
+                        name: "nav.programs",
                         id: "menu2",
                         href: "",
                         sub_menu: [
                             {
-                                name: "nav.services",
-                                href: "/pages/stlaurent-services"
+                                name: "nav.scoop",
+                                href: "/southland-scoop
                             },
                             {
-                                name: "nav.gift_card",
-                                href: "/pages/stlaurent-gift-cards"
+                                name: "nav.kids_club",
+                                href: "/kids-club"
                             }
                         ]
                     },
