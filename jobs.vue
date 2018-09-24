@@ -114,6 +114,7 @@
                     }
                 },
                 getStoreCategories(categories) {
+                    console.log(categories)
                     var currentStoreCategory = this.currentStore.categories[0];
                     category = this.findCategoryById(currentStoreCategory)
                     return category.name
