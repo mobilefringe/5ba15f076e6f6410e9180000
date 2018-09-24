@@ -75,7 +75,8 @@
                     'property',
                     'timezone',
                     'findRepoByName',
-                    'processedJobs'
+                    'processedJobs',
+                    'findCategoryById'
                 ]),
                 promotions() {
                     var property_name = this.property.name
@@ -113,10 +114,13 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                getStoreCategories(categories) {
+                getStoreCategories(store_categories) {
                     console.log(categories)
-                    _.forEach(categories, function(value, key) {
+                    var vm = this;
+                    var categories = [];
+                    _.forEach(store_categories, function(value, key) {
                        console.log(value) 
+                       category = vm.findCategoryById(value)
                     });
                     // var currentStoreCategory = this.currentStore.categories[0];
                     // category = this.findCategoryById(currentStoreCategory)
