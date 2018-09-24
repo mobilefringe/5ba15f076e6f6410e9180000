@@ -107,6 +107,8 @@
     },
     "stores_page" : {
         "directory" : "Shop", 
+        "play" : "Play",
+        "dine" : "Dine",
         "find_your_store": "Find Store",
         "view_map": "View Mall Map",
         "new_store" : "New Store",
