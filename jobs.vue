@@ -117,15 +117,14 @@
                     }
                 },
                 getStoreCategories(store_categories) {
-                    console.log(store_categories)
                     var store_categories = store_categories;
                     var vm = this;
                     var categories = [];
-
-                    _.forEach(store_categories, function(value) {
+                    _.forEach(store_categories, function(value, key) {
                         try {
                             console.log(value)
                             var category = vm.findCategoryById(value);
+                            var category_name = category.name
                             console.log(category)
                         } catch(e) {
                             
