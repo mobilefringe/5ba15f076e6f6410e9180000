@@ -126,10 +126,11 @@
                             var category = vm.findCategoryById(value);
                             var category_name = category.name
                             console.log(category_name)
+                            categories.push(category_name)
                         } catch(e) {
                             
                         }
-                        // categories.push(category)
+                        // 
                     });
                     
                     
