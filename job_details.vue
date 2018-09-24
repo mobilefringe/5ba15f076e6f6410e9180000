@@ -15,7 +15,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <div class="details_store_name">
-                                <h2>{{ currentJob.name }}</h2>
+                                <h2>{{ currentJob.store_name }}</h2>
                                 <p v-if="storeCategory" class="store_category">{{ storeCategory }}</p>
                                 <h3 v-if="currentJob.phone" class="store_phone"><span>{{ currentJob.phone }}</span><i class="fa fa-phone"></i></h3>
                                 <div class="">
