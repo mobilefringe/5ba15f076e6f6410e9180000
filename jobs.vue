@@ -17,7 +17,7 @@
     					    <div class="promo_content">
     					        <h2>{{ promo.store_name }}</h2>
     					        <h4 v-if="promo.store_category" class="bold">
-    					            <span>{{ item }},</span>
+    					            <span>{{ promo.store_category }},</span>
     					        </h4>
     							<hr>
     					        <p class="job_position" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
