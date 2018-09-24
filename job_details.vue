@@ -118,7 +118,7 @@
                     this.currentJob = this.findJobBySlug(id);
                     if (this.currentJob != null || this.currentJob != undefined){
                         var property_name = this.property.name
-                        if(this.currentJob != null) {
+                        // if(this.currentJob != null) {
                             if (this.currentJob.store != null && this.currentJob.store != undefined){
                                 if(_.includes(this.currentJob.store.image_url, 'missing')) {
                                     this.currentJob.image_url = "https://via.placeholder.com/400x400/757575";
@@ -132,7 +132,7 @@
                                 this.currentJob.image_url =  "https://via.placeholder.com/400x400/757575";
                                 this.currentJob.store_name = property_name;
                             }
-                        }    
+                        // }    
                     } else {
                         this.$router.replace({ name: '404'});
                     }
