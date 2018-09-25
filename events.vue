@@ -36,7 +36,7 @@
         			<div class="row">
                         <div class="col-md-12">
                             <button class="animated_btn promo_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>
-                            <p v-if="noeventomos">{{$t("events_page.no_more_event_message")}}</p>
+                            <p v-if="noEvents">{{$t("events_page.no_more_event_message")}}</p>
                         </div>
                     </div>
         		</div>
