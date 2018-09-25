@@ -13,7 +13,7 @@
         		<div class="site_container page_content">
         			<div v-if="promotions.length > 0">
         				<!--<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="3">-->
-        					<div class="promo_container" v-for="(promo, index) in events">
+        					<div class="promo_container" v-for="promo in events">
         					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
         					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
         					    <div class="promo_content">
