@@ -86,7 +86,7 @@
                     'findRepoByName',
                     'processedEvents'
                 ]),
-                events() {
+                eventList() {
                     var vm = this;
                     var temp_event = [];
                     var temp_job = [];
