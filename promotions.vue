@@ -21,7 +21,7 @@
         					        <p class="promo_title" v-else>{{ property.name }}</p>
         					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
         							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
-        							<router-link :to="'/promotions/'+ promo.slug" >
+        							<router-link :to="'/promotions/'+ promo.slug">
     								   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
         						    </router-link>
         					    </div>
