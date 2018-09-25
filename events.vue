@@ -6,13 +6,13 @@
         		<div class="page_header" v-if="pageBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
         			<div class="site_container">
         				<div class="header_content caps">
-        					<h1>{{ $t("promos_page.promos_header") }}</h1>
+        					<h1>{{ $t("events_page.events_header") }}</h1>
         				</div>
         			</div>
         		</div>
         		<div class="site_container page_content">
         		    <transition-group name="list" tag="div">
-    					<div class="promo_container" v-if="promos" v-for="promo in promos" :key="promo.id">
+    					<div class="promo_container" v-if="events" v-for="promo in events" :key="promo.id">
     					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
     					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
     					    <div class="promo_content">
@@ -21,22 +21,22 @@
     					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
     							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
     							<router-link :to="'/promotions/'+ promo.slug">
-    							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+    							   <div class="promo_learn_more animated_btn">{{ $t("events_page.read_more") }}</div>
     						    </router-link>
     					    </div>
     					</div>
     					<div v-else>
                             <div class="row">
                                 <div class="col-md-12">
-                                    <p>{{$t("promos_page.no_promo_message")}}</p>    
+                                    <p>{{$t("events_page.no_promo_message")}}</p>    
                                 </div>
                             </div>
                         </div>
     				</transition-group>
         			<div class="row">
                         <div class="col-md-12">
-                            <button class="animated_btn promo_load_more" v-if="!noMorePromos" @click="handleButton">Load More</button>
-                            <p v-if="noPromos">{{$t("promos_page.no_more_promo_message")}}</p>
+                            <button class="animated_btn promo_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>
+                            <p v-if="noeventomos">{{$t("promos_page.no_more_event_message")}}</p>
                         </div>
                     </div>
         		</div>
@@ -46,39 +46,45 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load", "vue-paginate"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload, VuePaginate) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "vue-lazy-load"], function(Vue, Vuex, VueLazyload) {
         Vue.use(VueLazyload);
-        Vue.use(VuePaginate);
-        return Vue.component("promos-component", {
+        return Vue.component("events-component", {
             template: template, // the variable template will be injected
             props:['locale'],
             data: function() {
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    promos : null,
-                    paginate: ['promos']
+                    events: [],
+                    morePromos: [],
+                    morePromosFetched: false,
+                    noMorePromos: false,
+                    noPromos: false
                 }
             },
             created() {
                 this.loadData().then(response => {
-                    this.dataLoaded = true;
-                    
-                    var temp_repo = this.findRepoByName('Events Banner');
-                    if(temp_repo) {
-                        this.pageBanner = temp_repo.images[0];
+                    var temp_repo = this.findRepoByName('Promotions Banner');
+                    if (temp_repo) {
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
 
-                    this.promos = this.events;
+                    this.handleButton();
+                    this.dataLoaded = true;
                 });
+                
             },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
-                    'timezone',
                     'findRepoByName',
-                    'processedEvents'
+                    'processedPromos'
                 ]),
                 events() {
                     var vm = this;
@@ -91,12 +97,12 @@
                         value.description_short_2 = _.truncate(value.description_2, { 'length': 60, 'separator': ' ' });
 
                         if (_.includes(value.image_url, 'missing')) {
-                            value.image_url = "https://placehold.it/1560x800/757575";
+                            value.image_url = "https://placehold.it/1600x800/757575";
                         }
-                        if (_.includes(value.event_image2_url_abs, 'missing')){
-                            value.event_image2_url_abs  = "https://placehold.it/1560x800/757575";
+                        if (_.includes(value.promo_image2_url_abs, 'missing')) {
+                            value.promo_image2_url_abs = "https://placehold.it/1600x800/757575";
                         }
-
+                        
                         temp_event.push(value);
                     });
                     _.sortBy(temp_event, [function(o) { return o.start_date; }]);
@@ -106,10 +112,29 @@
             methods: {
                 loadData: async function() {
                     try {
-                        // avoid making LOAD_META_DATA call for now as it will cause the entire Promise.all to fail since no meta data is set up.
-                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "events")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "promotions")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
+                    }
+                },
+                handleButton: function () {
+                    if(!this.morePromosFetched){
+                        this.morePromos = this.promotions;
+                        this.events = this.morePromos.splice(0, 3);
+                        this.morePromosFetched = true;
+                    } else {
+                        var nextPromos = this.morePromos.splice(0, 3);
+                        // Add 3 more posts to posts array
+                        var vm = this;
+                        _.forEach(nextPromos, function(value, key) {
+                            vm.events.push(value);
+                        });
+                    }
+                    if(this.promotions.length === 0){
+                        this.noMorePromos = true
+                        this.noPromos = true
+                    } else {
+
                     }
                 }
             }
