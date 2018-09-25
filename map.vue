@@ -12,7 +12,7 @@
         		</div>  
                 <div class="site_container">
                     <div class="row">
-                        <div class="col-md-12">
+                        <div class="col-md-3">
                             <div class="map_search_container">
                                 <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :placeholder="$t('stores_page.find_your_store')">
                                     <template slot="item" scope="option">
@@ -22,6 +22,7 @@
                                 <i id="store_search_icon" class="fa fa-search" aria-hidden="true"></i>
                             </div>
                         </div>
+                        <div class="col-md-9"></div>
                     </div>
                     <div class="row">
                         <div class="col-md-9 col-md-push-3">
