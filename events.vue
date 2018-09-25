@@ -36,7 +36,7 @@
         			<div class="row">
                         <div class="col-md-12">
                             <button class="animated_btn promo_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>
-                            <p v-if="noeventomos">{{$t("promos_page.no_more_event_message")}}</p>
+                            <p v-if="noeventomos">{{$t("events_page.no_more_event_message")}}</p>
                         </div>
                     </div>
         		</div>
@@ -56,15 +56,15 @@
                     dataLoaded: false,
                     pageBanner: null,
                     events: [],
-                    morePromos: [],
-                    morePromosFetched: false,
-                    noMorePromos: false,
-                    noPromos: false
+                    moreEvents: [],
+                    moreEventsFetched: false,
+                    noMoreEvents: false,
+                    noEvents: false
                 }
             },
             created() {
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Promotions Banner');
+                    var temp_repo = this.findRepoByName('Events Banner');
                     if (temp_repo) {
                         try {
                             this.pageBanner = temp_repo.images[0];
@@ -118,21 +118,21 @@
                     }
                 },
                 handleButton: function () {
-                    if(!this.morePromosFetched){
-                        this.morePromos = this.promotions;
-                        this.events = this.morePromos.splice(0, 3);
-                        this.morePromosFetched = true;
+                    if(!this.moreEventsFetched){
+                        this.moreEvents = this.promotions;
+                        this.events = this.moreEvents.splice(0, 3);
+                        this.moreEventsFetched = true;
                     } else {
-                        var nextPromos = this.morePromos.splice(0, 3);
+                        var nextEvents = this.moreEvents.splice(0, 3);
                         // Add 3 more posts to posts array
                         var vm = this;
-                        _.forEach(nextPromos, function(value, key) {
+                        _.forEach(nextEvents, function(value, key) {
                             vm.events.push(value);
                         });
                     }
                     if(this.promotions.length === 0){
-                        this.noMorePromos = true
-                        this.noPromos = true
+                        this.noMoreEvents = true
+                        this.noEvents = true
                     } else {
 
                     }
