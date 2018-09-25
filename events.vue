@@ -20,7 +20,7 @@
     					        <p class="promo_title" v-else>{{ property.name }}</p>
     					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
     							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
-    							<router-link :to="'/promotions/'+ promo.slug">
+    							<router-link :to="'/events/'+ promo.slug">
     							   <div class="promo_learn_more animated_btn">{{ $t("events_page.read_more") }}</div>
     						    </router-link>
     					    </div>
@@ -99,8 +99,8 @@
                         if (_.includes(value.image_url, 'missing')) {
                             value.image_url = "https://placehold.it/1600x800/757575";
                         }
-                        if (_.includes(value.promo_image2_url_abs, 'missing')) {
-                            value.promo_image2_url_abs = "https://placehold.it/1600x800/757575";
+                        if (_.includes(value.event_image2_url_abs, 'missing')) {
+                            value.event_image2_url_abs = "https://placehold.it/1600x800/757575";
                         }
                         
                         temp_event.push(value);
@@ -119,7 +119,7 @@
                 },
                 handleButton: function () {
                     if(!this.moreEventsFetched){
-                        this.moreEvents = this.promotions;
+                        this.moreEvents = this.events;
                         this.events = this.moreEvents.splice(0, 3);
                         this.moreEventsFetched = true;
                     } else {
@@ -130,7 +130,7 @@
                             vm.events.push(value);
                         });
                     }
-                    if(this.promotions.length === 0){
+                    if(this.events.length === 0){
                         this.noMoreEvents = true
                         this.noEvents = true
                     } else {
