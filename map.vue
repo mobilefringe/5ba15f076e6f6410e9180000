@@ -12,6 +12,18 @@
         		</div>  
                 <div class="site_container">
                     <div class="row">
+                        <div class="col-md-12">
+                            <div class="map_search_container">
+                                <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :placeholder="$t('stores_page.find_your_store')">
+                                    <template slot="item" scope="option">
+                                        <article class="media"><p>{{ option.data.name }}</p></article>
+                                    </template>
+                                </search-component>
+                                <i id="store_search_icon" class="fa fa-search" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
                         <div class="col-md-9 col-md-push-3">
                             <png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'700 450'" @updateMap="updatePNGMap"></png-map>
                         </div>
