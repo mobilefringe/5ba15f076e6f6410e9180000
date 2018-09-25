@@ -11,16 +11,16 @@
         			</div>
         		</div>  
                 <div class="site_container">
-                    <div class="row">
-                        <div class="col-md-12">
-                            <div class="alpha_list hidden_phone">
-                                <a @click="filterStores('All')" class="all_a">All</a>
-                                <a @click="filterStores('#')">#</a>
-                                <a v-for="letter in alphabet" @click="filterStores(letter)">{{letter}}</a>
-                            </div>
-                            <div class="margin_40"></div>
-                        </div>
-                    </div>
+                    <!--<div class="row">-->
+                    <!--    <div class="col-md-12">-->
+                    <!--        <div class="alpha_list hidden_phone">-->
+                    <!--            <a @click="filterStores('All')" class="all_a">All</a>-->
+                    <!--            <a @click="filterStores('#')">#</a>-->
+                    <!--            <a v-for="letter in alphabet" @click="filterStores(letter)">{{letter}}</a>-->
+                    <!--        </div>-->
+                    <!--        <div class="margin_40"></div>-->
+                    <!--    </div>-->
+                    <!--</div>-->
                     <div class="row">
                         <div class="col-md-9 col-md-push-3">
                             <png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'700 450'" @updateMap="updatePNGMap"></png-map>
@@ -70,9 +70,9 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    alphabet : [
-                        'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
-                    ],
+                    // alphabet : [
+                    //     'A', 'B', 'C', 'D', 'E', 'F', 'G', 'H', 'I', 'J', 'K', 'L', 'M', 'N', 'O', 'P', 'Q', 'R', 'S', 'T', 'U', 'V', 'W', 'X', 'Y', 'Z'
+                    // ],
                     suggestionAttribute: "name",
                     storeSearch: null,
                     filteredStores: null,
@@ -80,7 +80,7 @@
             },
             created() {
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Contact Banner');
+                    var temp_repo = this.findRepoByName('Map Banner');
                     if(temp_repo) {
                         try {
                             this.pageBanner = temp_repo.images[0];
