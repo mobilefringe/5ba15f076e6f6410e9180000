@@ -60,7 +60,6 @@
                     pageBanner: null,
                     suggestionAttribute: "name",
                     storeSearch: null,
-                    filteredStores: null,
                 }
             },
             created() {
@@ -75,8 +74,7 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    
-                    this.filteredStores = this.processedStores;
+
                     this.$on('updateMap', this.updatePNGMap);
                     this.dataLoaded = true;
                 });
@@ -84,11 +82,8 @@
             computed: {
                 ...Vuex.mapGetters([
                     "property",
-                    "timezone",
-                    "repos",
                     "findRepoByName",
                     "processedStores",
-                    'storesByAlphaIndex',
                 ]),
                 allStores() {
                     return this.processedStores;
@@ -108,14 +103,6 @@
                         let results = await Promise.all([this.$store.dispatch("getData", "repos")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
-                    }
-                },
-                filterStores (letter) {
-                    if(letter == "All" || letter == undefined || letter == null){
-                        this.filteredStores = this.processedStores;
-                    } else {
-                        var filtered = _.filter(this.storesByAlphaIndex, function(o,i) { return _.lowerCase(i) == _.lowerCase(letter); })[0];
-                        this.filteredStores = filtered
                     }
                 },
                 onOptionSelect(option) {
