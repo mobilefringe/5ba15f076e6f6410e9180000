@@ -91,7 +91,7 @@
                         value.description_short_2 = _.truncate(value.description_2, { 'length': 60, 'separator': ' ' });
 
                         if (_.includes(value.image_url, 'missing')) {
-                            value.image_url = "https://placehold.it/1560x800/757575";
+                            value.image_url = "https://placehold.it/1600x800/757575";
                         }
                         if (_.includes(value.promo_image2_url_abs, 'missing')) {
                             value.promo_image2_url_abs = "https://placehold.it/1600x800/757575";
