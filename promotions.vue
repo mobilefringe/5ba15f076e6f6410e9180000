@@ -12,21 +12,21 @@
         		</div>
         		<div class="site_container page_content">
         			<div >
-        				<!--<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="3">-->
-        					<div class="promo_container" v-for="promo in events">
-        					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
-        					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
-        					    <div class="promo_content">
-        					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
-        					        <p class="promo_title" v-else>{{ property.name }}</p>
-        					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
-        							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
-        							<router-link :to="'/promotions/'+ promo.slug">
-    								   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
-        						    </router-link>
-        					    </div>
-        					</div>
-        				<!--</paginate>-->
+        				
+    					<div class="promo_container" v-if="promos" v-for="promo in promos">
+    					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
+    					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
+    					    <div class="promo_content">
+    					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
+    					        <p class="promo_title" v-else>{{ property.name }}</p>
+    					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
+    							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
+    							<router-link :to="'/promotions/'+ promo.slug">
+								   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+    						    </router-link>
+    					    </div>
+    					</div>
+
         			</div>
         			<div class="row" v-else>
         				<div class="col-md-12">
