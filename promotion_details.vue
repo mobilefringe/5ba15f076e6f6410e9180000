@@ -44,7 +44,10 @@
             				<div class="details_store_desc">
             				    <h4 class="details_store_title" v-if="locale=='en-ca'">{{ currentPromo.name_short }}</h4>
 							    <h4 class="details_store_title" v-else>{{ currentPromo.name_short_2 }}</h4>
-            				    <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
+            				    <p class="event_dates">
+            				        <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMMM D", timezone)}} - {{ currentPromo.end_date | moment("MMMM D", timezone)}}</span>
+            				        <span v-else>{{ currentPromo.start_date | moment("MMMM D", timezone)}}</span>
+        				        </p>
             				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>
 				                <div v-else v-html="currentPromo.rich_description_2"></div>
             				</div>
