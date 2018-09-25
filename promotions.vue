@@ -11,19 +11,21 @@
         			</div>
         		</div>
         		<div class="site_container page_content">
-					<div class="promo_container" v-if="promos" v-for="promo in promos">
-					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
-					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
-					    <div class="promo_content">
-					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
-					        <p class="promo_title" v-else>{{ property.name }}</p>
-					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
-							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
-							<router-link :to="'/promotions/'+ promo.slug">
-							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
-						    </router-link>
-					    </div>
-					</div>
+        		    <transition-group name="list" tag="div">
+    					<div class="promo_container" v-if="promos" v-for="promo in promos">
+    					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
+    					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
+    					    <div class="promo_content">
+    					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
+    					        <p class="promo_title" v-else>{{ property.name }}</p>
+    					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
+    							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
+    							<router-link :to="'/promotions/'+ promo.slug">
+    							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+    						    </router-link>
+    					    </div>
+    					</div>
+    				</transition-group>
         			<div class="row" v-else>
         				<div class="col-md-12">
         					<p>{{$t("promos_page.no_promo_message")}}</p>
@@ -42,8 +44,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload) {
-        Vue.use(Meta);
+    define(["Vue", "vuex", "vue-lazy-load"], function(Vue, Vuex, VueLazyload) {
         Vue.use(VueLazyload);
         return Vue.component("promos-component", {
             template: template, // the variable template will be injected
@@ -83,7 +84,6 @@
             computed: {
                 ...Vuex.mapGetters([
                     'property',
-                    'timezone',
                     'findRepoByName',
                     'processedPromos'
                 ]),
