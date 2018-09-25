@@ -42,7 +42,9 @@
     				<div class="row">
     				    <div class="col-md-12">
             				<div class="details_store_desc">
-            				    <h4 class="details_store_title">{{ currentPromo.name }}</h4>
+            				    <h4 class="details_store_title" v-if="locale=='en-ca'">{{ currentPromo.name_short }}</h4>
+							    <h4 class="details_store_title" v-else>{{ currentPromo.name_short_2 }}</h4>
+            				    <p class="event_dates"><span v-if="isMultiDay(item)">{{ item.start_date | moment("MMMM D", timezone)}} - {{ item.end_date | moment("MMMM D", timezone)}}</span><span v-else>{{ item.start_date | moment("MMMM D", timezone)}}</span></p>
             				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>
 				                <div v-else v-html="currentPromo.rich_description_2"></div>
             				</div>
@@ -104,6 +106,13 @@
                 ])
             },
             methods: {
+                loadData: async function() {
+                    try {
+                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "promotions")]);
+                    } catch (e) {
+                        console.log("Error loading data: " + e.message);
+                    }
+                },
                 updateCurrentPromo (id) {
                     this.currentPromo = this.findPromoBySlug(id);
                     if (this.currentPromo != null || this.currentPromo != undefined){
@@ -121,11 +130,14 @@
                         this.$router.replace({ name: '404'});
                     }
                 },
-                loadData: async function() {
-                    try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "promotions")]);
-                    } catch (e) {
-                        console.log("Error loading data: " + e.message);
+                isMultiDay(promo) {
+                    var timezone = this.timezone
+                    var start_date = moment(promo.start_date).tz(timezone).format("MM-DD-YYYY");
+                    var end_date = moment(promo.end_date).tz(timezone).format("MM-DD-YYYY");
+                    if (start_date === end_date) {
+                        return false
+                    } else {
+                        return true
                     }
                 }
             }
