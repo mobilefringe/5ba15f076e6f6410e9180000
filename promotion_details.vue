@@ -11,26 +11,39 @@
         			</div>
         		</div>
         		<div class="site_container page_content">
-        		    <div class="margin_60"></div>
-        			<div id="promos_container">
-    					<div class="promo_container">
-    					    <div class="promo_content center">
-    					        <p class="promo_title" v-if="currentPromo.store">{{ currentPromo.store.name }}</p>
-    					        <p class="promo_title" v-else>{{ property.name }}</p>
-    					        <h3 class="margin_60" v-if="locale=='en-ca'">{{ currentPromo.name }}</h3>
-    							<h3 class="margin_60" v-else>{{ currentPromo.name_2 }}</h3>
-    							<p class="promo_desc">
-    							    {{ currentPromo.start_date | moment("MMM D", timezone) }} - {{ currentPromo.end_date | moment("MMM D", timezone) }}
-    							</p>
-    					    </div>
-    					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>
-    					    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>
-    					    <div class="promo_details_desc">
-            				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>
-            				    <div v-else v-html="currentPromo.rich_description_2"></div>
-            				</div>
-    					</div>
-        			</div>
+        		    <div class="promo_container" v-if="currentPromo">
+					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>
+					    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>
+					    <div class="promo_content">
+					        <p class="promo_title" v-if="currentPromo.store">{{ currentPromo.store.name }}</p>
+					        <p class="promo_title" v-else>{{ property.name }}</p>
+					        <h3 class="center caps" v-if="locale=='en-ca'">{{ currentPromo.name_short }}</h3>
+							<h3 class="center caps" v-else>{{ currentPromo.name_short_2 }}</h3>
+							<router-link :to="'/promotions/'+ currentPromo.slug">
+							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+						    </router-link>
+					    </div>
+					</div>
+    					
+        	<!--		<div id="promos_container">-->
+    					<!--<div class="promo_container">-->
+    					<!--    <div class="promo_content center">-->
+    					<!--        <p class="promo_title" v-if="currentPromo.store">{{ currentPromo.store.name }}</p>-->
+    					<!--        <p class="promo_title" v-else>{{ property.name }}</p>-->
+    					<!--        <h3 class="margin_60" v-if="locale=='en-ca'">{{ currentPromo.name }}</h3>-->
+    					<!--		<h3 class="margin_60" v-else>{{ currentPromo.name_2 }}</h3>-->
+    					<!--		<p class="promo_desc">-->
+    					<!--		    {{ currentPromo.start_date | moment("MMM D", timezone) }} - {{ currentPromo.end_date | moment("MMM D", timezone) }}-->
+    					<!--		</p>-->
+    					<!--    </div>-->
+    					<!--    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>-->
+    					<!--    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>-->
+    					<!--    <div class="promo_details_desc">-->
+         <!--   				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>-->
+         <!--   				    <div v-else v-html="currentPromo.rich_description_2"></div>-->
+         <!--   				</div>-->
+    					<!--</div>-->
+        	<!--		</div>-->
 		        </div>
 		    </div>
 		</transition>
