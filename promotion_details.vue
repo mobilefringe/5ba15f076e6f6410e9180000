@@ -11,7 +11,7 @@
         			</div>
         		</div>
         		<div class="site_container page_content">
-        		    <div class="promo_container" v-if="currentPromo">
+        		    <div class="promo_container promo_details" v-if="currentPromo">
 					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>
 					    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>
 					    <div class="promo_content">
@@ -24,21 +24,6 @@
 						    </router-link>
 					    </div>
 					</div>
-    					
-        	<!--		<div id="promos_container">-->
-    					<!--<div class="promo_container">-->
-    					<!--    <div class="promo_content center">-->
-    					<!--        <p class="promo_title" v-if="currentPromo.store">{{ currentPromo.store.name }}</p>-->
-    					<!--        <p class="promo_title" v-else>{{ property.name }}</p>-->
-    					<!--        <h3 class="margin_60" v-if="locale=='en-ca'">{{ currentPromo.name }}</h3>-->
-    					<!--		<h3 class="margin_60" v-else>{{ currentPromo.name_2 }}</h3>-->
-    					<!--		<p class="promo_desc">-->
-    					<!--		    {{ currentPromo.start_date | moment("MMM D", timezone) }} - {{ currentPromo.end_date | moment("MMM D", timezone) }}-->
-    					<!--		</p>-->
-    					<!--    </div>-->
-    					<!--    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>-->
-    					<!--    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>-->
-    					
     				<div class="row">
     				    <div class="col-md-12">
             				<div class="details_store_desc">
