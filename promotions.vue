@@ -12,7 +12,7 @@
         		</div>
         		<div class="site_container page_content">
         			<div v-if="promotions.length > 0">
-        				<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="3">
+        				<!--<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="3">-->
         					<div class="promo_container" v-for="(promo, index) in paginated('promos')">
         					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
         					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
@@ -26,7 +26,7 @@
         						    </router-link>
         					    </div>
         					</div>
-        				</paginate>
+        				<!--</paginate>-->
         			</div>
         			<div class="row" v-else>
         				<div class="col-md-12">
@@ -34,10 +34,16 @@
         				</div>
         			</div>
         			<div class="row">
-        				<div class="col-md-12">
-        					<paginate-links for="promos" :async="true" :limit="3" :show-step-links="true"></paginate-links>
-        				</div>
-        			</div>
+                        <div class="col-md-12">
+                            <button class="animated_btn event_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>
+                            <p v-if="noEvents">No More Promotions</p>
+                        </div>
+                    </div>
+        			<!--<div class="row">-->
+        			<!--	<div class="col-md-12">-->
+        			<!--		<paginate-links for="promos" :async="true" :limit="3" :show-step-links="true"></paginate-links>-->
+        			<!--	</div>-->
+        			<!--</div>-->
         		</div>
 	        </div>
 	    </transition>
@@ -56,22 +62,36 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    promos : null,
-                    paginate: ['promos']
+                    // promos : null,
+                    // paginate: ['promos']
+                    
+                    events: [],
+                    moreEvents: [],
+                    moreEventsFetched: false,
+                    noMoreEvents: false,
+                    noEvents: false
                 }
             },
             created() {
                 this.loadData().then(response => {
-                    this.dataLoaded = true;
-                    
                     var temp_repo = this.findRepoByName('Promotions Banner');
-                    if(temp_repo) {
-                        this.pageBanner = temp_repo.images[0];
+                    if (temp_repo) {
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    console.log(this.pageBanner);
-                    this.promos = this.promotions;
-                    console.log(this.promos);
+                    // console.log(this.pageBanner);
+                    // this.promos = this.promotions;
+                    // console.log(this.promos);
+                    
+                    this.handleButton();
+                    this.dataLoaded = true;
                 });
+                
             },
             computed: {
                 ...Vuex.mapGetters([
@@ -110,6 +130,26 @@
                         let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "promotions")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
+                    }
+                },
+                handleButton: function () {
+                    if(!this.moreEventsFetched){
+                        this.moreEvents = this.promoList;
+                        this.events = this.moreEvents.splice(0, 3);
+                        this.moreEventsFetched = true;
+                    } else {
+                        var nextEvents = this.moreEvents.splice(0, 3);
+                        // Add 3 more posts to posts array
+                        var vm = this;
+                        _.forEach(nextEvents, function(value, key) {
+                            vm.events.push(value);
+                        });
+                    }
+                    if(this.promoList.length === 0){
+                        this.noMoreEvents = true
+                        this.noEvents = true
+                    } else {
+
                     }
                 }
             }
