@@ -119,7 +119,7 @@
                 },
                 handleButton: function () {
                     if(!this.moreEventsFetched){
-                        this.moreEvents = this.events;
+                        this.moreEvents = this.eventList;
                         this.events = this.moreEvents.splice(0, 3);
                         this.moreEventsFetched = true;
                     } else {
@@ -130,7 +130,7 @@
                             vm.events.push(value);
                         });
                     }
-                    if(this.events.length === 0){
+                    if(this.eventList.length === 0){
                         this.noMoreEvents = true
                         this.noEvents = true
                     } else {
