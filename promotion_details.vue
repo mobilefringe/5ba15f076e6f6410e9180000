@@ -38,10 +38,17 @@
     					<!--    </div>-->
     					<!--    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="currentPromo.image_url"></div>-->
     					<!--    <div class="promo_img" v-else v-lazy:background-image="currentPromo.promo_image2_url_abs"></div>-->
-				    <div class="promo_details_desc">
-    				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>
-    				    <div v-else v-html="currentPromo.rich_description_2"></div>
-    				</div>
+    					
+    				<div class="row">
+    				    <div class="col-md-12">
+            				<div class="details_store_desc">
+            				    <h4 class="details_store_title caps">{{ currentPromo.name }}</h4>
+            				    <div v-if="locale=='en-ca'" v-html="currentPromo.rich_description"></div>
+				                <div v-else v-html="currentPromo.rich_description_2"></div>
+            				</div>
+            			</div>	
+            		</div>	
+    			
 		        </div>
 		    </div>
 		</transition>
