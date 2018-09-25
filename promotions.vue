@@ -74,10 +74,7 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    // console.log(this.pageBanner);
-                    // this.promos = this.promotions;
-                    // console.log(this.promos);
-                    
+
                     this.handleButton();
                     this.dataLoaded = true;
                 });
