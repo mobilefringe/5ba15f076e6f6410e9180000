@@ -11,23 +11,19 @@
         			</div>
         		</div>
         		<div class="site_container page_content">
-        			<div >
-        				
-    					<div class="promo_container" v-if="promos" v-for="promo in promos">
-    					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
-    					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
-    					    <div class="promo_content">
-    					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
-    					        <p class="promo_title" v-else>{{ property.name }}</p>
-    					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
-    							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
-    							<router-link :to="'/promotions/'+ promo.slug">
-								   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
-    						    </router-link>
-    					    </div>
-    					</div>
-
-        			</div>
+					<div class="promo_container" v-if="promos" v-for="promo in promos">
+					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
+					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
+					    <div class="promo_content">
+					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
+					        <p class="promo_title" v-else>{{ property.name }}</p>
+					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
+							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
+							<router-link :to="'/promotions/'+ promo.slug">
+							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+						    </router-link>
+					    </div>
+					</div>
         			<div class="row" v-else>
         				<div class="col-md-12">
         					<p>{{$t("promos_page.no_promo_message")}}</p>
@@ -35,15 +31,10 @@
         			</div>
         			<div class="row">
                         <div class="col-md-12">
-                            <button class="animated_btn event_load_more" v-if="!noMoreEvents" @click="handleButton">Load More</button>
-                            <p v-if="noEvents">No More Promotions</p>
+                            <button class="animated_btn event_load_more" v-if="!noMorePromos" @click="handleButton">Load More</button>
+                            <p v-if="noPromos">No More Promotions</p>
                         </div>
                     </div>
-        			<!--<div class="row">-->
-        			<!--	<div class="col-md-12">-->
-        			<!--		<paginate-links for="promos" :async="true" :limit="3" :show-step-links="true"></paginate-links>-->
-        			<!--	</div>-->
-        			<!--</div>-->
         		</div>
 	        </div>
 	    </transition>
@@ -51,10 +42,9 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load", "vue-paginate"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload, VuePaginate) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-meta", "vue-lazy-load"], function(Vue, Vuex, moment, tz, VueMoment, Meta, VueLazyload) {
         Vue.use(Meta);
         Vue.use(VueLazyload);
-        Vue.use(VuePaginate);
         return Vue.component("promos-component", {
             template: template, // the variable template will be injected
             props:['locale'],
@@ -62,14 +52,11 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    // promos : null,
-                    // paginate: ['promos']
-                    
-                    events: [],
-                    moreEvents: [],
-                    moreEventsFetched: false,
-                    noMoreEvents: false,
-                    noEvents: false
+                    promos: [],
+                    morePromos: [],
+                    morePromosFetched: false,
+                    noMorePromos: false,
+                    noPromos: false
                 }
             },
             created() {
@@ -132,21 +119,21 @@
                     }
                 },
                 handleButton: function () {
-                    if(!this.moreEventsFetched){
-                        this.moreEvents = this.promotions;
-                        this.events = this.moreEvents.splice(0, 3);
-                        this.moreEventsFetched = true;
+                    if(!this.morePromosFetched){
+                        this.morePromos = this.promotions;
+                        this.promos = this.morePromos.splice(0, 3);
+                        this.morePromosFetched = true;
                     } else {
-                        var nextEvents = this.moreEvents.splice(0, 3);
+                        var nextPromos = this.morePromos.splice(0, 3);
                         // Add 3 more posts to posts array
                         var vm = this;
-                        _.forEach(nextEvents, function(value, key) {
-                            vm.events.push(value);
+                        _.forEach(nextPromos, function(value, key) {
+                            vm.promos.push(value);
                         });
                     }
                     if(this.promotions.length === 0){
-                        this.noMoreEvents = true
-                        this.noEvents = true
+                        this.noMorePromos = true
+                        this.noPromos = true
                     } else {
 
                     }
