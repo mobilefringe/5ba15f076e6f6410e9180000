@@ -134,7 +134,7 @@
                 },
                 handleButton: function () {
                     if(!this.moreEventsFetched){
-                        this.moreEvents = this.promoList;
+                        this.moreEvents = this.promotions;
                         this.events = this.moreEvents.splice(0, 3);
                         this.moreEventsFetched = true;
                     } else {
@@ -145,7 +145,7 @@
                             vm.events.push(value);
                         });
                     }
-                    if(this.promoList.length === 0){
+                    if(this.promotions.length === 0){
                         this.noMoreEvents = true
                         this.noEvents = true
                     } else {
