@@ -6,39 +6,39 @@
         		<div class="page_header" v-if="pageBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
         			<div class="site_container">
         				<div class="header_content caps">
-        					<h1>{{ $t("events_page.events_header") }}</h1>
+        					<h1>{{ $t("promos_page.promos_header") }}</h1>
         				</div>
         			</div>
         		</div>
         		<div class="site_container page_content">
-        			<div id="promos_container" class="clearfix" v-if="promos.length > 0">
-        				<paginate name="promos" v-if="promos" :list="promos" class="paginate-list margin-60" :per="3">
-        					<div class="promo_container clearfix" v-for="(promo, index) in paginated('promos')">
-        					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
-        					    <div class="promo_img" v-else v-lazy:background-image="promo.event_image2_url_abs"></div>
-        					    <div class="promo_content">
-        					        <p class="promo_title">{{ $t("events_page.events") }}</p>
-        					        <h3 class="" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
-        							<h3 class="" v-else>{{ promo.name_short_2 }}</h3>
-        					        <p class="promo_desc"  v-if="locale=='en-ca'" >{{ promo.description_short }}</p>
-        							<p class="promo_desc" v-else>{{ promo.description_short_2 }}</p>
-        							<router-link :to="'/events/'+ promo.slug" >
-        								   <div class="promo_learn_more animated_btn">{{ $t("events_page.read_more") }}</div>
-        						    </router-link>
-        					    </div>
-        					</div>
-        				</paginate>
-        			</div>
-        			<div class="row" v-else>
-        				<div class="col-md-12">
-        					<p>{{$t("events_page.no_event_message")}}</p>
-        				</div>
-        			</div>
+        		    <transition-group name="list" tag="div">
+    					<div class="promo_container" v-if="promos" v-for="promo in promos" :key="promo.id">
+    					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
+    					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
+    					    <div class="promo_content">
+    					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
+    					        <p class="promo_title" v-else>{{ property.name }}</p>
+    					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
+    							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
+    							<router-link :to="'/promotions/'+ promo.slug">
+    							   <div class="promo_learn_more animated_btn">{{ $t("promos_page.read_more") }}</div>
+    						    </router-link>
+    					    </div>
+    					</div>
+    					<div v-else>
+                            <div class="row">
+                                <div class="col-md-12">
+                                    <p>{{$t("promos_page.no_promo_message")}}</p>    
+                                </div>
+                            </div>
+                        </div>
+    				</transition-group>
         			<div class="row">
-        				<div class="col-md-12">
-        					<paginate-links for="promos" :async="true" :limit="3" :show-step-links="true"></paginate-links>
-        				</div>
-        			</div>
+                        <div class="col-md-12">
+                            <button class="animated_btn promo_load_more" v-if="!noMorePromos" @click="handleButton">Load More</button>
+                            <p v-if="noPromos">{{$t("promos_page.no_more_promo_message")}}</p>
+                        </div>
+                    </div>
         		</div>
 	        </div>
 	    </transition>
