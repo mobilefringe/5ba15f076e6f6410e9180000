@@ -104,7 +104,7 @@
         "promotions_title" : "Upcoming Promotions",
         "promotions" : "Promotion",
         "read_more" : "Check It Out",
-        "no_promo_message" : "No More Promotions",
+        "no_more_promo_message" : "No More Promotions",
         "no_promo_message" : "There are no Promotions at this time. Please check back soon.",
         "back_to_promos" : "Back to Promotions"
     },
