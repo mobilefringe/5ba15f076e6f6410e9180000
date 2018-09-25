@@ -11,7 +11,7 @@
         			</div>
         		</div>  
                 <div class="site_container">
-                    <div class="row">
+                    <div class="row margin_30">
                         <div class="col-md-3">
                             <div class="map_search_container">
                                 <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :placeholder="$t('stores_page.find_your_store')">
