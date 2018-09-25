@@ -30,8 +30,8 @@
                         </div>
                         <div class="margin-30 visible-mobile"></div>
                         <div class="col-md-3 col-md-pull-9">
-                            <div class="store_list">
-                                <div class="store_list_container hidden-mobile" v-if="filteredStores">
+                            <div class="store_list_container hidden-mobile">
+                                <div  v-if="filteredStores">
                                     <div class="store_name" v-for="store in filteredStores">
                                         <p v-on:click="addLandmark(store)">{{store.name}}</p>
                                     </div>
