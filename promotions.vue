@@ -94,7 +94,7 @@
                             value.image_url = "https://placehold.it/1560x800/757575";
                         }
                         if (_.includes(value.promo_image2_url_abs, 'missing')) {
-                            value.promo_image2_url_abs = "https://placehold.it/1560x800/757575";
+                            value.promo_image2_url_abs = "https://placehold.it/1600x800/757575";
                         }
                         
                         temp_promo.push(value);
