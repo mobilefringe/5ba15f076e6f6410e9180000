@@ -27,7 +27,7 @@
         			        <div class="" v-html="pageBody.body"></div>
         			    </div>
         			   <div class="col-md-8">
-        			       <img class="max_width" src="http://placehold.it/744x980/bada55" alt="" />
+        			       <img class="max_width" src="http://placehold.it/1522x1196" alt="" />
         			   </div>
         		    </div>
                 </div>
@@ -91,6 +91,19 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
+                selectGroundFloor(item) {
+                    this.show = !this.show
+                    _.forEach(this.gallery1, function (value, key) {
+                      value.isActive = false;
+                    });
+                    
+                    var selected_item = item
+                    this.$nextTick(function () {
+                      selected_item.isActive = true;
+                    });
+            
+                    this.groundFloor = selected_item;
+                }
             }
         });
     });
