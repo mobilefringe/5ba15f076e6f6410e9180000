@@ -99,6 +99,11 @@
         "thank_you_message" : "Thank you for subscribing to our newsletter. You'll hear from us soon!",
         "error_message" : "There was an error when trying to submit your request. Please try again later."
     },
+    "programs_page" : {
+        "programs_header" : "Programs",
+        "scoop_title" : "Southland Scoop",
+        "kids_club_title" : "Kids Club"
+    }, 
     "promos_page": {
         "promos_header_desc" : "Find The Best Deals at ",
         "promos_header" : "Promotions",
