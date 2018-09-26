@@ -42,15 +42,17 @@
             created(){
                 this.loadData().then(response => {
                     console.log(this.$route)
-                    var temp_repo = this.findRepoByName('Kids Club Banner');
-                    if (temp_repo) {
-                        try {
-                            this.pageBanner = temp_repo.images[0];
-                        } catch(e) {
-                            
+                    if (_.includes(this.$route.path, 'kids-club')) {
+                        var temp_repo = this.findRepoByName('Kids Club Banner');
+                        if (temp_repo) {
+                            try {
+                                this.pageBanner = temp_repo.images[0];
+                            } catch(e) {
+                                
+                            }
+                        } else {
+                            this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                         }
-                    } else {
-                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
                     
                    this.dataLoaded = true;
