@@ -16,8 +16,10 @@
     					    <div class="promo_img" v-if="locale=='en-ca'" v-lazy:background-image="promo.image_url"></div>
     					    <div class="promo_img" v-else v-lazy:background-image="promo.promo_image2_url_abs"></div>
     					    <div class="promo_content">
-    					        <p class="promo_title" v-if="promo.store">{{ promo.store.name }}</p>
-    					        <p class="promo_title" v-else>{{ property.name }}</p>
+    					        <p class="promo_title">
+    					            <span v-if="isMultiDay(promo)">{{ promo.start_date | moment("MMM D", timezone)}} - {{ promo.end_date | moment("MMM D", timezone)}}</span>
+    					            <span v-else>{{ promo.start_date | moment("MMM D", timezone)}}</span>
+    					        </p>
     					        <h3 class="center caps" v-if="locale=='en-ca'">{{ promo.name_short }}</h3>
     							<h3 class="center caps" v-else>{{ promo.name_short_2 }}</h3>
     							<router-link :to="'/events/'+ promo.slug">
@@ -115,6 +117,16 @@
                         let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "events")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
+                    }
+                },
+                isMultiDay(promo) {
+                    var timezone = this.timezone
+                    var start_date = moment(promo.start_date).tz(timezone).format("MM-DD-YYYY");
+                    var end_date = moment(promo.end_date).tz(timezone).format("MM-DD-YYYY");
+                    if (start_date === end_date) {
+                        return false
+                    } else {
+                        return true
                     }
                 },
                 handleButton: function () {
