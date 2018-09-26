@@ -16,7 +16,7 @@
     				        {{ $t("programs_page.scoop_title") }}
         				</div>
         				<div class="program_button_container animated_btn">
-        				    <router-link to="/southland-scoop">
+        				    <router-link to="/kids-club">
         				        {{ $t("programs_page.kids_club_title") }}
         				    </router-link>
         				</div>
