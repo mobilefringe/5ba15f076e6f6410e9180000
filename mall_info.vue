@@ -65,7 +65,7 @@
                     this.leasingContent = response[1];
                     this.marketingContent = response[2];
                     this.areaContent = response[3];
-
+                    this.pages
                     this.dataLoaded = true;
                 });
             },
@@ -74,7 +74,12 @@
                     'property',
                     'timezone',
                     'findRepoByName'
-                ])
+                ]),
+                pages() {
+                    var pages_json = [];
+                    pages_json = _.concat(pages_json, this.leasingContent, this.marketingContent, this.areaContent)
+                    console.log(pages_json)
+                }
             },
             methods: {
                 loadData: async function() {
