@@ -62,9 +62,9 @@
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
                     console.log(response)
-                    // this.leasingContent
-                    // this.marketingContent
-                    // this.areaContent
+                    this.leasingContent = response[1];
+                    this.marketingContent = response[2];
+                    this.areaContent = response[3];
 
                     this.dataLoaded = true;
                 });
