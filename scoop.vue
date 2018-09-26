@@ -75,8 +75,8 @@
                             
                         }
                     }
-                    console.log(response)
-                   this.dataLoaded = true;
+                    
+                    this.dataLoaded = true;
                 });
             },
             computed: {
@@ -84,8 +84,7 @@
                     'property',
                     'timezone',
                     'findRepoByName'
-                ]),
-
+                ])
             },
             methods: {
                 loadData: async function() {
