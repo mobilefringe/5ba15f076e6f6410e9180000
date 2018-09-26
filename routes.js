@@ -1,111 +1,8 @@
 define([], function() {
-    return [{
+    return [
+        {
             path: '/',
             component: view('home')
-        },
-        {
-            path: '/stores',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('stores'),
-                    name: 'storeList'
-                },
-                {
-                    path: ':id',
-                    component: view('store_details'),
-                    name: 'storeDetails',
-                    props: true
-                }
-            ]
-        },
-        {
-            path: '/play',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('play'),
-                    name: 'storeList'
-                }
-            ]
-        },
-        {
-            path: '/dine',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('dine'),
-                    name: 'storeList'
-                }
-            ]
-        },
-        {
-            path: '/promotions',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('promotions'),
-                    name: 'promoList'
-                },
-                {
-                    path: ':id',
-                    component: view('promotion_details'),
-                    name: 'promotionDetails',
-                    props: true
-
-                }
-            ]
-        },
-        {
-            path: '/events',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('events'),
-                    name: 'eventList'
-                },
-                {
-                    path: ':id',
-                    component: view('event_details'),
-                    name: 'eventDetails',
-                    props: true
-                }
-            ]
-        },
-        {
-            path: '/jobs',
-            component: view('default'),
-            children: [{
-                    path: '',
-                    component: view('jobs'),
-                    name: 'jobList'
-                },
-                {
-                    path: ':id',
-                    component: view('job_details'),
-                    name: 'jobDetails',
-                    props: true
-                }
-            ]
-        },
-        {
-            path: '/map',
-            component: view('default'),
-            redirect: '/404',
-            children: [{
-                path: '',
-                component: view('map'),
-                name: 'map'
-            }]
-        },
-        {
-            path: '/hours',
-            component: view('hours'),
-            children: [{
-                path: '',
-                component: view('hours'),
-                name: 'hourList',
-            }]
         },
         {
             path: '/contest',
@@ -126,6 +23,72 @@ define([], function() {
             }]
         },
         {
+            path: '/dine',
+            component: view('default'),
+            children: [{
+                    path: '',
+                    component: view('dine'),
+                    name: 'dineList'
+                }
+            ]
+        },
+        {
+            path: '/events',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('events'),
+                    name: 'eventList'
+                },
+                {
+                    path: ':id',
+                    component: view('event_details'),
+                    name: 'eventDetails',
+                    props: true
+                }
+            ]
+        },
+        {
+            path: '/hours',
+            component: view('hours'),
+            children: [
+                {
+                    path: '',
+                    component: view('hours'),
+                    name: 'hourList',
+                }
+            ]
+        },
+        {
+            path: '/jobs',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('jobs'),
+                    name: 'jobList'
+                },
+                {
+                    path: ':id',
+                    component: view('job_details'),
+                    name: 'jobDetails',
+                    props: true
+                }
+            ]
+        },
+        {
+            path: '/map',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('map'),
+                    name: 'map'
+                }
+            ]
+        },
+        {
             path: '/newsletter',
             component: view('default'),
             children: [{
@@ -138,7 +101,6 @@ define([], function() {
         {
             path: '/pages',
             component: view('default'),
-            redirect: '/',
             children: [{
                 path: ':id',
                 component: view('page_details'),
@@ -147,13 +109,61 @@ define([], function() {
             }]
         },
         {
+            path: '/play',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('play'),
+                    name: 'playList'
+                }
+            ]
+        },
+        {
+            path: '/promotions',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('promotions'),
+                    name: 'promoList'
+                },
+                {
+                    path: ':id',
+                    component: view('promotion_details'),
+                    name: 'promotionDetails',
+                    props: true
+
+                }
+            ]
+        },
+        {
+            path: '/stores',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('stores'),
+                    name: 'storeList'
+                },
+                {
+                    path: ':id',
+                    component: view('store_details'),
+                    name: 'storeDetails',
+                    props: true
+                }
+            ]
+        },
+        {
             path: '/thank-you',
             component: view('default'),
-            children: [{
-                path: '',
-                component: view('thank_you'),
-                name: 'thankYou'
-            }]
+            children: [
+                {
+                    path: '',
+                    component: view('thank_you'),
+                    name: 'thankYou'
+                }
+            ]
         },
         {
             path: '*',
