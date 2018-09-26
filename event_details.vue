@@ -48,7 +48,7 @@
 <script>
     define(['Vue', 'vuex', "moment", "moment-timezone", 'vue-lazy-load'], function(Vue, Vuex, moment, tz, VueLazyload) {
         Vue.use(VueLazyload);
-        return Vue.component("event-details-component", {
+        return Vue.component("events-details-component", {
             template: template, // the variable template will be injected,
             props:['id', 'locale'],
             data: function() {
