@@ -94,21 +94,18 @@
     define(["Vue", "vuex", "vue-meta", "vee-validate", "utility"], function(Vue, Vuex, Meta, VeeValidate, Utility) {
         Vue.use(Meta);
         Vue.use(VeeValidate);
-        return Vue.component("contact-us-component", {
+        return Vue.component("kids-club-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    form_data : {},
-                    formSuccess : false,
-                    formError: false
                 }
             },
             created(){
                 this.loadData().then(response => {
                     var temp_repo = this.findRepoByName('Kids Club Banner');
-                    if(temp_repo) {
+                    if (temp_repo) {
                         try {
                             this.pageBanner = temp_repo.images[0];
                         } catch(e) {
