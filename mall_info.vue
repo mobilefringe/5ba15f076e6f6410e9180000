@@ -13,13 +13,13 @@
         		<div class="site_container">
                     <div class="program_header_container">
     				    <div class="program_button_container animated_btn">
-    				        {{ $t("mall_info.scoop_title") }}
+    				        {{ $t("mall_info.leasing") }}
     				    </div>
     				    <div class="program_button_container animated_btn">
-    				        {{ $t("mall_info.scoop_title") }}
+    				        {{ $t("mall_info.marketing") }}
     				    </div>
         				<div class="program_button_container active">
-        				    {{ $t("mall_info.kids_club_title") }}
+        				    {{ $t("mall_info.area") }}
         				</div>
         			</div>
         			<div v-if="pageHeader" class="row">
