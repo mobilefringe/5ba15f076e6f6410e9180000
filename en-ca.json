@@ -84,7 +84,7 @@
         "desc_title" : "Job Description"
     },
     "mall_info" : {
-        "info_header" : "",
+        "info_header" : "Mall Info",
         "leasing" : "Leasing",
         "marketing" : "Marketing Partners",
         "area" : "Area Info"
