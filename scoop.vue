@@ -15,11 +15,11 @@
         				<div class="program_button_container active">
     				        {{ $t("programs_page.scoop_title") }}
         				</div>
-        				<div class="program_button_container animated_btn">
-        				    <router-link to="/kids-club">
+        				<router-link to="/kids-club">
+        				    <div class="program_button_container animated_btn">
         				        {{ $t("programs_page.kids_club_title") }}
-        				    </router-link>
-        				</div>
+        				    </div>
+    				    </router-link>
         			</div>
         			<div v-if="pageHeader" class="row">
         			    <div class="col-md-12">
