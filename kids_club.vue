@@ -19,7 +19,11 @@
         				    
         				</div>
         			</div>
-        			
+        			<div class="row">
+        			    <div class="col-md-12">
+        			        <h4 v-html=""></h4>
+        			    </div>
+        			</div>
         			
                 </div>
             </div>
@@ -35,23 +39,22 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
+                    currentPage: null,
                 }
             },
             created(){
                 this.loadData().then(response => {
-                    console.log(this.$route)
-                    if (_.includes(this.$route.path, 'kids-club')) {
-                        var temp_repo = this.findRepoByName('Kids Club Banner');
-                        if (temp_repo) {
-                            try {
-                                this.pageBanner = temp_repo.images[0];
-                            } catch(e) {
-                                
-                            }
-                        } else {
-                            this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
+                    var temp_repo = this.findRepoByName('Kids Club Banner');
+                    if (temp_repo) {
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
                         }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
+
                     
                    this.dataLoaded = true;
                 });
