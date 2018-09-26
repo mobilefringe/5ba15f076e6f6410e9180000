@@ -107,7 +107,7 @@
             },
             created(){
                 this.loadData().then(response => {
-                    var temp_repo = this.findRepoByName('Contact Us Banner');
+                    var temp_repo = this.findRepoByName('Kids Club Banner');
                     if(temp_repo) {
                         try {
                             this.pageBanner = temp_repo.images[0];
@@ -121,49 +121,15 @@
                    this.dataLoaded = true;
                 });
             },
-            mounted () {
-                // Ensuring the variables are created in this order for email
-                this.form_data.name = null;
-                this.form_data.email = null;
-                this.form_data.phone = null;
-                this.form_data.subject = this.property.name + ' Contact Us Form';
-                this.form_data.message = null;
-            },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
                     'findRepoByName'
                 ]),
-                getPropertyAddress() {
-                    return this.property.name + ' ' + this.property.address1 + ' ' + this.property.city + ' ' + this.property.province_state + ' ' + this.property.country;
-                }
+
             },
             methods: {
-                validateBeforeSubmit() {
-                    this.$validator.validateAll().then((result) => {
-                        this.validNumError = false;
-                        let errors = this.errors;
-                        send_data = {};
-                        send_data.form_data = JSON.stringify(Utility.serializeObject(this.form_data));
-                        this.$store.dispatch("CONTACT_US", send_data).then(res => {
-                            this.formSuccess = true;
-                        }).catch(error => {
-                            try {
-                                if (error.response.status == 401) {
-                                    console.log("Data load error: " + error.message);
-                                    this.formError = true;
-                                } else {
-                                    console.log("Data load error: " + error.message);
-                                    this.formError = true;
-                                }
-                            } catch (e) {
-                                console.log("Data load error: " + error.message);
-                                this.formError = true;
-                            }
-                        });
-                    });
-                },
                 loadData: async function() {
                     try {
                         let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch('LOAD_PAGE_DATA', {url: this.property.mm_host + "/pages/southland-kids-club.json"})]);
