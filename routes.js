@@ -78,6 +78,17 @@ define([], function() {
             ]
         },
         {
+            path: '/kids-club',
+            component: view(''),
+            children: [
+                {
+                    path: '',
+                    compoanent: view('kids_club'),
+                    name: 'kidsClub'
+                }    
+            ]
+        },
+        {
             path: '/map',
             component: view('default'),
             children: [
