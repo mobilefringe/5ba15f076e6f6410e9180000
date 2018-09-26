@@ -19,7 +19,6 @@
 							    <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
 						    </router-link>
 						</div>
-						<!--<div class="mobile_menu_icon visible_phone" @click="showMenu = !showMenu">-->
 				        <div id="menu-icon" @click="showMenu = !showMenu" :class="{ open: showMenu }" class="visible_phone hamburger">
             				<div class="hamburger__line">
             					<span class="hamburger__dots"></span>
@@ -37,7 +36,6 @@
             					<span class="hamburger__dots"></span>
             				</div> 
             			</div>
-					    <!--</div>-->
 					</div>
 					<div class="hidden_phone">
 					    <div class="header_search_container">
