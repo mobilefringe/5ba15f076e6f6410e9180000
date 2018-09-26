@@ -18,7 +18,7 @@
     				    <div class="program_button_container animated_btn">
     				        {{ $t("mall_info.marketing") }}
     				    </div>
-        				<div class="program_button_container animated_btn" @click="selectContent()" v-bind:class="{ selected: item.isActive }">
+        				<div class="program_button_container animated_btn" @click="selectContent()" > <!-- v-bind:class="{ selected: item.isActive }" -->
         				    {{ $t("mall_info.area") }}
         				</div>
         			</div>
