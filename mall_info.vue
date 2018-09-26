@@ -61,16 +61,10 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    
-                    if (response[1]) {
-                        try {
-                            this.pageHeader = response[1].data
-                            // this.pageBody = response[1].data.subpages[0]
-                            // this.pageImage = "//www.mallmaverick.com"
-                        } catch (e) {
-                            
-                        }
-                    }
+                    console.log(response)
+                    // this.leasingContent
+                    // this.marketingContent
+                    // this.areaContent
 
                     this.dataLoaded = true;
                 });
