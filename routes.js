@@ -89,6 +89,17 @@ define([], function() {
             ]
         },
         {
+            path: '/mall-information',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('mall_info'),
+                    name: 'mallInfo'
+                }
+            ]
+        },
+        {
             path: '/map',
             component: view('default'),
             children: [
