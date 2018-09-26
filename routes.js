@@ -79,7 +79,7 @@ define([], function() {
         },
         {
             path: '/kids-club',
-            component: view(''),
+            component: view('default'),
             children: [
                 {
                     path: '',
