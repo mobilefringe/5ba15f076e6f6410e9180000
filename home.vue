@@ -42,13 +42,13 @@
                         	        <a :href="feature.url">
                             			<img :src="feature.image_url" :alt="feature.name">
                             			<div class="feature_item_info">
-                            				<div class="feature_item_content">
-                            					<p>{{ feature.name }}</p>
-                            					<h3>{{ feature.description }}</h3>
-                            					<div class="feature_item_more">
-                            					    {{ $t("home_page.read_more") }}    
-                            					</div>
-                            				</div>
+                            				<!--<div class="feature_item_content">-->
+                            				<!--	<p>{{ feature.name }}</p>-->
+                            				<!--	<h3>{{ feature.description }}</h3>-->
+                            				<!--	<div class="feature_item_more">-->
+                            				<!--	    {{ $t("home_page.read_more") }}    -->
+                            				<!--	</div>-->
+                            				<!--</div>-->
                             			</div>
                             		</a>
                         	    </div>
