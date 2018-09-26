@@ -39,7 +39,9 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    currentPage: null,
+                    pageHeader: null,
+                    pageBody: null,
+                    pageImage: null
                 }
             },
             created(){
@@ -54,7 +56,12 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-
+                    
+                    if (response[1]) {
+                        try {
+                            this.currentpage
+                        }
+                    }
                     console.log(response)
                    this.dataLoaded = true;
                 });
