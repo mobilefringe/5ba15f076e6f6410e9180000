@@ -18,8 +18,9 @@
     				    <!--<div class="program_button_container animated_btn">-->
     				    <!--    {{ $t("mall_info.marketing") }}-->
     				    <!--</div>-->
-        				<div class="program_button_container animated_btn" v-for="item in pages" @click="selectContent(item)" > <!-- v-bind:class="{ selected: item.isActive }" -->
-        				    {{ $t("mall_info.area") }}
+        				<div class="program_button_container animated_btn" v-for="item in pages" @click="selectContent(item)" v-bind:class="{ selected: item.isActive }">
+        				    <!--{{ $t("mall_info.area") }}-->
+        				    {{ item.data.title }}
         				</div>
         			</div>
         			<div class="row">
