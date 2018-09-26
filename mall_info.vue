@@ -79,6 +79,7 @@
                     var pages_json = [];
                     pages_json = _.concat(pages_json, this.leasingContent, this.marketingContent, this.areaContent)
                     console.log(pages_json)
+                    return pages_json
                 }
             },
             methods: {
