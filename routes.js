@@ -171,8 +171,8 @@ define([], function() {
             children: [
                 {
                     path: '',
-                    component: view('kids_club'),
-                    name: 'kidsClub'
+                    component: view('scoop'),
+                    name: 'scoop'
                 }
             ]
         },
