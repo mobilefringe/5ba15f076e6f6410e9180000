@@ -85,7 +85,7 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                selectGroundFloor(item) {
+                selectContent(item) {
                     this.show = !this.show
                     _.forEach(this.gallery1, function (value, key) {
                       value.isActive = false;
