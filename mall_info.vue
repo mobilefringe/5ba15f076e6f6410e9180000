@@ -93,8 +93,8 @@
                 },
                 selectContent(item) {
                     this.show = !this.show
-                    _.forEach(this.gallery1, function (value, key) {
-                      value.isActive = false;
+                    _.forEach(pages, function (value, key) {
+                        value.isActive = false;
                     });
                     
                     var selected_item = item
