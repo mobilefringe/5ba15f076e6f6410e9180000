@@ -23,10 +23,10 @@
         				</div>
         			</div>
         			<div class="row">
-        			    <div class="col-md-8">
+        			    <div class="col-md-4">
         			        <div class="" v-html="pageBody.body"></div>
         			    </div>
-        			   <div class="col-md-4">
+        			   <div class="col-md-8">
         			       <img class="max_width" src="http://placehold.it/744x980/bada55" alt="" />
         			   </div>
         		    </div>
