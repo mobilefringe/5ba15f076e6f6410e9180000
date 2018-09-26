@@ -55,7 +55,7 @@
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
 
-                    
+                    console.log(response)
                    this.dataLoaded = true;
                 });
             },
