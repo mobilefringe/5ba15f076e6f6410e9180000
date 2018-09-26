@@ -166,6 +166,17 @@ define([], function() {
             ]
         },
         {
+            path: '/southland-scoop',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('kids_club'),
+                    name: 'kidsClub'
+                }
+            ]
+        },
+        {
             path: '/thank-you',
             component: view('default'),
             children: [
