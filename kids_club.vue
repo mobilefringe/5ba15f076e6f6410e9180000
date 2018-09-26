@@ -91,7 +91,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue-meta", "vee-validate", "utility"], function(Vue, Vuex, Meta, VeeValidate, Utility) {
+    define(["Vue", "vuex"], function(Vue, Vuex) {
         Vue.use(Meta);
         Vue.use(VeeValidate);
         return Vue.component("kids-club-component", {
