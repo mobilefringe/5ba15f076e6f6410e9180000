@@ -59,7 +59,7 @@
                 }
             },
             beforeRouteUpdate(to, from, next) {
-                this.currentEvent = this.findPromoBySlug(to.params.id);
+                this.currentEvent = this.findEventBySlug(to.params.id);
                     if (this.currentEvent === null || this.currentEvent === undefined){
                         this.$router.replace({ name: '404'});
                     }
@@ -102,7 +102,7 @@
                     }
                 },
                 updatecurrentEvent (id) {
-                    this.currentEvent = this.findPromoBySlug(id);
+                    this.currentEvent = this.findEventBySlug(id);
                     if (this.currentEvent != null || this.currentEvent != undefined){
                         this.currentEvent.name_short = _.truncate(this.currentEvent.name, { 'length': 21, 'separator': ' ' });
                         this.currentEvent.name_short_2 = _.truncate(this.currentEvent.name_2, { 'length': 21, 'separator': ' ' });
