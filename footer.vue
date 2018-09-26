@@ -38,17 +38,9 @@
         return Vue.component("footer-component", {
             template: template, // the variable template will be injected,
             data: function data() {
-                return {
-
-                }
+                return { }
             },
             props:['footer_menu_items', 'social_media'],
-            // created() {
-            //     this.loadData().then(response => {
-            //         this.dataLoaded = true;
-
-            //     });
-            // },
             computed: {
                 ...Vuex.mapGetters([
                     'property',
