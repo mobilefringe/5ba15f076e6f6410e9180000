@@ -24,7 +24,7 @@
         			</div>
         			<div class="row">
         			    <div class="col-md-4">
-        			        <div class="" v-html="pageBody.body"></div>
+        			        <div class="" v-html=""></div>
         			    </div>
         			   <div class="col-md-8">
         			       <img class="max_width" src="http://placehold.it/1522x1196" alt="" />
