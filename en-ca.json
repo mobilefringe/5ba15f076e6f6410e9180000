@@ -83,6 +83,12 @@
         "back_to_jobs" : "Back to Jobs",
         "desc_title" : "Job Description"
     },
+    "mall_info" : {
+        "info_header" : "",
+        "leasing" : "Leasing",
+        "marketing" : "Marketing Partners",
+        "area" : "Area Info"
+    },
     "map_page" : {
         "header_title" : "Mall Map",
         "no_stores" : "0 Stores Match Search"
