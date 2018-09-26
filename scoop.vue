@@ -12,13 +12,13 @@
         		</div>
         		<div class="site_container">
                     <div class="program_header_container">
+        				<div class="program_button_container active">
+    				        {{ $t("programs_page.scoop_title") }}
+        				</div>
         				<div class="program_button_container animated_btn">
         				    <router-link to="/southland-scoop">
-        				        {{ $t("programs_page.scoop_title") }}
-        				    </router-link>	
-        				</div>
-        				<div class="program_button_container active">
-        				    {{ $t("programs_page.kids_club_title") }}
+        				        {{ $t("programs_page.kids_club_title") }}
+        				    </router-link>
         				</div>
         			</div>
         			<div v-if="pageHeader" class="row">
