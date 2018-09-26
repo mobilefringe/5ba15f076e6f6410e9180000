@@ -90,8 +90,7 @@
                     'timezone',
                     'findRepoByName',
                     'processedEvents',
-                    'findPromoBySlug',
-                    'findPromoById'
+                    'findEventBySlug'
                 ])
             },
             methods: {
