@@ -29,8 +29,6 @@
 
 <script>
     define(["Vue", "vuex"], function(Vue, Vuex) {
-        Vue.use(Meta);
-        Vue.use(VeeValidate);
         return Vue.component("kids-club-component", {
             template: template, // the variable template will be injected
             data: function() {
