@@ -42,7 +42,7 @@
 
 <script>
     define(["Vue", "vuex"], function(Vue, Vuex) {
-        return Vue.component("kids-club-component", {
+        return Vue.component("scoop-component", {
             template: template, // the variable template will be injected
             data: function() {
                 return {
