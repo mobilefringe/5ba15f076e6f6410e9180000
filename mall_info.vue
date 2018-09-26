@@ -65,8 +65,8 @@
                     if (response[1]) {
                         try {
                             this.pageHeader = response[1].data
-                            this.pageBody = response[1].data.subpages[0]
-                            this.pageImage = "//www.mallmaverick.com"
+                            // this.pageBody = response[1].data.subpages[0]
+                            // this.pageImage = "//www.mallmaverick.com"
                         } catch (e) {
                             
                         }
