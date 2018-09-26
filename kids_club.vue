@@ -41,6 +41,7 @@
             },
             created(){
                 this.loadData().then(response => {
+                    console.log(this.$route)
                     var temp_repo = this.findRepoByName('Kids Club Banner');
                     if (temp_repo) {
                         try {
