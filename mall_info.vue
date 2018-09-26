@@ -94,7 +94,7 @@
                 },
                 selectContent(item) {
                     this.show = !this.show
-                    _.forEach(pages, function (value, key) {
+                    _.forEach(this.pages, function (value, key) {
                         value.isActive = false;
                     });
                     
