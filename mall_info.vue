@@ -97,7 +97,7 @@
                     _.forEach(this.pages, function (value, key) {
                         value.isActive = false;
                     });
-                    
+                    console.log((this.pages)
                     var selected_item = item
                     this.$nextTick(function () {
                       selected_item.isActive = true;
