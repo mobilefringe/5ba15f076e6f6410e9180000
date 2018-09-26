@@ -6,19 +6,20 @@
                 <div class="page_header" v-if="pageBanner" v-bind:style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
         			<div class="site_container">
         				<div class="header_content caps">
-        					<h1>{{ $t("programs_page.programs_header") }}</h1>
+        					<h1>{{ $t("mall_info.info_header") }}</h1>
         				</div>
         			</div>
         		</div>
         		<div class="site_container">
                     <div class="program_header_container">
-                        <router-link to="/southland-scoop">
-        				    <div class="program_button_container animated_btn">
-        				        {{ $t("programs_page.scoop_title") }}
-        				    </div>
-        				</router-link>
+    				    <div class="program_button_container animated_btn">
+    				        {{ $t("mall_info.scoop_title") }}
+    				    </div>
+    				    <div class="program_button_container animated_btn">
+    				        {{ $t("mall_info.scoop_title") }}
+    				    </div>
         				<div class="program_button_container active">
-        				    {{ $t("programs_page.kids_club_title") }}
+        				    {{ $t("mall_info.kids_club_title") }}
         				</div>
         			</div>
         			<div v-if="pageHeader" class="row">
