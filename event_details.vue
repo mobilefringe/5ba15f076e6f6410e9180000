@@ -59,11 +59,12 @@
                 }
             },
             beforeRouteUpdate(to, from, next) {
-                this.currentEvent = this.findEventBySlug(to.params.id);
-                    if (this.currentEvent === null || this.currentEvent === undefined){
-                        this.$router.replace({ name: '404'});
-                    }
-                next();
+                this.updatecurrentEvent(to.params.id); 
+                // this.currentEvent = this.findEventBySlug(to.params.id);
+                //     if (this.currentEvent != null || this.currentEvent != undefined){
+                //         this.$router.replace({ name: '404'});
+                //     }
+                // next();
                 this.dataLoaded = true;
             },
             created(){
