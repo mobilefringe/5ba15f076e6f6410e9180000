@@ -98,6 +98,9 @@
                                         <a href="https://goo.gl/maps/RJ5dV8dxP1y" target="_blank">
                                             <p>{{ property.address1 }},<br>{{ property.city }}, {{ property.province_state }}</p>
                                         </a>
+                                        <a :href="'tel:' + property.contact_phone" >
+                                            <h5>{{ property.contact_phone }}</h5>
+                                        </a>
                                         <hr>
                                     </div>
                                     <div class="social_icons center">
