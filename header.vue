@@ -94,9 +94,11 @@
     					        </ul>
     						    <div class="mobile_nav_content visible_phone">
                                     <div class="mobile_property_address center">
+                                        <hr>
                                         <a href="https://goo.gl/maps/RJ5dV8dxP1y" target="_blank">
                                             <p>{{ property.address1 }},<br>{{ property.city }}, {{ property.province_state }}</p>
                                         </a>
+                                        <hr>
                                     </div>
                                     <div class="social_icons center">
                                         <span v-for="item in social_media">
