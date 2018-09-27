@@ -93,7 +93,12 @@
     							    </li>
     					        </ul>
     						    <div class="mobile_nav_content visible_phone">
-    							    <div class="social_icons center">
+                                    <div class="mobile_property_address center">
+                                        <a href="https://goo.gl/maps/RJ5dV8dxP1y" target="_blank">
+                                            <p>{{ property.address1 }},<br>{{ property.city }}, {{ property.province_state }}</p>
+                                        </a>
+                                    </div>
+                                    <div class="social_icons center">
                                         <span v-for="item in social_media">
                                             <a :href="item.url" target="_blank">
                                                 <p class="accessibility">{{ item.name }}</p>
@@ -101,12 +106,6 @@
                                             </a>
                                         </span>
                                     </div> 
-                                    <div class="mobile_property_address center">
-                                        <p>{{ property.name }}<br>
-                                            <a href="https://goo.gl/maps/RJ5dV8dxP1y" target="_blank">{{ property.address1 }}<br>{{ property.city }} {{ property.province_state }} {{ property.postal_code }}</a>
-                                        </p>
-                                        
-                                    </div>
     							</div>
     						</nav>
     				    </transition>
