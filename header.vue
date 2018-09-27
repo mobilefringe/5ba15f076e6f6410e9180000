@@ -93,10 +93,10 @@
     							    </li>
     					        </ul>
     						    <div class="mobile_nav_content visible_phone">
-                                    <div class="mobile_property_address center">
+                                    <div class="mobile_address_container center">
                                         <hr>
                                         <a href="https://goo.gl/maps/RJ5dV8dxP1y" target="_blank">
-                                            <p class="mobile_menu_address">{{ property.address1 }},<br>{{ property.city }}, {{ property.province_state }}</p>
+                                            <p class="property_address">{{ property.address1 }},<br>{{ property.city }}, {{ property.province_state }}</p>
                                         </a>
                                         <a :href="'tel:' + property.contact_phone" >
                                             <h5>{{ property.contact_phone }}</h5>
