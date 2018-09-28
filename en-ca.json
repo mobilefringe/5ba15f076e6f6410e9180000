@@ -61,7 +61,7 @@
         "events_header" : "Events",
         "events_title" : "Upcoming Events",
         "events" : "Event",
-        "read_more" : "Check It Out",
+        "read_more" : "View Details",
         "no_more_event_message" : "No More Events",
         "no_event_message" : "There are no Events at this time. Please check back soon.",
         "back_to_events" : "Back to Events"
