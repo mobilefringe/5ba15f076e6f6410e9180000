@@ -78,7 +78,7 @@
         "position": "Position",
         "job_type" : "Job Type",
         "end_date" : "End Date",
-        "read_more" : "Read More",
+        "read_more" : "View Details",
         "no_job_message" : "There are no Jobs at this time. Please check back soon.",
         "back_to_jobs" : "Back to Jobs",
         "desc_title" : "Job Description"
