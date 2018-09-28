@@ -80,7 +80,6 @@
                     var vm = this;
                     var temp_promo = [];
                     var temp_job = [];
-                    // console.log(this.processedJobs)
                     _.forEach(this.processedJobs, function(value, key) {
                         if (value.store != null && value.store != undefined) {
                             if(_.includes(value.store.image_url, 'missing')) {
