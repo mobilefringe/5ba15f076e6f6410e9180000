@@ -13,7 +13,7 @@
         		<div class="site_container">
         		    <div class="job_container" v-for="promo in promotions">
         		        <div class="row">
-        		            <div class="">
+        		            <div class="jobs_left">
         		                <h2>{{ promo.store_name }}</h2>   
         		            </div>
         		            <div class="">
