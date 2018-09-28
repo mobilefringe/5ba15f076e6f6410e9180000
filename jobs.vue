@@ -82,19 +82,19 @@
                     var temp_job = [];
                     _.forEach(this.processedJobs, function(value, key) {
                         if (value.store != null && value.store != undefined) {
-                            if(_.includes(value.store.image_url, 'missing')) {
-                                value.image_url = "https://via.placeholder.com/400x400/757575";
-                            } else {
-                                value.image_url = value.store.store_front_url_abs;  
-                            }
+                            // if(_.includes(value.store.image_url, 'missing')) {
+                            //     value.image_url = "https://via.placeholder.com/400x400/757575";
+                            // } else {
+                            //     value.image_url = value.store.store_front_url_abs;  
+                            // }
                             value.store_name = value.store.name;
                             
-                            if (value.store.categories.length > 0) {
-                                value.store_category = vm.getStoreCategories(value.store.categories);
-                            }
+                            // if (value.store.categories.length > 0) {
+                            //     value.store_category = vm.getStoreCategories(value.store.categories);
+                            // }
                         } else if (value.store == null || value.store == undefined) {
                             value.store = {};
-                            value.image_url =  "https://via.placeholder.com/400x400/757575";
+                            // value.image_url =  "https://via.placeholder.com/400x400/757575";
                             value.store_name = property_name;
                         }
                         
@@ -112,24 +112,24 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
-                getStoreCategories(store_categories) {
-                    var store_categories = store_categories;
-                    var vm = this;
-                    var categories = [];
-                    _.forEach(store_categories, function(value, key) {
-                        try {
-                            var category = vm.findCategoryById(value);
-                            var category_name = category.name
-                            categories.push(category_name)
-                        } catch(e) {
+                // getStoreCategories(store_categories) {
+                //     var store_categories = store_categories;
+                //     var vm = this;
+                //     var categories = [];
+                //     _.forEach(store_categories, function(value, key) {
+                //         try {
+                //             var category = vm.findCategoryById(value);
+                //             var category_name = category.name
+                //             categories.push(category_name)
+                //         } catch(e) {
                             
-                        }
-                    });
+                //         }
+                //     });
                     
-                    categories = _.toString(categories, ' , ');
-                    console.log(categories)
-                    return categories
-                },
+                //     categories = _.toString(categories, ' , ');
+                //     console.log(categories)
+                //     return categories
+                // },
                 checkJobType(promo) {
                     if(this.locale != "en-ca") {
                         if(promo.job_type == "Full Time"){
