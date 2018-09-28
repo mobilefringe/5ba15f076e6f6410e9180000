@@ -126,7 +126,7 @@
                         }
                     });
                     
-                    categories = _.toString(categories, ', ');
+                    categories = _.toString(categories, ' , ');
                     console.log(categories)
                     return categories
                 },
