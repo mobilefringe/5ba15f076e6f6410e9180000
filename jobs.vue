@@ -47,8 +47,8 @@
                 return {
                     dataLoaded: false,
                     pageBanner: null,
-                    paginate: ['promos'],
-                    promos : null
+                    // paginate: ['promos'],
+                    // promos : null
                 }
             },
             created() {
@@ -63,7 +63,7 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    this.promos = this.promotions;
+                    // this.promos = this.promotions;
                     this.dataLoaded = true;
                 });
             },
