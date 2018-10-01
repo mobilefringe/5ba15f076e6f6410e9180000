@@ -12,7 +12,7 @@
         		</div>
         		<div class="site_container">
         		    <div class="job_container" v-for="promo in promotions">
-        		        <div class="row">
+        	
         		            <div class="jobs_left">
         		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2>   
         		            </div>
@@ -27,7 +27,7 @@
         						    </router-link>   
         				        </div>
         		            </div>
-        		        </div>
+        		       
         		    </div>
 				 <!--   <div class="promo_container jobs clearfix" v-for="(promo, index) in promotions">-->
 					<!--    <div class="promo_img" v-lazy:background-image="promo.image_url"></div>-->
