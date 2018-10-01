@@ -92,7 +92,8 @@
                     'property',
                     'timezone',
                     'findRepoByName',
-                    'findJobBySlug'
+                    'findJobBySlug',
+                    'findCategoryById'
                 ])
             },
             methods: {
@@ -150,6 +151,11 @@
                         return promo.job_type
                     }
                 },
+                storeCategory() {
+                    var currentStoreCategory = this.currentJob.store.categories[0];
+                    category = this.findCategoryById(currentStoreCategory);
+                    return category.name
+                }
                 getStoreCategories(store_categories) {
                     var store_categories = store_categories;
                     console.log(store_categories)
