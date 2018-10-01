@@ -14,13 +14,11 @@
         		    <div class="job_container" v-for="promo in promotions">
     		            <div class="jobs_left">
     		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2> 
-    		                
     		            </div>
     		            <div class="jobs_right">
     		                <div class="job_detail_content">
         		                <p class="job_position bold" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
     					        <p class="job_position bold" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>
-    					        <!--<p class="job_position" v-if="promo.job_type">{{ $t("jobs_page.job_type") }}:  {{ checkJobType(promo) }}</p>-->
     							<p class="job_date">{{ $t("jobs_page.end_date") }}: {{promo.end_date | moment("MMMM DD, YYYY", timezone)}}</p>
     							<router-link :to="'/jobs/'+ promo.slug" >
     							   <div class="job_learn_more animated_btn">{{ $t("jobs_page.read_more") }}</div>
@@ -28,21 +26,6 @@
     				        </div>
     		            </div>
         		    </div>
-				 <!--   <div class="promo_container jobs clearfix" v-for="(promo, index) in promotions">-->
-					<!--    <div class="promo_img" v-lazy:background-image="promo.image_url"></div>-->
-					<!--    <div class="promo_content">-->
-					<!--        <h2>{{ promo.store_name }}</h2>-->
-					<!--        <h4 v-if="promo.store_category" class="bold">{{ promo.store_category }}</h4>-->
-					<!--		<hr>-->
-					<!--        <p class="job_position" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>-->
-					<!--        <p class="job_position" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>-->
-					<!--        <p class="job_position" v-if="promo.job_type">{{ $t("jobs_page.job_type") }}:  {{ checkJobType(promo) }}</p>-->
-					<!--		<p class="job_date">{{ $t("jobs_page.end_date") }}: {{promo.end_date | moment("MMMM DD, YYYY", timezone)}}</p>-->
-					<!--		<router-link :to="'/jobs/'+ promo.slug" >-->
-					<!--		   <div class="promo_learn_more animated_btn">{{ $t("jobs_page.read_more") }}</div>-->
-					<!--	    </router-link>-->
-					<!--    </div>-->
-					<!--</div>-->
         			<div class="row no_promos" v-else>
         				<div class="col-md-12">
         					<p>{{$t("jobs_page.no_job_message")}}</p>
@@ -63,9 +46,7 @@
             data: function() {
                 return {
                     dataLoaded: false,
-                    pageBanner: null,
-                    // paginate: ['promos'],
-                    // promos : null
+                    pageBanner: null
                 }
             },
             created() {
@@ -80,7 +61,7 @@
                     } else {
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
-                    // this.promos = this.promotions;
+
                     this.dataLoaded = true;
                 });
             },
