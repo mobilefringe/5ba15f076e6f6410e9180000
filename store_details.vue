@@ -85,10 +85,16 @@
             },
             created (){
                 this.loadData().then(response => {
-                    // var temp_repo = this.findRepoByName('Stores Banner');
-                    // if(temp_repo) {
-                    //     this.pageBanner = temp_repo.images[0];
-                    // }
+                    var temp_repo = this.findRepoByName('Stores Banner');
+                    if(temp_repo) {
+                        try {
+                            this.pageBanner = temp_repo.images[0];
+                        } catch(e) {
+                            
+                        }
+                    } else {
+                        this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
+                    }
                     
                     this.updateCurrentStore(this.id);
                     this.dataLoaded = true;
