@@ -13,13 +13,14 @@
         		<div class="site_container">
         		    <div class="job_container" v-for="promo in promotions">
     		            <div class="jobs_left">
-    		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2>   
+    		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2> 
+    		                
     		            </div>
     		            <div class="jobs_right">
     		                <div class="job_detail_content">
         		                <p class="job_position" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
     					        <p class="job_position" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>
-    					        <p class="job_position" v-if="promo.job_type">{{ $t("jobs_page.job_type") }}:  {{ checkJobType(promo) }}</p>
+    					        <!--<p class="job_position" v-if="promo.job_type">{{ $t("jobs_page.job_type") }}:  {{ checkJobType(promo) }}</p>-->
     							<p class="job_date">{{ $t("jobs_page.end_date") }}: {{promo.end_date | moment("MMMM DD, YYYY", timezone)}}</p>
     							<router-link :to="'/jobs/'+ promo.slug" >
     							   <div class="job_learn_more animated_btn">{{ $t("jobs_page.read_more") }}</div>
