@@ -104,6 +104,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
+                    'findRepoByName'
                     'processedStores',
                     'findStoreBySlug',
                     'findCategoryById',
