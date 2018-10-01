@@ -16,7 +16,7 @@
     		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2>   
     		            </div>
     		            <div class="jobs_right">
-    		                <div>
+    		                <div class="job_detail_content">
         		                <p class="job_position" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
     					        <p class="job_position" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>
     					        <p class="job_position" v-if="promo.job_type">{{ $t("jobs_page.job_type") }}:  {{ checkJobType(promo) }}</p>
