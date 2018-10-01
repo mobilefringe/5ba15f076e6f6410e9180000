@@ -111,7 +111,7 @@
                                 this.currentJob.no_logo = true
                             } else {
                                 this.currentJob.no_logo = false
-                                this.currentJob.store_url = this.currentJob.store.store_front_alt_url_abs;
+                                this.currentJob.store_url = this.currentJob.store.image_url;
                             }
 
                             
