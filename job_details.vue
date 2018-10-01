@@ -28,7 +28,6 @@
                         </div>
                         <div class="col-md-4">
             				<div class="details_store_image">
-            				    
             				    <div v-if="currentJob.no_logo" class="store_details_image center-block">
                                     <div class="no_logo">
                                         <p class="store_details_name">{{ currentJob.store_name }}</p>
@@ -112,6 +111,7 @@
                                 this.currentJob.no_logo = true
                             } else {
                                 this.currentJob.no_logo = false
+                                this.currentJob.image_url = this.currentJob.store.store_front_alt_url_abs;
                             }
 
                             
@@ -121,7 +121,7 @@
                         } else if (this.currentJob.store == null || this.currentJob.store == undefined) {
                             this.currentJob.store = {};
                             this.currentJob.no_logo = false;
-                            this.currentJob.store_front_url_abs =  "https://via.placeholder.com/400x400/757575";
+                            this.currentJob.image_url =  "https://via.placeholder.com/400x400/757575";
                             this.currentJob.store_name = property_name;
                         }
                     } else {
