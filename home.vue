@@ -51,7 +51,7 @@
                             <div v-for="feature in mobile_feature_items" :class="'grid-item ' + feature.masonry_class ">
                             	<div class="feature_item_container">
                         	        <a :href="feature.url">
-                            			<img :src="feature.image_url" alt="name">
+                            			<img :src="feature.image_url" :alt="feature.name">
                             			<div class="feature_item_info" v-if="feature.name && feature.description ">
                             				<div :class="'feature_item_content ' + feature.text_class + feature.border">
                             					<p v-if="locale=='en-ca'">{{ feature.name }}</p>
@@ -72,7 +72,7 @@
         		    <div class="row">
         		        <div v-for="feature in programs" class="col-sm-6">
         		            <div class="feature_item_container programs">
-                    			<img :src="feature.image_url" alt="name">
+                    			<img :src="feature.image_url" :alt="feature.name">
                     			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
                     				<div class="feature_item_content">
                     					<p>{{ feature.name }}</p>
