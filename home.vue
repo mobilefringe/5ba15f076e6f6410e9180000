@@ -165,7 +165,7 @@
                     return features
                 },
                 mobile_feature_items () {
-                    var features = this.$store.state.feature_items;
+                    var features = _.slice(this.$store.state.feature_items, 0, 6);
                     _.forEach(features, function(value, key) {
                         if ( _.includes([1], key) ) {
                             value.masonry_class = "grid-item--width2";
