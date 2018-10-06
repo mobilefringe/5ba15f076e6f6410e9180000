@@ -78,7 +78,7 @@
                     					<p>{{ feature.name }}</p>
                     					<h3>{{ feature.description }}</h3>
                     					<a :href="feature.url" :aria-label="feature.name">
-                        					<div class="feature_item_more">Read More</div>
+                        					<div class="feature_item_more">View Details</div>
                         				</a>
                     				</div>
                     			</div>
