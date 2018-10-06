@@ -42,7 +42,7 @@
                                             <img class="transparent_logo" src="//codecloud.cdn.speedyrails.net/sites/5b1550796e6f641cab010000/image/png/1536094421888/default_background.png" alt="">
                                             <div class="no_logo_text">
                                                 <div class="store_text">
-                                                    <p>{{ store.name }}</p>
+                                                    <h5>{{ store.name }}</h5>
                                                 </div>
                                             </div>
                                         </div>
@@ -57,7 +57,7 @@
         								</div>
         								<div class="store_details">
         								    <div class="store_text">
-        								        <p>{{ store.name }}</p>
+        								        <h5>{{ store.name }}</h5>
     								        </div>    
         								</div>
                             		</router-link>
