@@ -47,19 +47,24 @@
                         </div>
                     </div>
                     <div v-masonry transition-duration="0.3s" item-selector=".grid-item" class="visible_phone">
-                        <div v-masonry-tile class="item" >
-                            <div v-for="feature in mobile_feature_items" :class="'grid-item ' + feature.masonry_class ">
-                            	<div class="feature_item_container">
+                        <div v-masonry-tile class="item">
+                            <div v-for="feature in feature_items" :class="'grid-item ' + feature.masonry_class ">
+                        	    <div v-if="feature.name && feature.description" class="feature_item_container">
                         	        <a :href="feature.url">
                             			<img :src="feature.image_url" :alt="feature.name">
-                            			<div class="feature_item_info" v-if="feature.name && feature.description ">
-                            				<div :class="'feature_item_content ' + feature.text_class + feature.border">
-                            					<p v-if="locale=='en-ca'">{{ feature.name }}</p>
-                            					<p v-else>{{ feature.name_2 }}</p>
-                            					<h3 v-if="locale=='en-ca'">{{ feature.description }}</h3>
-                            					<h3 v-else>{{ feature.description_2 }}</h3>
+                            			<div class="feature_item_info" >
+                            				<div class="feature_item_content">
+                            					<p>{{ feature.name }}</p>
+                            					<h3>{{ feature.description }}</h3>
+                            					<div class="feature_item_more">Read More</div>
                             				</div>
                             			</div>
+                            		</a>
+                        	    </div>
+                        	    <div v-else class="feature_item_container">
+                        	        <a :href="feature.url">
+                            			<img :src="feature.image_url" alt="">
+                            			<div class="feature_item_info"></div>
                             		</a>
                         	    </div>
                             </div>
