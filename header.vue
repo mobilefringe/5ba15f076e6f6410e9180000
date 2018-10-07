@@ -16,7 +16,7 @@
 					<div class="mobile_header">
 					    <div class="property_logo center-block">
 							<router-link to="/">
-							    <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" alt="Property Logo"/>
+							    <img src="//codecloud.cdn.speedyrails.net/sites/5ba15f076e6f6410e9180000/image/png/1519154972000/mm_logo.png" :alt="property.name + 'Logo'"/>
 						    </router-link>
 						</div>
 				        <div id="menu-icon" @click="showMenu = !showMenu" :class="{ open: showMenu }" class="visible_phone hamburger">
