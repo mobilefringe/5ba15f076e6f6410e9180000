@@ -44,12 +44,12 @@
 					<div class="hidden_phone">
 					    <div class="header_search_container">
     					    <search-component v-if="headerReady" :list="searchList" placeholder="Search" :suggestion-attribute="suggestionAttribute" :keys="keys" v-model="search_result" @select="onOptionSelect" :autocomplete="false" :minMatchCharLength="3" :tokenize="true" class="text-left">
-                                    <template slot="item" scope="option" class="manual">
-                                        <article class="media">
-                                            <p>{{ option.data.name }}</p>
-                                        </article>
-                                    </template>
-                                </search-component>
+                                <template slot="item" scope="option" class="manual">
+                                    <article class="media">
+                                        <p>{{ option.data.name }}</p>
+                                    </article>
+                                </template>
+                            </search-component>
                         </div>
 					</div>
 				</div>
