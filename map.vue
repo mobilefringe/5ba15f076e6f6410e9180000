@@ -60,6 +60,11 @@
                     pageBanner: null,
                     suggestionAttribute: "name",
                     storeSearch: null,
+                    
+                    floorOne: null,
+                    floorTwo: null,
+                    miniOne: null,
+                    miniTwo: null
                 }
             },
             created() {
