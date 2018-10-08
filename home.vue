@@ -39,7 +39,7 @@
                         	    </div>
                         	    <div v-else class="feature_item_container">
                         	        <a :href="feature.url">
-                            			<img :src="feature.image_url" alt="feature.name">
+                            			<img :src="feature.image_url" :alt="feature.name">
                             			<div class="feature_item_info"></div>
                             		</a>
                         	    </div>
@@ -63,7 +63,7 @@
                         	    </div>
                         	    <div v-else class="feature_item_container">
                         	        <a :href="feature.url">
-                            			<img :src="feature.image_url" alt="">
+                            			<img :src="feature.image_url" :alt="feature.name">
                             			<div class="feature_item_info"></div>
                             		</a>
                         	    </div>
