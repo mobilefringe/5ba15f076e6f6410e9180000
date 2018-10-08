@@ -136,8 +136,10 @@
             props:['menu_items', 'social_media'],
             data: function () {
                 return {
-                    suggestionAttribute: 'name',
-                    search: '', 
+                    search_result: null,
+                    suggestionAttribute: "name",
+                    keys: ["name", "description", "tags", "store.name"],
+                    headerReady: false,
                     showMenu: false,
                     showMobileMenu: false,
                     noScroll: false,
@@ -162,6 +164,9 @@
                 }
             },
             created() {
+                this.loadData().then(response => {
+                    this.headerReady = true;
+                });
                 this.$nextTick(function() {
                     window.addEventListener('resize', this.getWindowWidth);
                     this.getWindowWidth();
@@ -268,10 +273,14 @@
                     this.windowWidth = window.innerWidth;
                 },
                 onOptionSelect(option) {
-                    this.$nextTick(function() {
-                        this.search = ""
+                    this.$router.push({
+                        name: "search-results",
+                        query: { searchQuery: this.search_result },
+                        params: { results: option }
                     });
-                    this.$router.push("/stores/" + option.slug);
+                    this.$nextTick(function() {
+                        this.search_result = "";
+                    });
                 }
             },
             beforeDestroy: function() {
