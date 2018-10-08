@@ -27,12 +27,12 @@
                             <div v-for="feature in feature_items" :class="'grid-item ' + feature.masonry_class ">
                         	    <div v-if="feature.name && feature.description" class="feature_item_container">
                         	        <a :href="feature.url">
-                            			<img :src="feature.image_url" :alt="feature.name">
+                            			<img :src="feature.image_url" alt="">
                             			<div class="feature_item_info" >
                             				<div class="feature_item_content">
                             					<p>{{ feature.name }}</p>
                             					<h3>{{ feature.description }}</h3>
-                            					<div class="feature_item_more">View Details</div>
+                            					<div class="feature_item_more" :aria-label="feature.name">View Details</div>
                             				</div>
                             			</div>
                             		</a>
