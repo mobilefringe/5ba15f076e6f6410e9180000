@@ -169,38 +169,38 @@
                     var features = _.slice(this.$store.state.feature_items, 6, 8);  
                     return features
                 },
-                mobile_feature_items () {
-                    var features = _.slice(this.$store.state.feature_items, 0, 6);
-                    _.forEach(features, function(value, key) {
-                        if ( _.includes([1], key) ) {
-                            value.masonry_class = "grid-item--width2";
-                            value.text_class = " ";
-                            value.border = " ";
-                        } else if ( _.includes([2], key) ){
-                            value.masonry_class = "grid-item--width2";
-                            value.text_class = "add_black";
-                            value.border = " ";
-                        } else if ( _.includes([3], key) ){
-                            value.masonry_class = "grid-item--height2";
-                            value.text_class = " ";
-                            value.border = " ";
-                        } else if ( _.includes([4], key) ){
-                            value.text_class = " ";
-                            value.border = "full_border";
-                        } else if ( _.includes([5], key) ){
-                            value.text_class = "add_black";
-                            value.border = " ";
-                            value.last_item = true;
-                        } else {
-                            value.masonry_class = " ";
-                            value.text_class = " ";
-                            value.border = " ";
-                            value.last_item = false;
-                        }
-                    });
-                    features = _.sortBy(features, [function(o) { return o.mobile_order; }]);
-                    return features;
-                }
+                // mobile_feature_items () {
+                //     var features = _.slice(this.$store.state.feature_items, 0, 6);
+                //     _.forEach(features, function(value, key) {
+                //         if ( _.includes([1], key) ) {
+                //             value.masonry_class = "grid-item--width2";
+                //             value.text_class = " ";
+                //             value.border = " ";
+                //         } else if ( _.includes([2], key) ){
+                //             value.masonry_class = "grid-item--width2";
+                //             value.text_class = "add_black";
+                //             value.border = " ";
+                //         } else if ( _.includes([3], key) ){
+                //             value.masonry_class = "grid-item--height2";
+                //             value.text_class = " ";
+                //             value.border = " ";
+                //         } else if ( _.includes([4], key) ){
+                //             value.text_class = " ";
+                //             value.border = "full_border";
+                //         } else if ( _.includes([5], key) ){
+                //             value.text_class = "add_black";
+                //             value.border = " ";
+                //             value.last_item = true;
+                //         } else {
+                //             value.masonry_class = " ";
+                //             value.text_class = " ";
+                //             value.border = " ";
+                //             value.last_item = false;
+                //         }
+                //     });
+                //     features = _.sortBy(features, [function(o) { return o.mobile_order; }]);
+                //     return features;
+                // }
             },
             methods: {
                 loadData: async function() {
