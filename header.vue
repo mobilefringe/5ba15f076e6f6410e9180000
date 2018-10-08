@@ -43,7 +43,7 @@
 					</div>
 					<div class="hidden_phone">
 					    <div class="header_search_container">
-    					    <search-component v-model="search" :list="processedStores" :suggestion-attribute="suggestionAttribute" placeholder="" @select="onOptionSelect">
+    					    <search-component v-model="search" :list="searchList" :suggestion-attribute="suggestionAttribute" placeholder="" @select="onOptionSelect">
                                 <template slot="item" scope="option">
                                     <article class="media">
                                         <p>{{ option.data.name }}</p>
