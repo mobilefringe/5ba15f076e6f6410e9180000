@@ -32,7 +32,7 @@
                         <div class="col-md-3 col-md-pull-9">
                             <div class="store_list_container hidden-mobile">
                                 <div class="store_name" v-for="store in allStores">
-                                    <p v-on:click="addLandmark(store)">{{store.name}}</p>
+                                    <p v-on:click="dropPin(store)">{{store.name}}</p>
                                 </div>
                             </div>
                         </div>
@@ -42,14 +42,6 @@
         </transition>
     </div>
 </template>
-<style>
-	#png_map{
-	    width:1310px;
-		height: 983px;
-		min-width:1310px;
-		min-height: 983px;
-	}
-</style>
 <script>
     define(["Vue", "vuex", "vue!mapplic-map"], function(Vue, Vuex, MapplicComponent) {
         return Vue.component("stores-component", {
@@ -60,11 +52,6 @@
                     pageBanner: null,
                     suggestionAttribute: "name",
                     storeSearch: null,
-                    
-                    floorOne: null,
-                    floorTwo: null,
-                    miniOne: null,
-                    miniTwo: null
                 }
             },
             created() {
@@ -105,11 +92,11 @@
                     all_stores.push(initZoom)
                     return all_stores
                 },
-                getSVGMap () {
+                getSVGMap() {
                     var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
                     return mapURL
                 },
-                floorList () {
+                floorList() {
                     var floor_list = [];
                     var floor_1 = {};
                     floor_1.id = "first-floor";
