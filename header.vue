@@ -174,6 +174,7 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
+                    'getPropertyHours',
                     'processedStores'
                 ]),
                 locale: {
