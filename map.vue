@@ -116,11 +116,17 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
+                // onOptionSelect(option) {
+                //     this.$nextTick(function() {
+                //         this.storeSearch = ""
+                //     });
+                //     this.svgMapRef.addMarker(option);
+                // },
                 onOptionSelect(option) {
                     this.$nextTick(function() {
                         this.storeSearch = ""
                     });
-                    this.svgMapRef.addMarker(option);
+                    this.$refs.mapplic_ref.showLocation(store.svgmap_region);
                 },
                 dropPin(store) {
                     this.$refs.mapplic_ref.showLocation(store.svgmap_region);
