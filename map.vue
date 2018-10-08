@@ -26,7 +26,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-9 col-md-push-3">
-                            <png-map ref="pngmap_ref" :png-map-url="getPNGurl" :initial-position="'700 450'" @updateMap="updatePNGMap"></png-map>
+                            <mapplic-map ref="mapplic_ref" :height="566" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="allStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
                         </div>
                         <div class="margin-30 visible-mobile"></div>
                         <div class="col-md-3 col-md-pull-9">
@@ -51,7 +51,7 @@
 	}
 </style>
 <script>
-    define(["Vue", "vuex", "jquery", "smooth-zoom", "vue!png-map"], function(Vue, Vuex, $, smoothZoom, PNGMapComponent) {
+    define(["Vue", "vuex", "vue!mapplic-map"], function(Vue, Vuex, MapplicComponent) {
         return Vue.component("stores-component", {
             template: template, // the variable template will be injected
             data: function () {
