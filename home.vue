@@ -23,8 +23,7 @@
             		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
             		        <h3 class="home_page_title caps">Find Your Store</h3>
             		    </div>
-            		    <!--<div class="row margin_30">-->
-                  <!--      <div class="col-md-3">-->
+            		    <div class="margin_30">
                             <div class="map_search_container">
                                 <search-component v-model="storeSearch" :list="processedStores" :suggestion-attribute="suggestionAttribute" @select="onOptionSelect" :placeholder="$t('stores_page.find_your_store')">
                                     <template slot="item" scope="option">
@@ -33,13 +32,8 @@
                                 </search-component>
                                 <i id="store_search_icon" class="fa fa-search" aria-hidden="true"></i>
                             </div>
-                    <!--    </div>-->
-                    <!--    <div class="col-md-9"></div>-->
-                    <!--</div>-->
-                    <!--<div class="row">-->
-                    <!--    <div class="col-md-9 col-md-push-3">-->
-                            <mapplic-map ref="mapplic_ref" :height="556" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="allStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
-                        <!--</div>-->
+                        </div>
+                        <mapplic-map ref="mapplic_ref" :height="556" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="allStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
         		    </div>
         		    <div class="home_page_title_container">
         		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
