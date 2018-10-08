@@ -132,7 +132,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "vue_router", "routes", "bootstrap-vue"], function (Vue, Vuex, VueRouter, appRoutes, BootstrapVue) {
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue_router", "routes", "bootstrap-vue"], function (Vue, Vuex, tz, VueRouter, appRoutes, BootstrapVue) {
         Vue.use(BootstrapVue);
         return Vue.component("header-component", {
             template: template, // the variable template will be injected,
