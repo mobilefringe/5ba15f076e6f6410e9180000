@@ -26,7 +26,7 @@
                     </div>
                     <div class="row">
                         <div class="col-md-9 col-md-push-3">
-                            <mapplic-map ref="mapplic_ref" :height="566" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="allStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
+                            <mapplic-map ref="mapplic_ref" :height="556" :minimap= "false" :deeplinking="false" :sidebar="false" :hovertip="true" :maxscale= "5" :storelist="allStores" :floorlist="floorList" tooltiplabel="View Store Details"></mapplic-map>
                         </div>
                         <div class="margin-30 visible-mobile"></div>
                         <div class="col-md-3 col-md-pull-9">
