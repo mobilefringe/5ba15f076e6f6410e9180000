@@ -32,7 +32,7 @@
                             				<div class="feature_item_content">
                             					<p>{{ feature.name }}</p>
                             					<h3>{{ feature.description }}</h3>
-                            					<div class="feature_item_more">View Details</div>
+                            					<div class="feature_item_more" :aria-label="feature.name">View Details</div>
                             				</div>
                             			</div>
                             		</a>
@@ -56,7 +56,7 @@
                             				<div class="feature_item_content">
                             					<p>{{ feature.name }}</p>
                             					<h3>{{ feature.description }}</h3>
-                            					<div class="feature_item_more">View Details</div>
+                            					<div class="feature_item_more" :aria-label="feature.name">View Details</div>
                             				</div>
                             			</div>
                             		</a>
