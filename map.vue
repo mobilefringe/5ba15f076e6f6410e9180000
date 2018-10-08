@@ -75,27 +75,46 @@
                         this.pageBanner = { "image_url": "https://via.placeholder.com/1920x300" }
                     }
 
-                    this.$on('updateMap', this.updatePNGMap);
+                    this.getSVGMap;
                     this.dataLoaded = true;
                 });
             },
             computed: {
                 ...Vuex.mapGetters([
                     "property",
+                    "timezone",
                     "findRepoByName",
                     "processedStores",
                 ]),
                 allStores() {
-                    return this.processedStores;
+                    var all_stores = this.processedStores;
+                    _.forEach(all_stores, function(value, key) {
+                        value.zoom = 2;
+                    });
+                    var initZoom = {};
+                    initZoom.svgmap_region = "init";
+                    initZoom.z_coordinate = 1;
+                    initZoom.x = 0.5;
+                    initZoom.y = 0.5;
+                    initZoom.zoom = 1;
+                    all_stores.push(initZoom)
+                    return all_stores
                 },
-                getPNGurl() {
-                    return "https://www.mallmaverick.com" + this.property.map_url;
+                getSVGMap () {
+                    var mapURL = "https://www.mallmaverick.com" + this.property.svgmap_url.split("?")[0];
+                    return mapURL
                 },
-                svgMapRef() {
-                    return _.filter(this.$children, function(o) {
-                        return (o.$el.className == "svg-map")
-                    })[0];
-                },
+                floorList () {
+                    var floor_list = [];
+                    var floor_1 = {};
+                    floor_1.id = "first-floor";
+                    floor_1.title = "Level One";
+                    floor_1.map = this.getSVGMap;
+                    floor_1.z_index = 1;
+                    floor_1.show = true;
+                    floor_list.push(floor_1);
+                    return floor_list;
+                }
             },
             methods: {
                 loadData: async function() {
@@ -111,13 +130,8 @@
                     });
                     this.svgMapRef.addMarker(option);
                 },
-                updatePNGMap(map) {
-                    this.map = map;
-                    // console.log("in updatepng")
-                },
-                addLandmark(store) {
-                    console.log(store)
-                    this.svgMapRef.addMarker(store);
+                dropPin(store) {
+                    this.$refs.mapplic_ref.showLocation(store.svgmap_region);
                 }
             }
         });
