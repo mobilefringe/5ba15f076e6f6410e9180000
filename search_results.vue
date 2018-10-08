@@ -3,13 +3,13 @@
 		<loading-spinner v-if="!dataLoaded"></loading-spinner>
         <transition name="fade">
             <div v-if="dataLoaded" v-cloak>
-                <div v-if="pageBanner" class="inside_header_background" :style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">
-                    <div class="main_container">
-                        <div class="page_container">
-                            <h2>Seach Results</h2>
-                        </div>
-                    </div>
-                </div>
+                <!--<div v-if="pageBanner" class="inside_header_background" :style="{ backgroundImage: 'url(' + pageBanner.image_url + ')' }">-->
+                <!--    <div class="main_container">-->
+                <!--        <div class="page_container">-->
+                <!--            <h2>Seach Results</h2>-->
+                <!--        </div>-->
+                <!--    </div>-->
+                <!--</div>-->
                 <div class="main_container margin_30">
             		<div class="page_container text-left" v-if="searchResults && searchResults.length > 0" id="searchResults">
                         <p class="search_result_title">Found {{searchResults.length}} results matching "{{searchQuery}}"</p>
