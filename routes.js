@@ -160,6 +160,20 @@ define([], function() {
             ]
         },
         {
+            path: '/search-results',
+            component: view('default'),
+            children: [
+                {
+                    path: '',
+                    component: view('search_results'),
+                    meta: {
+                        pageName: 'Search Results',
+                    },
+                    name: 'search-results'
+                }
+            ]
+        },
+        {
             path: '/stores',
             component: view('default'),
             children: [
