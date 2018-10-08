@@ -126,7 +126,7 @@
                     this.$nextTick(function() {
                         this.storeSearch = ""
                     });
-                    this.$refs.mapplic_ref.showLocation(store.svgmap_region);
+                    this.$refs.mapplic_ref.showLocation(option.svgmap_region);
                 },
                 dropPin(store) {
                     this.$refs.mapplic_ref.showLocation(store.svgmap_region);
