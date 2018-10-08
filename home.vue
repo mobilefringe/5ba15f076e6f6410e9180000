@@ -140,7 +140,9 @@
                         infinite: true,
                         slidesToShow: 1,
                         speed: 1200
-                    }
+                    },
+                    suggestionAttribute: "name",
+                    storeSearch: null,
                 }
             },
             created () {
