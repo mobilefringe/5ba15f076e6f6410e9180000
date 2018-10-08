@@ -18,6 +18,12 @@
         			</div>
         		</div>
         		<div class="site_container">
+        		    <div class="show_phone">
+        		        <div class="home_page_title_container">
+            		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
+            		        <h3 class="home_page_title caps">Find Your Store</h3>
+            		    </div>
+        		    </div>
         		    <div class="home_page_title_container">
         		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
         		        <h3 class="home_page_title caps">What's Happening</h3>
