@@ -12,6 +12,13 @@
                                 </a>
                             </span>
                         </div>
+                        <div class="hours_container todays_hours">
+                            <p v-if="hour.is_open" v-for="hour in todaysHours" class="caps center">Open Now</p>
+                            <p v-if="hour.is_open" v-for="hour in todaysHours" class="center">
+                                {{hour.open_time | moment("h:mm a", timezone)}} - {{hour.close_time | moment("h:mm a", timezone)}}    
+                            </p>
+                            <p v-else class="center">Closed</p>
+                        </div>
 					</div>
 					<div class="mobile_header">
 					    <div class="property_logo center-block">
