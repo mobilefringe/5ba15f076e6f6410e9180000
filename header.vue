@@ -233,10 +233,11 @@
                     }
                 },
                 searchList() {
+                    var _this = this;
                     var events = this.processedEvents;
                     _.forEach(events, function (value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        var today = moment.tz(_this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, _this.timezone).format();
                         if (today >= showOnWebDate) {
                             if (_.includes(value.eventable_type, 'Property')) {
                                 value.is_store = false;
@@ -248,8 +249,8 @@
 
                     var promos = this.processedPromos;
                     _.forEach(promos, function (value, key) {
-                        var today = moment.tz(this.timezone).format();
-                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        var today = moment.tz(_this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, _this.timezone).format();
                         if (today >= showOnWebDate) {
                             if (_.includes(value.promotionable_type, 'Property')) {
                                 value.is_store = false;
