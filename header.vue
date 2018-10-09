@@ -248,6 +248,7 @@
                     });
 
                     var promos = this.processedPromos;
+                    var temp_promo = [];
                     _.forEach(promos, function (value, key) {
                         var today = moment.tz(_this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, _this.timezone).format();
@@ -257,8 +258,11 @@
                             } else {
                                 value.is_store = true;    
                             }
+                            
+                            temp_promo.push(value)
                         }
                     });
+                    promos = temp+promo
                     console.log("promos", promos)
 
                     var jobs = this.processedJobs;
