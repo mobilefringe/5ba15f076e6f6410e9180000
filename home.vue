@@ -94,8 +94,7 @@
         		    <div class="row">
         		        <div v-for="feature in programs" class="col-sm-6">
         		            <div class="feature_item_container programs" :class="feature.program_class">
-                    			<!--<img :src="feature.image_url" alt="">-->
-                    			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
+                    			<div class="feature_item_info">
                     				<div class="feature_item_content">
                     					<p>{{ feature.name }}</p>
                     					<h3>{{ feature.description }}</h3>
