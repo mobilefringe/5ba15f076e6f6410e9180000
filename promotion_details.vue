@@ -24,8 +24,8 @@
     				<div class="row">
     				    <div class="col-md-12">
             				<div class="details_store_desc">
-            				    <h4 class="details_store_title" v-if="locale=='en-ca'">{{ currentPromo.name_short }}</h4>
-							    <h4 class="details_store_title" v-else>{{ currentPromo.name_short_2 }}</h4>
+            				    <h4 class="details_store_title" v-if="locale=='en-ca'">{{ currentPromo.name }}</h4>
+							    <h4 class="details_store_title" v-else>{{ currentPromo.name_2 }}</h4>
             				    <p class="bold">
             				        <span v-if="isMultiDay(currentPromo)">{{ currentPromo.start_date | moment("MMM D", timezone)}} - {{ currentPromo.end_date | moment("MMM D", timezone)}}</span>
             				        <span v-else>{{ currentPromo.start_date | moment("MMM D", timezone)}}</span>
