@@ -191,7 +191,7 @@
                             value.program_class = "last";
                         }
                     });
-                        
+                        console.log("features", features)
                     return features
                 },
                 // mobile_feature_items () {
