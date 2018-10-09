@@ -235,19 +235,27 @@
                 searchList() {
                     var events = this.processedEvents;
                     _.forEach(events, function (value, key) {
-                        if (_.includes(value.eventable_type, 'Property')) {
-                            value.is_store = false;
-                        } else {
-                            value.is_store = true;    
+                         var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            if (_.includes(value.eventable_type, 'Property')) {
+                                value.is_store = false;
+                            } else {
+                                value.is_store = true;    
+                            }
                         }
                     });
 
                     var promos = this.processedPromos;
                     _.forEach(promos, function (value, key) {
-                        if (_.includes(value.promotionable_type, 'Property')) {
-                            value.is_store = false;
-                        } else {
-                            value.is_store = true;    
+                        var today = moment.tz(this.timezone).format();
+                        var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
+                        if (today >= showOnWebDate) {
+                            if (_.includes(value.promotionable_type, 'Property')) {
+                                value.is_store = false;
+                            } else {
+                                value.is_store = true;    
+                            }
                         }
                     });
 
