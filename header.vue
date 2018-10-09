@@ -178,6 +178,7 @@
                     'property',
                     'timezone',
                     'getPropertyHours',
+                    'getPropertyHolidayHours',
                     'processedStores',
                     'processedEvents',
                     'processedPromos',
