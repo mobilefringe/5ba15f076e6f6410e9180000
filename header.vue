@@ -14,7 +14,7 @@
                         </div>
                         <div class="header_hours">
                             <p v-if="hour.is_open" v-for="hour in todaysHours">Open Now: {{hour.open_time | moment("h a", timezone)}} - {{hour.close_time | moment("h a", timezone)}}</p>
-                            <p v-else class="center">Closed</p>
+                            <p v-else>Closed</p>
                         </div>
 					</div>
 					<div class="mobile_header">
