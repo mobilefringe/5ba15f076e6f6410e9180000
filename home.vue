@@ -50,7 +50,7 @@
                             					<p>{{ feature.name }}</p>
                             					<h3>{{ feature.description }}</h3>
                             					<a :href="feature.url">
-                            					<div class="feature_item_more" :aria-label="feature.name">View Details</div>
+                            					<div class="feature_item_more animated_btn" :aria-label="feature.name">View Details</div>
                             					</a>
                             				</div>
                             			</div>
