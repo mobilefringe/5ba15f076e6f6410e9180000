@@ -62,7 +62,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "jquery", "json!site.json"], function(Vue, Vuex, $, site) {
+    define(["Vue", "vuex", "jquery""], function(Vue, Vuex, $) {
         return Vue.component("search-results", {
             template: template, // the variable template will be injected
             data() {
