@@ -187,7 +187,9 @@
                 programs () {
                     var features = _.slice(this.$store.state.feature_items, 6, 8); 
                     _.forEach(features, function(value, key) {
-                        value.program_class = "last";
+                        if ( _.includes([8], key) ) {
+                            value.program_class = "last";
+                        }
                     });
                         
                     return features
