@@ -90,6 +90,7 @@
                     var vm = this;
                     var temp_promo = [];
                     var temp_job = [];
+                    console.log(this.processedPromos)
                     _.forEach(this.processedPromos, function(value, key) {
                         value.name_short = _.truncate(value.name, { 'length': 21, 'separator': ' ' });
                         value.name_short_2 = _.truncate(value.name_2, { 'length': 21, 'separator': ' ' });
