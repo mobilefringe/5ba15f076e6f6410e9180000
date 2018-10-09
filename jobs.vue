@@ -11,7 +11,7 @@
         			</div>
         		</div>
         		<div class="site_container">
-        		    <div class="job_container" v-if="promotions.length" v-for="promo in promotions">
+        		    <div class="job_container" v-if="promotions" v-for="promo in promotions">
     		            <div class="jobs_left">
     		                <h2 class="jobs_store_name">{{ promo.store_name }}</h2> 
     		            </div>
