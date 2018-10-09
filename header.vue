@@ -212,7 +212,6 @@
                         }
                     });
                     // If there is no holiday today, check for today's hours
-                    console.log("hours", hours)
                     if (hours.length > 0) {
                         return hours;
                     } else {
