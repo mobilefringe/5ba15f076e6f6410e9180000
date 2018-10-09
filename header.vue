@@ -259,6 +259,7 @@
                             }
                         }
                     });
+                    console.log("promos", promos)
 
                     var jobs = this.processedJobs;
                     _.forEach(jobs, function (value, key) {
