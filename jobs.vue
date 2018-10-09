@@ -38,8 +38,7 @@
 </template>
 
 <script>
-    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment", "vue-lazy-load"], function(Vue, Vuex, moment, tz, VueMoment, VueLazyload) {
-        Vue.use(VueLazyload);
+    define(["Vue", "vuex", "moment", "moment-timezone", "vue-moment"], function(Vue, Vuex, moment, tz, VueMoment) {
         return Vue.component("promos-component", {
             template: template, // the variable template will be injected
             props:['locale'],
@@ -94,7 +93,7 @@
             methods: {
                 loadData: async function() {
                     try {
-                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "jobs"), this.$store.dispatch("getData", "categories")]);
+                        let results = await Promise.all([this.$store.dispatch("getData", "repos"), this.$store.dispatch("getData", "jobs")]);
                     } catch (e) {
                         console.log("Error loading data: " + e.message);
                     }
