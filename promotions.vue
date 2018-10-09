@@ -90,7 +90,6 @@
                     var vm = this;
                     var temp_promo = [];
                     var temp_job = [];
-                    console.log(this.processedPromos)
                     _.forEach(this.processedPromos, function(value, key) {
                         var today = moment.tz(this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, this.timezone).format();
