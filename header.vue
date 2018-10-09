@@ -235,6 +235,7 @@
                 searchList() {
                     var _this = this;
                     var events = this.processedEvents;
+                    var temp_events = [];
                     _.forEach(events, function (value, key) {
                         var today = moment.tz(_this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, _this.timezone).format();
@@ -244,9 +245,11 @@
                             } else {
                                 value.is_store = true;    
                             }
+                            temp_event.push(value);
                         }
                     });
-
+                    events = temp_event;
+                    
                     var promos = this.processedPromos;
                     var temp_promo = [];
                     _.forEach(promos, function (value, key) {
@@ -263,7 +266,6 @@
                         }
                     });
                     promos = temp_promo
-                    console.log("promos", promos)
 
                     var jobs = this.processedJobs;
                     _.forEach(jobs, function (value, key) {
