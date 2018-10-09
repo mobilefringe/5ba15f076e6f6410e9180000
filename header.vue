@@ -245,13 +245,13 @@
                             } else {
                                 value.is_store = true;    
                             }
-                            temp_event.push(value);
+                            temp_events.push(value);
                         }
                     });
-                    events = temp_event;
+                    events = temp_events;
                     
                     var promos = this.processedPromos;
-                    var temp_promo = [];
+                    var temp_promos = [];
                     _.forEach(promos, function (value, key) {
                         var today = moment.tz(_this.timezone).format();
                         var showOnWebDate = moment.tz(value.show_on_web_date, _this.timezone).format();
@@ -262,10 +262,10 @@
                                 value.is_store = true;    
                             }
                             
-                            temp_promo.push(value)
+                            temp_promos.push(value)
                         }
                     });
-                    promos = temp_promo
+                    promos = temp_promos;
 
                     var jobs = this.processedJobs;
                     _.forEach(jobs, function (value, key) {
