@@ -26,7 +26,7 @@
     				        </div>
     		            </div>
         		    </div>
-        			<div class="row no_promos" v-else>
+        			<div v-else class="row no_promos">
         				<div class="col-md-12">
         					<p>{{$t("jobs_page.no_job_message")}}</p>
         				</div>
