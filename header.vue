@@ -262,7 +262,7 @@
                             temp_promo.push(value)
                         }
                     });
-                    promos = temp+promo
+                    promos = temp_promo
                     console.log("promos", promos)
 
                     var jobs = this.processedJobs;
