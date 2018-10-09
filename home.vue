@@ -91,9 +91,9 @@
         		        <h5 class="home_page_subtitle center caps">Programs</h5>
         		        <h3 class="home_page_title caps">Kids Club & Southland Scoop</h3>
         		    </div>
-        		    <div class="row">
+        		    <div class="row programs">
         		        <div v-for="feature in programs" class="col-sm-6">
-        		            <div class="feature_item_container programs">
+        		            <div class="feature_item_container">
                     			<!--<img :src="feature.image_url" alt="">-->
                     			<div class="feature_item_info"> <!-- v-if="feature.name && feature.description " -->
                     				<div class="feature_item_content">
