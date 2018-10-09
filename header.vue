@@ -239,6 +239,7 @@
                             value.is_store = true;    
                         }
                     });
+                    console.log("events", events)
                     var promos = this.processedPromos;
                     _.forEach(promos, function (value, key) {
                         if (_.includes(value.promotionable_type, 'Property')) {
@@ -247,6 +248,7 @@
                             value.is_store = true;    
                         }
                     });
+                    console.log("promos", promos)
                     var jobs = this.processedJobs;
                     _.forEach(jobs, function (value, key) {
                         if (_.includes(value.jobable_type, 'Property')) {
@@ -255,11 +257,12 @@
                             value.is_store = true;    
                         }
                     });
+                    console.log("jobs", jobs)
                     var stores = this.processedStores;
                     _.forEach(stores, function (value, key) {
                         value.is_store = true;    
                     });
-                    
+                    console.log("stores", stores)
                     var list = _.union( stores, events, promos, jobs );
                     return list
                 },
