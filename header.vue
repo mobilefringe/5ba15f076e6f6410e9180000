@@ -234,6 +234,7 @@
                 },
                 searchList() {
                     var _this = this;
+                    
                     var events = this.processedEvents;
                     var temp_events = [];
                     _.forEach(events, function (value, key) {
