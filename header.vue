@@ -217,15 +217,15 @@
                     } else {
                         _.forEach(regHours, function(value) {  
                             var today = moment().day();
-                            if( today == value.day_of_week ){
+                            if ( today == value.day_of_week ) {
                                 var time = moment().tz(timezone).format('HH:mm');
                                 var opens = moment(value.open_time).tz(timezone).format('HH:mm');
                                 var closes = moment(value.close_time).tz(timezone).format('HH:mm');
-                                // if (time > opens && time < closes) {
-                                //     value.is_open = true;
-                                // } else {
-                                //     value.is_open = false;
-                                // }
+                                if (time > opens && time < closes) {
+                                    value.is_open = true;
+                                } else {
+                                    value.is_open = false;
+                                }
                                 hours.push(value);
                             }         
                         });
