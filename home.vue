@@ -21,9 +21,9 @@
         		    <div class="visible_phone">
         		        <div class="homepage_hours">
         		            <h5 class="home_page_subtitle center caps" v-if="hour.is_open" v-for="hour in todaysHours">Open Now:</h5>
+        		            <h5 class="home_page_subtitle center caps" v-else></h5>
                             <h3 class="home_page_title caps" v-if="hour.is_open" v-for="hour in todaysHours">{{hour.open_time | moment("h a", timezone)}} - {{hour.close_time | moment("h a", timezone)}}</h3>
-                            <h5 class="home_page_subtitle center caps" v-if="!hour.is_open" v-for="hour in todaysHours"></h5>
-                            <h3 class="home_page_title caps" v-if="!hour.is_open">Closed</h3>
+                            <h3 class="home_page_title caps" v-else>Closed</h3>
                         </div>
         		        <div class="home_page_title_container">
             		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
