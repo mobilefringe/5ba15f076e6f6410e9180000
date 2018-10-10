@@ -27,8 +27,9 @@
 				<transition name="custom-classes-transition" enter-active-class="fadeIn">
 					<router-view class="content" :locale="locale" ></router-view>
 				</transition>
-				
-				<footer-component :footer_menu_items="footer_menu_items" :social_media="social_media" v-if="dataLoaded"></footer-component>
+				<transition name="custom-classes-transition" enter-active-class="fadeIn">
+				    <footer-component :footer_menu_items="footer_menu_items" :social_media="social_media" v-if="dataLoaded"></footer-component>
+				</transition>
 			</div>
 		</div>
 		<div class='modal-backdrop custom_backdrop hidden_now' id="popup_backdrop"></div>
