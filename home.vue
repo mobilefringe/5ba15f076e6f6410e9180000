@@ -167,6 +167,8 @@
                 ...Vuex.mapGetters([
                     'property',
                     'timezone',
+                    'getPropertyHours',
+                    'getPropertyHolidayHours',
                     'processedStores'
                 ]),
                 banners () {
