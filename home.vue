@@ -19,6 +19,10 @@
         		</div>
         		<div class="site_container">
         		    <div class="visible_phone">
+        		        <div class="homepage_hours">
+                            <p v-if="hour.is_open" v-for="hour in todaysHours">Open Now: {{hour.open_time | moment("h a", timezone)}} - {{hour.close_time | moment("h a", timezone)}}</p>
+                            <p v-else>Closed</p>
+                        </div>
         		        <div class="home_page_title_container">
             		        <h5 class="home_page_subtitle center caps">Discover {{ property.name }}</h5>
             		        <h3 class="home_page_title caps">Find Your Store</h3>
@@ -252,7 +256,46 @@
                     floor_1.show = true;
                     floor_list.push(floor_1);
                     return floor_list;
-                }
+                },
+                todaysHours() {
+                    var timezone = this.timezone
+                    var regHours = this.getPropertyHours;
+                    var holHours = this.getPropertyHolidayHours;
+                    var hours = [];
+                    // First check if there is a holiday today
+                    _.forEach(holHours, function(value) {
+                        var today = moment().format("YYYY-MM-DD");
+                        var holiday_date = moment(value.holiday_date).tz(timezone).format("YYYY-MM-DD");
+                        if (today == holiday_date) {
+                            if (value.is_closed) {
+                                value.is_open = false;
+                            } else {
+                                value.is_open = true;
+                            }
+                            hours.push(value);
+                        }
+                    });
+                    // If there is no holiday today, check for today's hours
+                    if (hours.length > 0) {
+                        return hours;
+                    } else {
+                        _.forEach(regHours, function(value) {  
+                            var today = moment().day();
+                            if ( today == value.day_of_week ) {
+                                var time = moment().tz(timezone).format('HH:mm');
+                                var opens = moment(value.open_time).tz(timezone).format('HH:mm');
+                                var closes = moment(value.close_time).tz(timezone).format('HH:mm');
+                                if (time > opens && time < closes) {
+                                    value.is_open = true;
+                                } else {
+                                    value.is_open = false;
+                                }
+                                hours.push(value);
+                            }         
+                        });
+                        return hours;
+                    }
+                },
             },
             methods: {
                 loadData: async function() {
