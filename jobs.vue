@@ -19,7 +19,7 @@
     		                <div class="job_detail_content">
         		                <p class="job_position bold" v-if="locale=='en-ca'">{{ $t("jobs_page.position") }}: {{ promo.name }}</p>
     					        <p class="job_position bold" v-else>{{ $t("jobs_page.position") }}: {{ promo.name_2 }}</p>
-    					        <p class="job_position"> {{ checkJobType(promo) }}</p>
+    					        <p class="job_position">{{ checkJobType(promo) }}</p>
     							<p class="job_date">{{ $t("jobs_page.end_date") }}: {{promo.end_date | moment("MMMM DD, YYYY", timezone)}}</p>
     							<router-link :to="'/jobs/'+ promo.slug" >
     							   <div class="job_learn_more animated_btn">{{ $t("jobs_page.read_more") }}</div>
@@ -89,7 +89,7 @@
                     });
                     _.sortBy(temp_promo, [function(o) { return o.start_date; }]);
                     return temp_promo;
-                }
+                }s
             },
             methods: {
                 loadData: async function() {
