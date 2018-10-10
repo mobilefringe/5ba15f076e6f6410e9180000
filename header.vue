@@ -310,11 +310,54 @@
                     this.$nextTick(function() {
                         this.search_result = "";
                     });
-                }
-            },
-            beforeDestroy: function() {
-                window.removeEventListener('resize', this.getWindowWidth);
-            }
+                },
+                handleScroll () {
+				    this.scrolled = window.pageYOffset > 100;
+			    },
+        		mobileDidScrolled () {
+        			if (this.isMobile) {
+        				this.mobileScroll = window.pageYOffset > 0;
+        				console.log(this.mobileScroll)
+        				var _this = this;
+        				// setTimeout(function() {
+        					if (_this.mobileScroll) {
+        						_this.mobileHasScrolled();
+        						_this.mobileScroll = false;
+        					}
+        				// }, 150);
+        			}
+        		},
+    			mobileHasScrolled () {
+    				// var lastScrollTop = 0;
+    				var delta = 5;
+    				var navbarHeight = document.getElementById("header").offsetHeight;
+    				var st = $(window).scrollTop();
+    
+    				// If they scrolled down and are past the navbar, add class .nav-up.
+    				// This is necessary so you never see what is "behind" the navbar.
+    				if (st > this.lastScrollTop && st > navbarHeight){
+    					// Scroll Down
+    					this.navUp = true;
+    				} else {
+    					// Scroll Up
+    					if(st + $(window).height() < $(document).height()) {
+    						this.navUp = false;
+    					}
+    				}
+    				
+    				this.lastScrollTop = st;
+    			},
+		    },
+    		beforeMount () {
+    			window.addEventListener('resize', this.getWindowWidth);
+    			window.addEventListener('scroll', this.handleScroll);
+    			window.addEventListener('scroll', this.mobileDidScrolled);
+    		},
+    		beforeDestroy () {
+    			window.addEventListener('resize', this.getWindowWidth);
+    			window.removeEventListener('scroll', this.handleScroll);
+    			window.removeEventListener('scroll', this.mobileDidScrolled);
+    		}
         });
     });
 </script>
