@@ -104,9 +104,8 @@
                     }
                 },
                 selectPage(item) {
-                    console.log(item)
                     var item = item.value
-                    if (_.includes(item, "kids")) {
+                    if (_.includes(item, "club")) {
                         this.$router.push("/kids-club");
                     }
                     
