@@ -135,6 +135,7 @@
             props:['menu_items', 'social_media'],
             data: function () {
                 return {
+                    scrolled: false,
                     search_result: null,
                     suggestionAttribute: "name",
                     keys: ["name", "description", "tags", "store.name"],
