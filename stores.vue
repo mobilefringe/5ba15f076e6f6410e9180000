@@ -28,7 +28,7 @@
         				    </router-link>
         				</div>
         			</div>
-        			<div v-masonry transition-duration="0.3s" item-selector=".stores-grid-item" horizontal-order="true">
+        			<div v-masonry transition-duration="0.5s" item-selector=".stores-grid-item" horizontal-order="true">
                         <transition-group name="custom-classes-transition" enter-active-class="animated fadeInDown" leave-active-class="animated fadeOut" tag="div">
                             <div v-masonry-tile  v-for="(store, index) in allStores" :key="index" class="stores-grid-item">
                         	    <div class="store_logo_container">
