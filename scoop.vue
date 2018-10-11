@@ -11,7 +11,7 @@
         			</div>
         		</div>
         		<div class="site_container">
-                    <div class="program_header_container">
+                    <div class="program_header_container hidden_phone">
         				<div class="program_button_container active">
     				        {{ $t("programs_page.scoop_title") }}
         				</div>
@@ -20,6 +20,9 @@
         				        {{ $t("programs_page.kids_club_title") }}
         				    </div>
     				    </router-link>
+        			</div>
+        			<div class="visible_phone margin_20">
+        				<v-select v-model="selected" :options="pageOptions" :searchable="false" :on-change="selectPage" class="category-select"></v-select>
         			</div>
         			<div v-if="pageHeader" class="row">
         			    <div class="col-md-12">
