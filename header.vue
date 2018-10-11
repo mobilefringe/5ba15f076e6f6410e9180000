@@ -1,5 +1,5 @@
 <template>
-    <header :class="{ sticky: scrolled, 'nav-up': navUp }">
+    <header id="header" :class="{ sticky: scrolled, 'nav-up': navUp }">
 		<div class="site_container">
 			<div class="header_logo">
 				<div class="hidden_phone">
