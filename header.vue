@@ -145,6 +145,16 @@
                     showMobileMenu: false,
                     noScroll: false,
                     windowWidth: 0
+                    
+                    scrolled: false,
+				isOpen: false,
+				showMenu: false,
+				windowWidth: 0,
+				isMobile: false,
+				mobileScroll: false,
+				lastScrollTop: 0,
+				navUp: false,
+				navDown: true,
                 }
             },
             watch: {
