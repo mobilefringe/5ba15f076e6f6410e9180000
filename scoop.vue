@@ -23,7 +23,7 @@
         			</div>
         			<div class="visible_phone margin_20">
         			    <label style="display: none;" for="pageSelect">Select a Page</label>
-        				<v-select v-model="selected" :options="pageOptions" :searchable="false" :on-change="selectPage" class="category-select" id="pageSelect"></v-select>
+        				<v-select v-model="selected" :options="pageOptions" :searchable="false" :on-change="selectPage" class="category-select" inputId="pageSelect"></v-select>
         			</div>
         			<div v-if="pageHeader" class="row">
         			    <div class="col-md-12">
