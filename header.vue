@@ -136,6 +136,7 @@
             data: function () {
                 return {
                     scrolled: false,
+                    navUp: false,
                     search_result: null,
                     suggestionAttribute: "name",
                     keys: ["name", "description", "tags", "store.name"],
