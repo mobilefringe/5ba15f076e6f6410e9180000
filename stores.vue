@@ -63,7 +63,7 @@
                             		</router-link>
                         	    </div>
                             </div>
-                        <!--</transition-group>-->
+                        </transition-group>
                     </div>
         		</div>
 	        </div>
