@@ -4,15 +4,15 @@ define([], function() {
             path: '/',
             component: view('home')
         },
-        {
-            path: '/contest',
-            component: view('default'),
-            children: [{
-                path: '',
-                component: view('contest'),
-                name: 'contestList'
-            }]
-        },
+        // {
+        //     path: '/contest',
+        //     component: view('default'),
+        //     children: [{
+        //         path: '',
+        //         component: view('contest'),
+        //         name: 'contestList'
+        //     }]
+        // },
         {
             path: '/contact-us',
             component: view('default'),
@@ -110,16 +110,16 @@ define([], function() {
                 }
             ]
         },
-        {
-            path: '/newsletter',
-            component: view('default'),
-            children: [{
-                path: '',
-                component: view('newsletter'),
-                name: 'newsletter',
-                props: true
-            }]
-        },
+        // {
+        //     path: '/newsletter',
+        //     component: view('default'),
+        //     children: [{
+        //         path: '',
+        //         component: view('newsletter'),
+        //         name: 'newsletter',
+        //         props: true
+        //     }]
+        // },
         {
             path: '/pages',
             component: view('default'),
@@ -201,17 +201,17 @@ define([], function() {
                 }
             ]
         },
-        {
-            path: '/thank-you',
-            component: view('default'),
-            children: [
-                {
-                    path: '',
-                    component: view('thank_you'),
-                    name: 'thankYou'
-                }
-            ]
-        },
+        // {
+        //     path: '/thank-you',
+        //     component: view('default'),
+        //     children: [
+        //         {
+        //             path: '',
+        //             component: view('thank_you'),
+        //             name: 'thankYou'
+        //         }
+        //     ]
+        // },
         {
             path: '*',
             redirect: '/'
