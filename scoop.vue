@@ -100,6 +100,13 @@
                         console.log("Error loading data: " + e.message);
                     }
                 },
+                selectPage(item) {
+                    var item = item.value
+                    if (_.includes(item, "kids")) {
+                        this.$router.push("/kids-club");
+                    }
+                    
+                }
             }
         });
     });
