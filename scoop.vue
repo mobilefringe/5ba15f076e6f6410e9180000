@@ -50,7 +50,12 @@
                     pageBanner: null,
                     pageHeader: null,
                     pageBody: null,
-                    pageImage: null
+                    pageImage: null,
+                    pageOptions: [
+                        { 'label': 'Southland Scoop', 'value': 'scoop', 'disabled': true },
+                        { 'label': 'Kids Club', 'value': 'club', 'disabled': false }
+                    ],
+                    selected: { 'label': 'Southland Scoop', 'value': 'scoop', 'disabled': true },
                 }
             },
             created(){
