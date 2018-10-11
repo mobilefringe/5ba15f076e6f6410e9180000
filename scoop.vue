@@ -104,6 +104,7 @@
                     }
                 },
                 selectPage(item) {
+                    console.log(item)
                     var item = item.value
                     if (_.includes(item, "kids")) {
                         this.$router.push("/kids-club");
