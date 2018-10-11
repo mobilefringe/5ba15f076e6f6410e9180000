@@ -95,7 +95,7 @@
                     <!--</div>-->
                     <div class="home_page_title_container">
         		        <h5 class="home_page_subtitle center caps">Programs</h5>
-        		        <h3 class="home_page_title caps">Kids Club & Southland Scoop</h3>
+        		        <h3 class="home_page_title second caps">Kids Club & Southland Scoop</h3>
         		    </div>
         		    <div class="row">
         		        <div v-for="feature in programs" class="col-sm-6">
