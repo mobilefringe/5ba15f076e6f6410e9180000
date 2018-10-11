@@ -22,7 +22,8 @@
     				    </router-link>
         			</div>
         			<div class="visible_phone margin_20">
-        				<v-select v-model="selected" :options="pageOptions" :searchable="false" :on-change="selectPage" class="category-select"></v-select>
+        			<label style="display: none;" for="pageSelect">Select a Page</label>
+        				<v-select v-model="selected" :options="pageOptions" :searchable="false" :on-change="selectPage" class="category-select" id="pageSelect"></v-select>
         			</div>
         			<div v-if="pageHeader" class="row">
         			    <div class="col-md-12">
